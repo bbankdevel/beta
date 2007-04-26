@@ -21,6 +21,51 @@
                                 <form [formGroup]="ngFormActivateCreditCard" (ngSubmit)="activate()">
                                     <div class="form-group form-focus">
                                         <label class="focus-label">Numero de tarjeta</label>
+                                        <input type="text" class="form-control floating" id="number" placeholder="# de tarjeta" formControlName="number" [(ngModel)]="creditcard.number"required [ngClass]="{ 'is-invalid': submitted && fval.number.errors }">
+                                            <div *ngIf="submitted && fval.number.errors" class="invalid-feedback">
+                                            <div ngClass="fval.number.errors.required">
+                                               Campo requerido.
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="form-group form-focus">
+                                        <label class="focus-label">Nombre del titular</label>
+                                        <input type="text" class="form-control floating" id="name" placeholder="" formControlName="name" [(ngModel)]="creditcard.name"required [ngClass]="{ 'is-invalid': submitted && fval.name.errors }">
+                                            <div *ngIf="submitted && fval.name.errors" class="invalid-feedback">
+                                            <div ngClass="fval.name.errors.required">
+                                               Campo requerido.
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="form-group form-focus">
+                                        <label class="focus-label">CVV</label>
+                                        <input type="text" class="form-control floating" id="cvv" placeholder="cvv" formControlName="cvv" [(ngModel)]="creditcard.cvv"required [ngClass]="{ 'is-invalid': submitted && fval.cvv.errors }">
+                                            <div *ngIf="submitted && fval.cvv.errors" class="invalid-feedback">
+                                            <div ngClass="fval.cvv.errors.required">
+                                               Campo requerido.
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="form-group form-focus">
+                                        <label class="focus-label">Fecha de caducidad</label>
+                                        <input type="text" class="form-control floating" id="caducidad" placeholder="caducidad" formControlName="caducidad" [(ngModel)]="creditcard.caducidad"required [ngClass]="{ 'is-invalid': submitted && fval.caducidad.errors }">
+                                            <div *ngIf="submitted && fval.caducidad.errors" class="invalid-feedback">
+                                            <div ngClass="fval.caducidad.errors.required">
+                                               Campo requerido.
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="form-group form-focus">
+                                        <label class="focus-label">Direccion</label>
+                                        <input type="text" class="form-control floating" id="address" placeholder="Direccion" formControlName="address" [(ngModel)]="creditcard.address"required [ngClass]="{ 'is-invalid': submitted && fval.address.errors }">
+                                            <div *ngIf="submitted && fval.address.errors" class="invalid-feedback">
+                                            <div ngClass="fval.address.errors.required">
+                                               Campo requerido.
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="form-group form-focus">
+                                        <label class="focus-label">Numero de tarjeta</label>
                                         <input type="text" class="form-control floating" id="number" placeholder="# de cuenta" formControlName="number" [(ngModel)]="creditcard.number"required [ngClass]="{ 'is-invalid': submitted && fval.number.errors }">
                                             <div *ngIf="submitted && fval.number.errors" class="invalid-feedback">
                                             <div ngClass="fval.number.errors.required">

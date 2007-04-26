@@ -5,4 +5,9 @@ export interface CreditcardInterface{
 	email?:string;
 	type?:string;	
 	userId?:string;
+
+	name?:string;
+	cvv?:string;
+	caduca?:string;
+	address?:string;
 }

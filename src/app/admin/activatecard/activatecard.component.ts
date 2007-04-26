@@ -26,6 +26,10 @@ export class ActivatecardComponent implements OnInit {
   public isLogged =false;
   public creditcard : CreditcardInterface ={
     number:"",
+    name:"",
+    cvv:"",
+    caducidad:"",
+    address:"",
     status:"active"
   };
   message = "";  
@@ -78,7 +82,11 @@ export class ActivatecardComponent implements OnInit {
 
   ngOnInit(): void {
     this.ngFormActivateCreditCard = this.formBuilder.group({
-      number: ['', [Validators.required]]
+      number: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      cvv: ['', [Validators.required]],
+      caducidad: ['', [Validators.required]],
+      address: ['', [Validators.required]]
       });
   }
 

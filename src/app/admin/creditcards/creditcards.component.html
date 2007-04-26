@@ -77,7 +77,11 @@
 								<thead>
 									<tr>
 										<th>Numero</th>
-										<th>Propietario</th>
+										<th>Nombre</th>
+										<th>CVV</th>
+										<th>Fecha caducidad</th>
+										<th>Direccion</th>
+										<th>Cuenta</th>
 										<th  class="float-right">Status</th>
 									</tr>
 								</thead>
@@ -93,7 +97,20 @@
 											</a>
 										</td>
 										<td class="py-2"><a
-										>{{creditcard.email}}</a></td>
+										>{{creditcard.name}}</a>
+										</td>
+										<td class="py-2"><a
+										>{{creditcard.cvv}}</a>
+										</td>
+										<td class="py-2"><a
+										>{{creditcard.caducidad}}</a>
+										</td>
+										<td class="py-2"><a
+										>{{creditcard.address}}</a>
+										</td>
+										<td class="py-2"><a
+										>{{creditcard.email}}</a>
+										</td>
 											<td>
 											<a class="btn-link text-success float-right">ACTIVE</a>
 										</td>
