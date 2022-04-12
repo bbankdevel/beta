@@ -17,7 +17,7 @@
                       <span class="nav-text">Clientes</span>
                 </a>
                 <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
-                   <li><a [routerLink]="['/admin/ecom-customers']" class="{{(currentHref == '/admin/ecom-customers') ? 'mm-active' : ''}}">listado</a></li>
+                   <li><a [routerLink]="['/admin/customers']" >listado</a></li>
                 </ul>
             </li>
             <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}">
