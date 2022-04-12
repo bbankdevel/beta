@@ -41,13 +41,15 @@ export class RegisterComponent implements OnInit {
   ) { }
   public usercardSubmit : UsercardInterface ={
     name:"",
-    username:"",
+    email:"",
     address:"",
-    surname:"",
     images:[],
+    status:"",
     userId:"",
+    usertype:"",
     phone:""
   }; 
+   
 
   loadAPI = null;
   onRegister(){
@@ -57,7 +59,7 @@ export class RegisterComponent implements OnInit {
       this.user.usertype='developertest';
       this.user.status='new';
       this.usercardSubmit.name=this.user.name;
-      this.usercardSubmit.username=this.user.email;
+      // this.usercardSubmit.username=this.user.email;
       this.usercardSubmit.images[0]="https://www.buckapiservices.com/developer.png";
       this.authService
         .registerUser(this.user.name, this.user.email, this.user.password, this.user.usertype, this.user.status)
@@ -81,7 +83,7 @@ export class RegisterComponent implements OnInit {
       this.usercardSubmit.status='new';
       setTimeout(() => {
         if (this.isError==false){  
-          console.log("dato" +this.isError);
+          console.log("error: " +this.isError);
           this.saveUsercard(this.usercardSubmit);
        //   this.isError = false;
           }
@@ -98,7 +100,7 @@ export class RegisterComponent implements OnInit {
   public saveUsercard(usercard){
     return this.dataApi.saveUsercard(this.usercardSubmit)
        .subscribe(
-            usercardSubmit => this.router.navigate(['/successregister'])
+            usercardSubmit => this.router.navigate(['/admin/customers'])
        );
        this.waiting=false;
 }
