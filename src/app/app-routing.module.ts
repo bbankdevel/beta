@@ -140,7 +140,7 @@ import { PortofolioComponent } from './portofolio/portofolio.component';
 import { MarketCapitalComponent } from './market-capital/market-capital.component';
 
 const routes: Routes = [
-                {path: '', redirectTo: 'admin/index', pathMatch: 'full' },
+                {path: '', redirectTo: 'page-login', pathMatch: 'full' },
 				{
                     path: 'admin', component: AdminComponent, children: [
                         {path: '', component: Index1Component},
