@@ -7,7 +7,7 @@ import {UserWService} from '../../user-w.service';
 })
 export class Index1Component implements OnInit {
 
-  constructor(    _uw:UserWService) { }
+  constructor(    public _uw:UserWService) { }
 
   ngOnInit(): void {
   }

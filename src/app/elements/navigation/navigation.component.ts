@@ -16,7 +16,7 @@ export class NavigationComponent implements OnInit {
 
   constructor(
     location: Location,
-    _uw:UserWService, 
+    public _uw:UserWService,
     router: Router) {
     router.events.subscribe((val) => {
       if(location.path() != ''){
