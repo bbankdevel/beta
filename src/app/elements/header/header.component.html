@@ -685,8 +685,8 @@
                         <a class="nav-link"  role="button" data-toggle="dropdown" ngbDropdownToggle>
                             <img src="assets/images/profile/pic1.jpg" width="20" alt=""/>
                             <div class="header-info" *ngIf="_uw.usertype!=undefined">
-                                <span [hidden]="_uw.usertype!=admin">Administrator</span>
-                                <span [hidden]="_uw.usertype!=customer">Customer</span>
+                                <span [hidden]="_uw.usertype!=='admin'">Administrator</span>
+                                <span [hidden]="_uw.usertype!=='customer'">Customer</span>
                                 <small *ngIf="_uw.email!=undefined">{{_uw.email}}</small>
                                 
                             </div>
