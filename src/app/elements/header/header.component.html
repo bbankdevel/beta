@@ -684,9 +684,11 @@
                     <li class="nav-item dropdown header-profile dropdown-no-icon" ngbDropdown>
                         <a class="nav-link"  role="button" data-toggle="dropdown" ngbDropdownToggle>
                             <img src="assets/images/profile/pic1.jpg" width="20" alt=""/>
-                            <div class="header-info">
-                                <span>Administrator</span>
-                                <small>admin@bbevolutionbank.com</small>
+                            <div class="header-info" *ngIf="_uw.usertype!=undefined">
+                                <span [hidden]="_uw.usertype!=admin">Administrator</span>
+                                <span [hidden]="_uw.usertype!=customer">Customer</span>
+                                <small>{{_uw.email}}</small>
+                                
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>

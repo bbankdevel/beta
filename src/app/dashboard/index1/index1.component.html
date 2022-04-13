@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div> -->
-            <div class="col-xl-6 col-xxl-12" [hidde]="_uw.usertype!=admin">
+            <div class="col-xl-6 col-xxl-12" [hidden]="_uw.usertype!=admin">
                 <div class="row" >
                     <div class="col-sm-7">
                         <app-sell-order></app-sell-order>
@@ -39,6 +39,14 @@
                     <div class="col-sm-5">
                         <app-buy-order></app-buy-order>
                     </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-xxl-12" [hidden]="_uw.usertype!=customer">
+                <div class="row" >
+                    <div class="col-sm-12">
+                     Nada que mostrar por ahora.
+                    </div>
+                   
                 </div>
             </div>
         </div>
