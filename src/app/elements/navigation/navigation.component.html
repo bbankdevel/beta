@@ -7,7 +7,7 @@
                 </a>
             <ul aria-expanded="false"  [ngClass]="{'mm-show': dashboardArray.indexOf(currentHref) > -1}">
                 <li><a  class="{{(currentHref == '/admin/index' || currentHref == '/admin') ? 'mm-active' : ''}}" [routerLink]="">Solicitudes</a></li>
-                <li><a [routerLink]="" class="{{(currentHref == '/admin/transactions') ? 'mm-active' : ''}}">Cuentas</a></li>
+                <li><a [routerLink]="['/admin/accounts']"class="{{(currentHref == '/admin/accounts') ? 'mm-active' : ''}}">Cuentas</a></li>
             </ul>
             
             </li>
@@ -17,7 +17,7 @@
                       <span class="nav-text">Clientes</span>
                 </a>
                 <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
-                   <li><a [routerLink]="['/admin/customers']" >listado</a></li>
+                   <li><a [routerLink]="['/admin/customers']" >Listado</a></li>
                 </ul>
             </li>
             <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}">
@@ -26,7 +26,7 @@
                     <span class="nav-text">Tarjetas</span>
                 </a>
                 <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
-                    <li><a [routerLink]="">Listado</a></li>
+                    <li><a [routerLink]="['/admin/creditcards']">Listado</a></li>
                   
                 </ul>
             </li>
@@ -36,7 +36,7 @@
                     <span class="nav-text">Transacciones</span>
                 </a>
                 <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
-                    <li><a [routerLink]="">Listado</a></li> 
+                    <li><a [routerLink]="['/admin/transactions']">Listado</a></li> 
                 </ul>
             </li>
         </ul>
