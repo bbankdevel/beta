@@ -129,6 +129,7 @@ import { CheckoutComponent } from './apps/shop/checkout/checkout.component';
 import { InvoiceComponent } from './apps/shop/invoice/invoice.component';
 import { EcomCustomersComponent } from './apps/shop/ecom-customers/ecom-customers.component';
 import { CustomersComponent } from './admin/customers/customers.component';
+import { AccountsComponent } from './admin/accounts/accounts.component';
 
 
 import { ApexComponent } from './charts/apex/apex.component';
@@ -718,6 +719,7 @@ import { SwitcherComponent } from './switcher/switcher.component';
 	InvoiceComponent,
 	EcomCustomersComponent,
   CustomersComponent,
+  AccountsComponent,
     
     ApexComponent,
 	LineComponent,

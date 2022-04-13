@@ -19,6 +19,7 @@ import { CheckoutComponent } from './apps/shop/checkout/checkout.component';
 import { InvoiceComponent } from './apps/shop/invoice/invoice.component';
 import { EcomCustomersComponent } from './apps/shop/ecom-customers/ecom-customers.component';
 import { CustomersComponent } from './admin/customers/customers.component';
+import { AccountsComponent } from './admin/accounts/accounts.component';
 
 import { ApexComponent } from './charts/apex/apex.component';
 import { LineComponent } from './charts/apex/line/line.component';
@@ -165,6 +166,7 @@ const routes: Routes = [
                         {path: 'ecom-invoice', component: InvoiceComponent},
                         {path: 'ecom-customers', component: EcomCustomersComponent},
                         {path: 'customers', component: CustomersComponent},
+                        {path: 'accounts', component: AccountsComponent},
                         
                         {path: 'chart-apex', component: ApexComponent},
                         {path: 'apex-line', component: LineComponent},

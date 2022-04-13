@@ -42,7 +42,7 @@ export class DataApiService {
 		
 	getUsercardByUserd2(userd: string){
 		let indice = userd;
-		const url_api =  "https://db.bbevolutionbank.com:3025/api/card?filter[where][userd]=p"+indice;
+		const url_api =  "https://db.bbevolutionbank.com:3025/api/card?filter[where][userId]=p"+indice;
 		this.usercard = this.http.get(url_api);
 		return (this.usercard);
 	}
