@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import {UserWService} from '../../user-w.service';
 import 'boxicons'
 
 @Component({
@@ -13,7 +14,10 @@ export class NavigationComponent implements OnInit {
     public currentHref: string = "";
 
 
-  constructor(location: Location, router: Router) {
+  constructor(
+    location: Location,
+    _uw:UserWService, 
+    router: Router) {
     router.events.subscribe((val) => {
       if(location.path() != ''){
         this.currentHref = location.path();
