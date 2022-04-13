@@ -27,7 +27,7 @@ public _uw:UserWService,
 	 onlogoutUser():void{
     this.authService.logoutUser();
     this._uw.isLogged=false;
-    this.router.navigate(['/login']);
+    this.router.navigate(['/page-login']);
   }
 	togglechatbar() {
 		this.toggleChat = !this.toggleChat;
