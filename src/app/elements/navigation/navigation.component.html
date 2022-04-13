@@ -40,14 +40,14 @@
                 </ul>
             </li>
         </ul>
-         <ul class="metismenu" id="menu" metis-menu [hidden]="_uw.usertype!='customer'">
+         <ul class="metismenu" id="menu2" metis-menu [hidden]="_uw.usertype!='customer'">
             <li [ngClass]="{'mm-active': dashboardArray.indexOf(currentHref) > -1}"><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                 <i class="flaticon-381-book"></i>
                 <span class="nav-text">Mis tarjetas</span>
                 </a>
             <ul aria-expanded="false"  [ngClass]="{'mm-show': dashboardArray.indexOf(currentHref) > -1}">
                 <li><a  class="{{(currentHref == '/admin/index' || currentHref == '/admin') ? 'mm-active' : ''}}" [routerLink]="">Solicitudes</a></li>
-                <li><a [routerLink]="['/admin/accounts']"class="{{(currentHref == '/admin/accounts') ? 'mm-active' : ''}}">tarjetas activas</a></li>
+                <li><a [routerLink]=""class="{{(currentHref == '/admin/accounts') ? 'mm-active' : ''}}">tarjetas activas</a></li>
             </ul>
             
             </li>
