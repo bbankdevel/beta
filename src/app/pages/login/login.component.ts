@@ -85,7 +85,7 @@ get fval() {
               this._uw.userId=data.id;
               this._uw.appointmentUsercard=data.user.id;
               this._uw.name=data.name;
-              this._uw.email=data.email;
+              this._uw.email=data.user.email;
               this._uw.usertype=data.user.usertype;
               this._uw.userW=data.user;
               this._uw.isLogged=true;
