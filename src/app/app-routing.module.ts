@@ -129,8 +129,6 @@ import { Error403Component } from './pages/error403/error403.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { Error500Component } from './pages/error500/error500.component';
 import { Error503Component } from './pages/error503/error503.component';
-
-
 import { Index2Component } from './dashboard/index2/index2.component';
 import { Index3Component } from './dashboard/index3/index3.component';
 import { Index4Component } from './dashboard/index4/index4.component';
@@ -139,14 +137,14 @@ import { MyWalletsComponent } from './my-wallets/my-wallets.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { PortofolioComponent } from './portofolio/portofolio.component';
 import { MarketCapitalComponent } from './market-capital/market-capital.component';
-
+import { AuthGuard } from './auth.guard';
 const routes: Routes = [
                 {path: '', redirectTo: 'page-login', pathMatch: 'full' },
 				{
 
                     path: 'admin', component: AdminComponent, children: [
                         {path: '', component: Index1Component},
-                        {path: 'index', component: Index1Component},
+                        {path: 'index', component: Index1Component, canActivate: [AuthGuard] },
                         {path: 'index-1', component: Index1Component},
                         {path: 'dashboard', component: Index1Component},
                         {path: 'index-2', component: Index2Component},
