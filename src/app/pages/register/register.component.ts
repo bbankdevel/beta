@@ -53,6 +53,7 @@ export class RegisterComponent implements OnInit {
 
   loadAPI = null;
   onRegister(){
+     this.submitted = true;
     if (this.ngFormSignup.valid){
       this.isError = false;
       this.waiting=true;
