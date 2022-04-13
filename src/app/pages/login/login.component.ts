@@ -89,7 +89,7 @@ get fval() {
               this._uw.userW=data.user;
               this._uw.isLogged=true;
               this._uw.appointmentUsercard= "p"+this._uw.appointmentUsercard;
-              this.router.navigate(['/dashboard']);
+              this.router.navigate(['/admin/index']);
               this.isError = false;
            
         },
