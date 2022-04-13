@@ -22,6 +22,9 @@ public _uw:UserWService,
 		) { }
 	
 	ngOnInit(): void {
+		if(this._uw.email==undefined){
+    this.router.navigate(['/page-login']);
+		}
 	}
 	
 	 onlogoutUser():void{
