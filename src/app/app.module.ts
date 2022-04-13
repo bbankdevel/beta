@@ -1341,6 +1341,7 @@ import { SwitcherComponent } from './switcher/switcher.component';
     MatTooltipModule,
     MatTreeModule,
   ],
+   exports: [ IndeterminateProgressBarComponent ],
    providers: [
        DataApiService,
        UserWService,
