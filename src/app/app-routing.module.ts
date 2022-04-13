@@ -143,6 +143,7 @@ import { MarketCapitalComponent } from './market-capital/market-capital.componen
 const routes: Routes = [
                 {path: '', redirectTo: 'page-login', pathMatch: 'full' },
 				{
+
                     path: 'admin', component: AdminComponent, children: [
                         {path: '', component: Index1Component},
                         {path: 'index', component: Index1Component},
@@ -160,7 +161,7 @@ const routes: Routes = [
                         {path: 'email-inbox', component: InboxComponent},
                         {path: 'email-read', component: ReadComponent},
                         {path: 'app-calender', component: CalenderComponent},
-                        {path: 'success', component: SuccessComponent},
+                       
                         
                         {path: 'ecom-product-grid', component: ProductGridComponent},
                         {path: 'ecom-product-list', component: ProductListComponent},
@@ -275,7 +276,7 @@ const routes: Routes = [
                     ]
                 },
                         
-                        
+                        {path: 'success', component: SuccessComponent},
                         {path: 'page-register', component: RegisterComponent},
                         {path: 'page-login', component: LoginComponent},
                         {path: 'page-lock-screen', component: LockScreenComponent},
