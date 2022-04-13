@@ -170,7 +170,7 @@ const routes: Routes = [
                         {path: 'customers', component: CustomersComponent},
                         {path: 'accounts', component: AccountsComponent},
                         {path: 'creditcards', component: CreditcardsComponent},
-                        {path: 'transactions', component: TransationsComponent},
+                        {path: 'transactions', component: TransactionsComponent},
                         
                         {path: 'chart-apex', component: ApexComponent},
                         {path: 'apex-line', component: LineComponent},
