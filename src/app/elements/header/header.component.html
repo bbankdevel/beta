@@ -687,7 +687,7 @@
                             <div class="header-info" *ngIf="_uw.usertype!=undefined">
                                 <span [hidden]="_uw.usertype!=admin">Administrator</span>
                                 <span [hidden]="_uw.usertype!=customer">Customer</span>
-                                <small>{{_uw.email}}</small>
+                                <small *ngIf="_uw.email!=undefined">{{_uw.email}}</small>
                                 
                             </div>
                         </a>
