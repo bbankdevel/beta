@@ -17,7 +17,7 @@
                                      
 
                                             <label class="focus-label">Nombre Completo</label>
-                                            <input type="text" class="form-control floating" id="name" formControlName="name" placeholder="Full Name" [(ngModel)]="user.name" [ngClass]="{'is-invalid': submitted && fval.name.errors }"required>
+                                            <input type="text" class="form-control floating" id="name" formControlName="name" placeholder="Nombre completo" [(ngModel)]="user.name" [ngClass]="{'is-invalid': submitted && fval.name.errors }"required>
 
                                             <div *ngIf="submitted && fval.name.errors" class="invalid-feedback">
                                                 <div *ngIf="fval.name.errors.required">
