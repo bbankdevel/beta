@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserWService {
-	admin:boolean;
+	admin:boolean=false;
 	adminName:string;
 	allLoaded:boolean=false;
 	buttonDisabled:boolean=false;
