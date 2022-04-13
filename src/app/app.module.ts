@@ -90,6 +90,7 @@ import {MatTreeModule} from '@angular/material/tree';
 
 /* #########################  SITE PAGES COMPONENT ###################*/
 
+import { SuccessComponent } from './success/success.component';
 import { AdminComponent } from './admin/admin.component';
 
 import { Index1Component } from './dashboard/index1/index1.component';
@@ -686,6 +687,7 @@ import { SwitcherComponent } from './switcher/switcher.component';
   declarations: [
     AppComponent,
     AdminComponent,
+    SuccessComponent,
     Index1Component,
     Index2Component,
     Index3Component,

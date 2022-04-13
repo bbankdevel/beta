@@ -56,7 +56,7 @@ export class RegisterComponent implements OnInit {
     if (this.ngFormSignup.valid){
       this.isError = false;
       this.waiting=true;
-      this.user.usertype='developertest';
+      this.user.usertype='customer';
       this.user.status='new';
       this.usercardSubmit.name=this.user.name;
       // this.usercardSubmit.username=this.user.email;
@@ -100,7 +100,7 @@ export class RegisterComponent implements OnInit {
   public saveUsercard(usercard){
     return this.dataApi.saveUsercard(this.usercardSubmit)
        .subscribe(
-            usercardSubmit => this.router.navigate(['/admin/customers'])
+            usercardSubmit => this.router.navigate(['/success'])
        );
        this.waiting=false;
 }

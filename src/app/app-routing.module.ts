@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { SuccessComponent } from './success/success.component';
 import { AdminComponent } from './admin/admin.component';
 import { Index1Component } from './dashboard/index1/index1.component';
 
@@ -159,6 +160,7 @@ const routes: Routes = [
                         {path: 'email-inbox', component: InboxComponent},
                         {path: 'email-read', component: ReadComponent},
                         {path: 'app-calender', component: CalenderComponent},
+                        {path: 'success', component: SuccessComponent},
                         
                         {path: 'ecom-product-grid', component: ProductGridComponent},
                         {path: 'ecom-product-list', component: ProductListComponent},
