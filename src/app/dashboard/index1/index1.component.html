@@ -4,7 +4,7 @@
 ***********************************-->
 <div class="content-body">
     <!-- row -->
-    <div class="container-fluid">
+    <div class="container-fluid" *ngIf="_uw.usertype!=undefined">
         <div class="row">
         <!--     <div class="col-xl-3 col-sm-6">
                 <app-graph1></app-graph1>
@@ -31,8 +31,8 @@
                     </div>
                 </div>
             </div> -->
-            <div class="col-xl-6 col-xxl-12" *ngIf="_uw.usertype==='admin'">
-                <div class="row">
+            <div class="col-xl-6 col-xxl-12" [hidde]="_uw.usertype!=admin">
+                <div class="row" >
                     <div class="col-sm-7">
                         <app-sell-order></app-sell-order>
                     </div>
