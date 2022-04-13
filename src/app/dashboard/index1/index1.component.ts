@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {UserWService} from '../../user-w.service';
 @Component({
   selector: 'app-index1',
   templateUrl: './index1.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Index1Component implements OnInit {
 
-  constructor() { }
+  constructor(    _uw:UserWService) { }
 
   ngOnInit(): void {
   }
