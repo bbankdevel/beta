@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 import { UsercardInterface } from './models/usercard-interface';
+import { EmailmInterface } from './models/emailm-interface';
 import { UserWService } from "./user-w.service";
 
 @Injectable({
@@ -11,6 +12,7 @@ import { UserWService } from "./user-w.service";
 })
 export class DataApiService {	
 	usercard: Observable<any>;
+	emailm: Observable<any>;
 	usercards: Observable<any>;
   constructor(
   	public _uw:UserWService,
@@ -25,7 +27,12 @@ export class DataApiService {
 		const url_api = 'https://db.bbevolutionbank.com:3025/api/usercard?filter[where][status]=activated';
 		return (this.usercards = this.http.get(url_api));
 	}
-		
+	sendMailNewCustomer(emailm){
+		const url_api='https://zqqvy9pk23.execute-api.us-east-1.amazonaws.com/production/newcustomer';
+		return this.http
+		.post(url_api, emailm)
+		.pipe(map(data => data));
+	}
 	saveUsercard(usercard :UsercardInterface){
 		const url_api='https://db.bbevolutionbank.com:3025/api/card';
 		return this.http

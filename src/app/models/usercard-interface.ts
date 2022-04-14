@@ -3,7 +3,9 @@ export interface UsercardInterface{
 	name?:string;
 	phone?:string;
 	email?:string;
+	adminEmail?:string;
 	status?:string;
+	message?:string;
 	type?:string;
 	address?:string;
 	usertype?:string;

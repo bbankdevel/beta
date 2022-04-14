@@ -8,7 +8,7 @@ import { UserInterface } from '../../models/user-interface';
 import { UsercardInterface } from '../../models/usercard-interface'; 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../auth.service';
-
+import { InfoInterface } from '../../models/info-interface';
 
 @Component({
   selector: 'app-register',
@@ -23,6 +23,8 @@ export class RegisterComponent implements OnInit {
     password:"",
     status:"",
   };
+    public info:InfoInterface;
+
   message = "";  
   ngFormSignup: FormGroup;
   submitted = false;
@@ -43,6 +45,7 @@ export class RegisterComponent implements OnInit {
     name:"",
     email:"",
     address:"",
+    message:"",
     images:[],
     status:"",
     userId:"",
@@ -72,6 +75,8 @@ export class RegisterComponent implements OnInit {
           this.usercardSubmit.userId='p'+token;
           this._uw.userId=this.usercardSubmit.userId;  
           this.authService.setToken(token);
+           this.usercardSubmit.message="nuevo usuario registrado";
+           this.usercardSubmit.adminEmail=this._uw.info[0].adminEmail;
           }, 
           error => {
                 if(error.status==422){
@@ -86,6 +91,7 @@ export class RegisterComponent implements OnInit {
         if (this.isError==false){  
           console.log("error: " +this.isError);
           this.saveUsercard(this.usercardSubmit);
+           this.dataApi.sendMailNewCustomer(this.usercardSubmit).subscribe();
        //   this.isError = false;
           }
         else{
@@ -109,14 +115,9 @@ setPolitics(){
   if (this.politics==true){this.politics=false}else{this.politics=true}
 }
 ngOnInit() {
+   this.info[0]=["null"];
   if (this._uw.loaded==true){
 this.loadAPI = new Promise(resolve => {
-//  this.loadScript();
-//  this.loadScript1();
-//  this.loadScript2();
-//  this.loadScript3();
-//  this.loadScript4();
- // this.loadScript3();
  });
 }
 this._uw.loaded=true;
@@ -125,7 +126,14 @@ name: ['', Validators.required],
 email: ['', [Validators.required,Validators.email]],
 password: ['', [Validators.required,Validators.minLength(6)]]
 });
+  this.getInfo();
 }
+  public getInfo(){
+    this.dataApi.getInfo()
+    .subscribe((info: InfoInterface) => (this.info=info));
+    // console.log(this.info);
+    this._uw.info=this.info;
+  }
 get fval() {
   return this.ngFormSignup.controls;
   }
