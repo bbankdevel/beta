@@ -6,7 +6,7 @@ import { AuthService } from './auth.service';
 import { UsercardInterface } from './models/usercard-interface';
 import { EmailmInterface } from './models/emailm-interface';
 import { UserWService } from "./user-w.service";
-
+import { InfoInterface } from './models/info-interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +14,8 @@ export class DataApiService {
 	usercard: Observable<any>;
 	emailm: Observable<any>;
 	usercards: Observable<any>;
+
+	info: Observable<any>;
   constructor(
   	public _uw:UserWService,
   	private http: HttpClient, 
@@ -22,7 +24,12 @@ export class DataApiService {
   	headers : HttpHeaders = new HttpHeaders({
   		"Content-Type":"application/json"
   		});
-		
+		getInfo(){
+		const url_api=`https://db.buckapi.com:3070/api/infos/`;
+		this.info = this.http.get(url_api);
+		return (this.info);
+	}
+
 	getAllUsercardsReturn(){
 		const url_api = 'https://db.bbevolutionbank.com:3025/api/usercard?filter[where][status]=activated';
 		return (this.usercards = this.http.get(url_api));
