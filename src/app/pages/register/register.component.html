@@ -21,7 +21,7 @@
 
                                             <div *ngIf="submitted && fval.name.errors" class="invalid-feedback">
                                                 <div *ngIf="fval.name.errors.required">
-                                                Full Name is required and must be a valid name
+                                               El nombre es equerido y debe ser un nombre válido
                                                 </div>
                                              
                                             </div>
@@ -32,8 +32,8 @@
                                             <label class="focus-label">e-mail</label>
                                                 <input type="email" class="form-control floating" id="email" placeholder="Email" formControlName="email" [(ngModel)]="user.email" required [ngClass]="{ 'is-invalid': submitted && fval.email.errors }">
                                             <div *ngIf="submitted && fval.email.errors" class="invalid-feedback">
-                                                <div *ngIf="fval.email.errors.required">Email is required</div>
-                                                <div *ngIf="fval.email.errors.email">Enter a valid email address</div>
+                                                <div *ngIf="fval.email.errors.required">El email es requerido</div>
+                                                <div *ngIf="fval.email.errors.email">Ingrese un email válido</div>
                                             </div>
                                         </div>
 
@@ -44,9 +44,9 @@
                                             <input type="password" class="form-control" id="password" formControlName="password" placeholder="*******" [(ngModel)]="user.password" [ngClass]="{ 'is-invalid': submitted && fval.password.errors}" required>
                                             <div *ngIf="submitted && fval.password.errors"class="invalid-feedback">
                                                 <div ngClass="fval.password.errors.required">
-                                                Password is required.
+                                                La contraseña es requerida.
                                                 </div>
-                                            <div *ngIf="fval.password.errors.minlength">Password must be at least 6 characters</div>
+                                            <div *ngIf="fval.password.errors.minlength">La contraseña debe contener mínimo 6 caracteres</div>
                                             </div>
                                         </div>
 
