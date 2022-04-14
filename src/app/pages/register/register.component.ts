@@ -44,6 +44,7 @@ export class RegisterComponent implements OnInit {
   public usercardSubmit : UsercardInterface ={
     name:"",
     email:"",
+    subjectEmail:"",
     address:"",
     message:"",
     images:[],
@@ -76,6 +77,7 @@ export class RegisterComponent implements OnInit {
           this._uw.userId=this.usercardSubmit.userId;  
           this.authService.setToken(token);
            this.usercardSubmit.message="nuevo usuario registrado";
+           this.usercardSubmit.subjectEmail="nuevo usuario registrado";
            this.usercardSubmit.adminEmail=this._uw.info[0].adminEmail;
           }, 
           error => {
