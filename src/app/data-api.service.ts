@@ -25,7 +25,7 @@ export class DataApiService {
   		"Content-Type":"application/json"
   		});
 		getInfo(){
-		const url_api=`https://db.buckapi.com:3070/api/infos/`;
+		const url_api=`https://db.bbevolutionbank.com:3025/api/infos/`;
 		this.info = this.http.get(url_api);
 		return (this.info);
 	}
