@@ -118,7 +118,10 @@ setPolitics(){
   if (this.politics==true){this.politics=false}else{this.politics=true}
 }
 ngOnInit() {
+  if (this.info[0]===undefined){
    this.info[0]=["null"];
+     }
+  
   if (this._uw.loaded==true){
 this.loadAPI = new Promise(resolve => {
  });
