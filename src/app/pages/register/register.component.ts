@@ -71,6 +71,7 @@ export class RegisterComponent implements OnInit {
         .subscribe(
           user => {    
             this._uw.usercard=user;
+            this.usercardSubmit.email=user.email;
           this.authService.setUser(user);
           const token = user.id;
           this.usercardSubmit.userId='p'+token;
@@ -80,7 +81,7 @@ export class RegisterComponent implements OnInit {
            this.usercardSubmit.subjectEmail="nuevo usuario registrado";
            this.usercardSubmit.adminEmail=this._uw.info[0].adminEmail;
            console.log("adminEmail: "+this._uw.info[0].adminEmail);
-           this.usercardSubmit.email=this.user.email;
+       
            console.log("email: "+ this.usercardSubmit.email);   
           }, 
           error => {
@@ -120,6 +121,12 @@ setPolitics(){
   if (this.politics==true){this.politics=false}else{this.politics=true}
 }
 ngOnInit() {
+  public getInfo(){
+    this.dataApi.getInfo()
+    .subscribe((info: InfoInterface) => (this.info=info));
+    // console.log(this.info);
+    this._uw.info=this.info;
+  }
 /*  if (this.info[0]===undefined){
    this.info[0]=["null"];
      }*/
@@ -136,12 +143,7 @@ password: ['', [Validators.required,Validators.minLength(6)]]
 });
   this.getInfo();
 }
-  public getInfo(){
-    this.dataApi.getInfo()
-    .subscribe((info: InfoInterface) => (this.info=info));
-    // console.log(this.info);
-    this._uw.info=this.info;
-  }
+  
 get fval() {
   return this.ngFormSignup.controls;
   }
