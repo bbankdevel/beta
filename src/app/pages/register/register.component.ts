@@ -79,7 +79,9 @@ export class RegisterComponent implements OnInit {
            this.usercardSubmit.message="nuevo usuario registrado";
            this.usercardSubmit.subjectEmail="nuevo usuario registrado";
            this.usercardSubmit.adminEmail=this._uw.info[0].adminEmail;
+           console.log("adminEmail: "+this._uw.info[0].adminEmail);
            this.usercardSubmit.email=this.user.email;
+           console.log("email: "+ this.usercardSubmit.email);   
           }, 
           error => {
                 if(error.status==422){
