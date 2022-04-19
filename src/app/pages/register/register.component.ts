@@ -120,9 +120,10 @@ export class RegisterComponent implements OnInit {
 
   public getInfo(){
     this.dataApi.getInfo()
-    .subscribe((info: InfoInterface) => (this.info=info));
-    console.log(this.info);
-    this._uw.info=this.info;
+    .subscribe((info: InfoInterface) => (this.info=info)
+      console.log(this.info)
+      this._uw.info=this.info
+    );
   }
 
   get fval() {
