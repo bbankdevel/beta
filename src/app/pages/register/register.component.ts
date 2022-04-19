@@ -53,36 +53,32 @@ export class RegisterComponent implements OnInit {
     usertype:"",
     phone:""
   }; 
-   
-
   loadAPI = null;
   onRegister(){
-     this.submitted = true;
+    this.submitted = true;
     if (this.ngFormSignup.valid){
       this.isError = false;
       this.waiting=true;
       this.user.usertype='customer';
       this.user.status='new';
       this.usercardSubmit.name=this.user.name;
-      // this.usercardSubmit.username=this.user.email;
       this.usercardSubmit.images[0]="https://www.buckapiservices.com/developer.png";
       this.authService
         .registerUser(this.user.name, this.user.email, this.user.password, this.user.usertype, this.user.status)
         .subscribe(
           user => {    
             this._uw.usercard=user;
-                this.usercardSubmit.email=user.email;
-          this.authService.setUser(user);
-          const token = user.id;
-          this.usercardSubmit.userId='p'+token;
-          this._uw.userId=this.usercardSubmit.userId;  
-          this.authService.setToken(token);
-           this.usercardSubmit.message="nuevo usuario registrado";
-           this.usercardSubmit.subjectEmail="nuevo usuario registrado";
-           this.usercardSubmit.adminEmail=this._uw.info[0].adminEmail;
-           console.log("adminEmail: "+this._uw.info[0].adminEmail);
-       
-           console.log("email: "+ this.usercardSubmit.email);   
+            this.usercardSubmit.email=user.email;
+            this.authService.setUser(user);
+            const token = user.id;
+            this.usercardSubmit.userId='p'+token;
+            this._uw.userId=this.usercardSubmit.userId;  
+            this.authService.setToken(token);
+            this.usercardSubmit.message="nuevo usuario registrado";
+            this.usercardSubmit.subjectEmail="nuevo usuario registrado";
+            this.usercardSubmit.adminEmail=this._uw.info[0].adminEmail;
+            console.log("adminEmail: "+this._uw.info[0].adminEmail);
+            console.log("email: "+ this.usercardSubmit.email);   
           }, 
           error => {
                 if(error.status==422){
@@ -98,7 +94,6 @@ export class RegisterComponent implements OnInit {
           console.log("error: " +this.isError);
           this.saveUsercard(this.usercardSubmit);
            this.dataApi.sendMailNewCustomer(this.usercardSubmit).subscribe();
-       //   this.isError = false;
           }
         else{
           this.waiting=false;
@@ -110,48 +105,48 @@ export class RegisterComponent implements OnInit {
       this.onIsError();
     }
   }
+
   public saveUsercard(usercard){
     return this.dataApi.saveUsercard(this.usercardSubmit)
        .subscribe(
             usercardSubmit => this.router.navigate(['/success'])
        );
        this.waiting=false;
-}
-setPolitics(){
-  if (this.politics==true){this.politics=false}else{this.politics=true}
-}
-ngOnInit() {
-  this.getInfo();
-/*  if (this.info[0]===undefined){
-   this.info[0]=["null"];
-     }*/
-  
-  if (this._uw.loaded==true){
-this.loadAPI = new Promise(resolve => {
- });
-}
-this._uw.loaded=true;
- this.ngFormSignup = this.formBuilder.group({
-name: ['', Validators.required],
-email: ['', [Validators.required,Validators.email]],
-password: ['', [Validators.required,Validators.minLength(6)]]
-});
-  
-}
+  }
+
+  setPolitics(){
+    if (this.politics==true){this.politics=false}else{this.politics=true}
+  }
+
   public getInfo(){
     this.dataApi.getInfo()
     .subscribe((info: InfoInterface) => (this.info=info));
-    // console.log(this.info);
+    console.log(this.info);
     this._uw.info=this.info;
   }
-get fval() {
+
+  get fval() {
   return this.ngFormSignup.controls;
   }
-   onIsError(): void {
+
+  onIsError(): void {
     this.isError = true;
     setTimeout(() => {
       this.isError = false;
     }, 4000);
+  }
+
+  ngOnInit() {
+    this.getInfo();  
+    if (this._uw.loaded==true){
+      this.loadAPI = new Promise(resolve => {});
+    }
+    this._uw.loaded=true;
+    this.ngFormSignup = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required,Validators.email]],
+      password: ['', [Validators.required,Validators.minLength(6)]]
+    });    
   }
 
 }
