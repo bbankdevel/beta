@@ -64,7 +64,12 @@ export class RegisterComponent implements OnInit {
       this.usercardSubmit.name=this.user.name;
       this.usercardSubmit.images[0]="https://www.buckapiservices.com/developer.png";
       this.authService
-        .registerUser(this.user.name, this.user.email, this.user.password, this.user.usertype, this.user.status)
+        .registerUser(
+          this.user.name, 
+          this.user.email, 
+          this.user.password, 
+          this.user.usertype, 
+          this.user.status)
         .subscribe(
           user => {    
             this._uw.usercard=user;
@@ -76,8 +81,9 @@ export class RegisterComponent implements OnInit {
             this.authService.setToken(token);
             this.usercardSubmit.message="nuevo usuario registrado";
             this.usercardSubmit.subjectEmail="nuevo usuario registrado";
-            this.usercardSubmit.adminEmail=this._uw.info[0].adminEmail;
-            console.log("adminEmail: "+this._uw.info[0].adminEmail);
+            this.usercardSubmit.adminEmail=this.info[0].adminEmail;
+            this._uw.info=this.info;
+            console.log("adminEmail: "+this.info[0].adminEmail);
             console.log("email: "+ this.usercardSubmit.email);   
           }, 
           error => {
@@ -91,9 +97,9 @@ export class RegisterComponent implements OnInit {
       this.usercardSubmit.status='new';
       setTimeout(() => {
         if (this.isError==false){  
-          console.log("error: " +this.isError);
+          // console.log("error: " +this.isError);
           this.saveUsercard(this.usercardSubmit);
-           this.dataApi.sendMailNewCustomer(this.usercardSubmit).subscribe();
+              this.sendMailNewCustomer(this.usercardSubmit);
        //   this.isError = false;
           }
         else{
@@ -107,11 +113,17 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  public saveUsercard(usercard){
-    return this.dataApi.saveUsercard(this.usercardSubmit)
+  public sendMailNewCustomer(usercard){
+    return this.dataApi.sendMailNewCustomer(this.usercardSubmit)
        .subscribe(
             usercardSubmit => this.router.navigate(['/success'])
        );
+       this.waiting=false;
+  }
+
+   public saveUsercard(usercard){
+    return this.dataApi.saveUsercard(this.usercardSubmit)
+       .subscribe();
        this.waiting=false;
   }
 
@@ -122,8 +134,6 @@ export class RegisterComponent implements OnInit {
   public getInfo(){
     this.dataApi.getInfo()
     .subscribe((info: InfoInterface) => (this.info=info));
-    console.log(this.info);
-    this._uw.info=this.info;
   }
 
   get fval() {
