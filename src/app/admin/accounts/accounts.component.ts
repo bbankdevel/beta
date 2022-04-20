@@ -9,6 +9,7 @@ import { DataApiService } from '../../data-api.service';
 })
 export class AccountsComponent implements OnInit {
 public waiting = true;
+public accounts:AccountInterface;
   constructor(
 public dataApi:DataApiService
     ) { }
