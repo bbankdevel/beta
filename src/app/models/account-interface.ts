@@ -3,6 +3,7 @@ export interface AccountInterface{
 	numberAccount?:string;
 	ammount?:number;
 	userId?:string;
+	email?:string;
 	type?:string;
 	status?:string;
 }
