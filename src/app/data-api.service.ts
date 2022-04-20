@@ -8,6 +8,7 @@ import { EmailmInterface } from './models/emailm-interface';
 import { UserWService } from "./user-w.service";
 import { InfoInterface } from './models/info-interface';
 import { AccountInterface } from './models/account-interface';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +16,8 @@ export class DataApiService {
 	usercard: Observable<any>;
 	emailm: Observable<any>;
 	usercards: Observable<any>;
-	account: Observable<any>;
+	accounts: Observable<any>;
+	cards: Observable<any>;
 	info: Observable<any>;
   constructor(
   	public _uw:UserWService,
@@ -35,6 +37,12 @@ export class DataApiService {
 		const url_api = 'https://db.bbevolutionbank.com:3025/api/usercard?filter[where][status]=activated';
 		return (this.usercards = this.http.get(url_api));
 	}
+	getNewAccountsReturn(){
+		const url_api = 'https://db.bbevolutionbank.com:3025/api/account?filter[where][status]=new';
+		return (this.accounts = this.http.get(url_api));
+	}
+
+	
 	sendMailNewCustomer(emailm){
 		const url_api='https://zqqvy9pk23.execute-api.us-east-1.amazonaws.com/production/newcustomer';
 		return this.http

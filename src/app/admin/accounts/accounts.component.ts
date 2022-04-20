@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountInterface } from '../../models/account-interface'; 
+import { DataApiService } from '../../data-api.service';
 
 @Component({
   selector: 'app-accounts',
@@ -7,11 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountsComponent implements OnInit {
 public waiting = true;
-  constructor() { }
+  constructor(
+public dataApi:DataApiService
+    ) { }
 
   ngOnInit(): void {
+    this.getNewAccounts();
   }
-    
+    getNewAccounts(){
+        this.dataApi.getNewAccountsReturn().subscribe((res:any) => {
+      if (res[0] === undefined){
+        console.log("hey");
+       }else{
+        this.accounts=res;            
+        }
+     });  
+    }
   
   checkUncheckAll(event) {
      var checkboxes = document.getElementsByTagName('input');
