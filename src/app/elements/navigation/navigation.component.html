@@ -12,32 +12,32 @@
             
             </li>
             <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}">
-                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                <a class=" ai-icon"  [routerLink]="['/admin/customers']" aria-expanded="false">
                     <i class="fa fa-users"></i> 
                       <span class="nav-text">Clientes</span>
                 </a>
-                <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
+              <!--   <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
                    <li><a [routerLink]="['/admin/customers']" >Listado</a></li>
-                </ul>
+                </ul> -->
             </li>
             <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}">
-                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                <a class=" ai-icon" [routerLink]="['/admin/creditcards']" aria-expanded="false">
                     <i class="flaticon-381-id-card"></i>
                     <span class="nav-text">Tarjetas</span>
                 </a>
-                <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
+              <!--   <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
                     <li><a [routerLink]="['/admin/creditcards']">Listado</a></li>
                   
-                </ul>
+                </ul> -->
             </li>
             <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}">
-                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                <a class=" ai-icon" [routerLink]="['/admin/transactions']"aria-expanded="false">
                     <i class="flaticon-381-television"></i>
                     <span class="nav-text">Transacciones</span>
                 </a>
-                <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
+              <!--   <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
                     <li><a [routerLink]="['/admin/transactions']">Listado</a></li> 
-                </ul>
+                </ul> -->
             </li>
         </ul>
         <ul class="metismenu" id="menu2" metis-menu [hidden]="_uw.usertype!=='customer'">
