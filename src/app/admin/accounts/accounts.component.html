@@ -20,9 +20,9 @@
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-body">
-						<div class="table-responsive"> Loading, please wait...
-							 
-							<table class="table table-responsive-lg mb-0 table-striped">
+						<div class="table-responsive"> 
+						<span [hidden]="!waiting">Loading, please wait...</soan>	 
+							<table class="table table-responsive-lg mb-0 table-striped" *ngIf="requests!=undefined">
 								<thead>
 									<tr>
 										<th class="">
