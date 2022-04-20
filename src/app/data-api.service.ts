@@ -37,8 +37,8 @@ export class DataApiService {
 		const url_api = 'https://db.bbevolutionbank.com:3025/api/usercard?filter[where][status]=activated';
 		return (this.usercards = this.http.get(url_api));
 	}
-	getNewAccountsReturn(){
-		const url_api = 'https://db.bbevolutionbank.com:3025/api/account?filter[where][status]=new';
+	getActiveAccountsReturn(){
+		const url_api = 'https://db.bbevolutionbank.com:3025/api/account?filter[where][status]=active';
 		return (this.accounts = this.http.get(url_api));
 	}
 

@@ -17,8 +17,8 @@ public dataApi:DataApiService
   ngOnInit(): void {
     this.getNewAccounts();
   }
-    getNewAccounts(){
-        this.dataApi.getNewAccountsReturn().subscribe((res:any) => {
+    getActiveAccounts(){
+        this.dataApi.getActiveAccountsReturn().subscribe((res:any) => {
       if (res[0] === undefined){
         console.log("hey");
        }else{
