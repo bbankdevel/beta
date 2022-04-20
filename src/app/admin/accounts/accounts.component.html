@@ -40,7 +40,7 @@
 									</tr>
 								</thead>
 								<tbody id="customers">
-									<tr class="btn-reveal-trigger">
+									<tr class="btn-reveal-trigger" *ngFor="let account of accounts">
 										<!-- <td>
 											<div class="custom-control custom-checkbox mx-2">
 												<input type="checkbox" class="custom-control-input" id="checkbox1">
@@ -56,13 +56,13 @@
 														</div>
 													</div>
 													<div class="media-body">
-														<h5 class="mb-0 fs--1">Ricky Antony</h5>
+														<h5 class="mb-0 fs--1">{{account.name}}</h5>
 													</div>
 												</div>
 											</a>
 										</td>
 										<td class="py-2"><a
-										href="mailto:ricky@example.com">info@example.com</a></td>
+										href="mailto:ricky@example.com">{{account.email}}</a></td>
 									<!-- 	<td class="py-2"> <a href="tel:2012001851">(201) 200-1851</a></td>
 										<td class="py-2 pl-5 wspace-no">2392 Main Avenue, Penasauka</td>
 										<td class="py-2">30/03/2018</td>
