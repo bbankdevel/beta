@@ -7,6 +7,7 @@ import { UsercardInterface } from './models/usercard-interface';
 import { EmailmInterface } from './models/emailm-interface';
 import { UserWService } from "./user-w.service";
 import { InfoInterface } from './models/info-interface';
+import { AccountInterface } from './models/account-interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +15,7 @@ export class DataApiService {
 	usercard: Observable<any>;
 	emailm: Observable<any>;
 	usercards: Observable<any>;
-
+	account: Observable<any>;
 	info: Observable<any>;
   constructor(
   	public _uw:UserWService,
@@ -44,6 +45,12 @@ export class DataApiService {
 		const url_api='https://db.bbevolutionbank.com:3025/api/card';
 		return this.http
 		.post<UsercardInterface>(url_api, usercard)
+		.pipe(map(data => data));
+	}
+	saveAccount(account :AccountInterface){
+		const url_api='https://db.bbevolutionbank.com:3025/api/account';
+		return this.http
+		.post<AccountInterface>(url_api, account)
 		.pipe(map(data => data));
 	}
 			

@@ -9,6 +9,7 @@ import { UsercardInterface } from '../../models/usercard-interface';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../auth.service';
 import { InfoInterface } from '../../models/info-interface';
+import { AccountInterface } from '../../models/account-interface';
 
 @Component({
   selector: 'app-register',
@@ -52,7 +53,16 @@ export class RegisterComponent implements OnInit {
     userId:"",
     usertype:"",
     phone:""
+  };
+
+  public accountSubmit : AccountInterface ={
+    numberAccount:"",
+    ammount:0,
+    status:"new",
+    userId:"",
+    type:"default"
   }; 
+
   loadAPI = null;
   onRegister(){
     this.submitted = true;
@@ -77,14 +87,15 @@ export class RegisterComponent implements OnInit {
             this.authService.setUser(user);
             const token = user.id;
             this.usercardSubmit.userId='p'+token;
+            this.accountSubmit.userId='p'+token;
             this._uw.userId=this.usercardSubmit.userId;  
             this.authService.setToken(token);
             this.usercardSubmit.message="nuevo usuario registrado";
             this.usercardSubmit.subjectEmail="nuevo usuario registrado";
             this.usercardSubmit.adminEmail=this.info[0].adminEmail;
             this._uw.info=this.info;
-            console.log("adminEmail: "+this.info[0].adminEmail);
-            console.log("email: "+ this.usercardSubmit.email);   
+            // console.log("adminEmail: "+this.info[0].adminEmail);
+            // console.log("email: "+ this.usercardSubmit.email);   
           }, 
           error => {
                 if(error.status==422){
@@ -97,10 +108,9 @@ export class RegisterComponent implements OnInit {
       this.usercardSubmit.status='new';
       setTimeout(() => {
         if (this.isError==false){  
-          // console.log("error: " +this.isError);
-          this.saveUsercard(this.usercardSubmit);
-              this.sendMailNewCustomer(this.usercardSubmit);
-       //   this.isError = false;
+            this.saveUsercard(this.usercardSubmit);
+            this.saveAccount(this.accountSubmit);
+            this.sendMailNewCustomer(this.usercardSubmit);
           }
         else{
           this.waiting=false;
@@ -121,8 +131,14 @@ export class RegisterComponent implements OnInit {
        this.waiting=false;
   }
 
-   public saveUsercard(usercard){
+  public saveUsercard(usercard){
     return this.dataApi.saveUsercard(this.usercardSubmit)
+       .subscribe();
+       this.waiting=false;
+  }  
+  
+  public saveAccount(account){
+    return this.dataApi.saveAccount(this.accountSubmit)
        .subscribe();
        this.waiting=false;
   }
