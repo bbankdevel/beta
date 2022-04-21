@@ -9,6 +9,7 @@ import { DataApiService } from '../../data-api.service';
 })
 export class AccountsComponent implements OnInit {
 public waiting = true;
+public clear = true;
 public accounts:AccountInterface;
 public newAccounts:AccountInterface;
   constructor(
@@ -25,6 +26,7 @@ public dataApi:DataApiService
       if (res[0] === undefined){
         console.log("hey");
        }else{
+        this.clear = false;
         this.accounts=res;            
         this.waiting=false;
         }
@@ -36,6 +38,7 @@ public dataApi:DataApiService
       if (res[0] === undefined){
         console.log("hey");
        }else{
+        this.clear = false;
         this.waiting=false;
         this.newAccounts=res;            
         }
