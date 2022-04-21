@@ -131,6 +131,7 @@ import { InvoiceComponent } from './apps/shop/invoice/invoice.component';
 import { EcomCustomersComponent } from './apps/shop/ecom-customers/ecom-customers.component';
 import { CustomersComponent } from './admin/customers/customers.component';
 import { AccountsComponent } from './admin/accounts/accounts.component';
+import { ActivateaccountComponent } from './admin/activateaccount/activateaccount.component';
 
 
 import { ApexComponent } from './charts/apex/apex.component';

@@ -22,6 +22,7 @@ import { EcomCustomersComponent } from './apps/shop/ecom-customers/ecom-customer
 import { CustomersComponent } from './admin/customers/customers.component';
 import { AccountsComponent } from './admin/accounts/accounts.component';
 import { CreditcardsComponent } from './admin/creditcards/creditcards.component';
+import { ActivateaccountComponent } from './admin/activateaccount/activateaccount.component';
 //import { TransactionsComponent } from './admin/transactions/transactions.component';
 
 import { ApexComponent } from './charts/apex/apex.component';
@@ -171,6 +172,7 @@ const routes: Routes = [
                         {path: 'customers', component: CustomersComponent},
                         {path: 'accounts', component: AccountsComponent},
                         {path: 'creditcards', component: CreditcardsComponent},
+                        {path: 'activateaccount', component: ActivateaccountComponent},
                         // {path: 'transactions', component: TransactionsComponent},
                         
                         {path: 'chart-apex', component: ApexComponent},
