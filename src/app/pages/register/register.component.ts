@@ -77,7 +77,7 @@ export class RegisterComponent implements OnInit {
           this.user.status)
         .subscribe(
           user => {    
-            this._uw.accountSubmit=user;
+            this._uw.account=user;
             this.accountSubmit.email=user.email;
             this.authService.setUser(user);
             const token = user.id;
