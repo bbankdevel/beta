@@ -5,7 +5,6 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { isError } from "util";
 import { UserInterface } from '../../models/user-interface'; 
-import { UsercardInterface } from '../../models/usercard-interface'; 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../auth.service';
 import { InfoInterface } from '../../models/info-interface';
@@ -42,24 +41,20 @@ export class RegisterComponent implements OnInit {
     private location: Location
 
   ) { }
-  public usercardSubmit : UsercardInterface ={
-    name:"",
+
+
+  public accountSubmit : AccountInterface ={
+    numberAccount:"",
+    status:"new",
+    userId:"",
+     name:"",
     email:"",
     subjectEmail:"",
     address:"",
     message:"",
     images:[],
-    status:"",
-    userId:"",
-    usertype:"",
-    phone:""
-  };
-
-  public accountSubmit : AccountInterface ={
-    numberAccount:"",
-    ammount:0,
-    status:"new",
-    userId:"",
+     usertype:"",
+    phone:"".
     type:"default"
   }; 
 
@@ -71,8 +66,8 @@ export class RegisterComponent implements OnInit {
       this.waiting=true;
       this.user.usertype='customer';
       this.user.status='new';
-      this.usercardSubmit.name=this.user.name;
-      this.usercardSubmit.images[0]="https://www.buckapiservices.com/developer.png";
+      this.accountSubmit.name=this.user.name;
+      this.accountSubmit.images[0]="https://www.buckapiservices.com/developer.png";
       this.authService
         .registerUser(
           this.user.name, 
@@ -82,20 +77,18 @@ export class RegisterComponent implements OnInit {
           this.user.status)
         .subscribe(
           user => {    
-            this._uw.usercard=user;
-            this.usercardSubmit.email=user.email;
+            this._uw.accountSubmit=user;
+            this.accountSubmit.email=user.email;
             this.authService.setUser(user);
             const token = user.id;
-            this.usercardSubmit.userId='p'+token;
             this.accountSubmit.userId='p'+token;
-            this._uw.userId=this.usercardSubmit.userId;  
+            this.accountSubmitSubmit.userId='p'+token;
+            this._uw.userId=this.accountSubmit.userId;  
             this.authService.setToken(token);
-            this.usercardSubmit.message="nuevo usuario registrado";
-            this.usercardSubmit.subjectEmail="nuevo usuario registrado";
-            this.usercardSubmit.adminEmail=this.info[0].adminEmail;
+            this.accountSubmit.message="nuevo usuario registrado";
+            this.accountSubmit.subjectEmail="nuevo usuario registrado";
+            this.accountSubmit.adminEmail=this.info[0].adminEmail;
             this._uw.info=this.info;
-            // console.log("adminEmail: "+this.info[0].adminEmail);
-            // console.log("email: "+ this.usercardSubmit.email);   
           }, 
           error => {
                 if(error.status==422){
@@ -104,13 +97,12 @@ export class RegisterComponent implements OnInit {
               }
           }
         );
-      this.usercardSubmit.usertype='customer';
-      this.usercardSubmit.status='activate';
+      this.accountSubmit.usertype='customer';
+      this.accountSubmit.status='activate';
       setTimeout(() => {
         if (this.isError==false){  
-            this.saveUsercard(this.usercardSubmit);
             this.saveAccount(this.accountSubmit);
-            this.sendMailNewCustomer(this.usercardSubmit);
+            this.sendMailNewCustomer(this.accountSubmit);
           }
         else{
           this.waiting=false;
@@ -124,18 +116,14 @@ export class RegisterComponent implements OnInit {
   }
 
   public sendMailNewCustomer(usercard){
-    return this.dataApi.sendMailNewCustomer(this.usercardSubmit)
+    return this.dataApi.sendMailNewCustomer(this.accountSubmit)
        .subscribe(
-            usercardSubmit => this.router.navigate(['/success'])
+            accountSubmit => this.router.navigate(['/success'])
        );
        this.waiting=false;
   }
 
-  public saveUsercard(usercard){
-    return this.dataApi.saveUsercard(this.usercardSubmit)
-       .subscribe();
-       this.waiting=false;
-  }  
+ 
   
   public saveAccount(account){
     return this.dataApi.saveAccount(this.accountSubmit)

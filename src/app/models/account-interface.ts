@@ -1,9 +1,16 @@
 export interface AccountInterface{
 	id?:string;
 	numberAccount?:string;
-	ammount?:number;
-	userId?:string;
+	name?:string;
+	phone?:string;
 	email?:string;
-	type?:string;
+	subjectEmail?:string;
+	adminEmail?:string;
 	status?:string;
+	message?:string;
+	type?:string;
+	address?:string;
+	usertype?:string;
+	userId?:string;
+	images?:Array<string>;
 }
