@@ -41,8 +41,8 @@
 									</tr>
 								</thead>
 								<tbody id="customers">
-									<tr class="btn-reveal-trigger" *ngFor="let account of newAccounts">									
-										<a href="javascript:void(0);">
+									<tr class="btn-reveal-trigger" *ngFor="let account of newAccounts;let i = index">									
+										<a (click)="view(i)">
 											<td class="py-3">
 												<div class="media d-flex align-items-center">
 													<div class="media-body">

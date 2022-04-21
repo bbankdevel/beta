@@ -35,8 +35,8 @@ public dataApi:DataApiService
         }
      });  
     }   
-    public view(account){
-        console.log("name"+account.name);
+    public view(id){
+        console.log("name"+id);
 
     }
     getNewAccounts(){
