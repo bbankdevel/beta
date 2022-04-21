@@ -3,7 +3,7 @@
 	<div class="container-fluid">
 		<div [hidden]="newAccounts[0].email===undefined && accounts[0].email===undefined && !this.waiting">Nada que mostar por ahora</div>
 			<div [hidden]="newAccounts[0].email!=undefined && accounts[0].email!=undefined && this.waiting">Cargando...
-				<app-indeterminate-progress-bar></app-indeterminate-progress-bar>
+				<mat-progress-bar mode="indeterminate"></mat-progress-bar>
 			</div>
 		<div class="row page-titles mx-0" *ngIf="newAccounts[0].email!=undefined">
             <div class="col-sm-6 p-md-0">
