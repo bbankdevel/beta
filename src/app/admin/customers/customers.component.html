@@ -24,7 +24,7 @@
 							 
 							<table class="table table-responsive-md mb-0 table-striped" *ngIf="cards!=undefined">
 								<thead>
-									<tr *ngFor="let card of cards">
+									<tr >
 									<!-- 	<th class="">
 											<div class="custom-control custom-checkbox mx-2">
 												<input type="checkbox" class="custom-control-input" id="checkAll" (change)="checkUncheckAll($event)">
@@ -41,7 +41,7 @@
 									</tr>
 								</thead>
 								<tbody id="customers">
-									<tr class="btn-reveal-trigger">
+									<tr class="btn-reveal-trigger" *ngFor="let card of cards">
 										<!-- <td>
 											<div class="custom-control custom-checkbox mx-2">
 												<input type="checkbox" class="custom-control-input" id="checkbox1">
