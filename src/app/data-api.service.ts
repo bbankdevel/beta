@@ -16,6 +16,7 @@ export class DataApiService {
 	emailm: Observable<any>;
 	usercards: Observable<any>;
 	accounts: Observable<any>;
+	account: Observable<any>;
 	info: Observable<any>;
   constructor(
   	public _uw:UserWService,
