@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
     message:"",
     images:[],
      usertype:"",
-    phone:"".
+    phone:"",
     type:"default"
   }; 
 
