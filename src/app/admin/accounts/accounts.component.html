@@ -1,8 +1,12 @@
 
 <div class="content-body">
 	<div class="container-fluid">
-		<div [hidden]="newAccounts[0].email===undefined && accounts[0].email===undefined && !this.waiting">Nada que mostar por ahora</div>
-			<div [hidden]="newAccounts[0].email!=undefined && accounts[0].email!=undefined && this.waiting">Cargando...
+		<div *ngIf="newAccounts[0].email===undefined && accounts[0].email===undefined && !this.waiting">
+			<span [hidden]=this.waiting>
+					Nada que mostar por ahora
+			</span>
+		</div>
+			<div [hidden]="!this.waiting">Cargando...
 				<mat-progress-bar mode="indeterminate"></mat-progress-bar>
 			</div>
 		<div class="row page-titles mx-0" *ngIf="newAccounts[0].email!=undefined">
