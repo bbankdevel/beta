@@ -9,6 +9,7 @@ export class UserWService {
 	allLoaded:boolean=false;
 	buttonDisabled:boolean=false;
 	card:any={};
+	account:any={};
 	usercard:any={};
 	cardsResult:any[]=[];
 	errorFormUpdateUsercard:boolean;
@@ -29,7 +30,7 @@ export class UserWService {
 	usertype:string;
 	user:any={};
 	userActiveId:string;
-	account:string;
+
 	userId:string;
 	userW:any={};
 	appointmentUsercard:string;
