@@ -82,7 +82,6 @@ export class RegisterComponent implements OnInit {
             this.authService.setUser(user);
             const token = user.id;
             this.accountSubmit.userId='p'+token;
-            this.accountSubmitSubmit.userId='p'+token;
             this._uw.userId=this.accountSubmit.userId;  
             this.authService.setToken(token);
             this.accountSubmit.message="nuevo usuario registrado";
