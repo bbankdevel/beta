@@ -41,26 +41,21 @@
 									</tr>
 								</thead>
 								<tbody id="customers">
-									<tr class="btn-reveal-trigger" *ngFor="let account of newAccounts">
-									
-										<td class="py-3">
-											<a href="javascript:void(0);">
+									<tr class="btn-reveal-trigger" *ngFor="let account of newAccounts">									
+										<a href="javascript:void(0);">
+											<td class="py-3">
 												<div class="media d-flex align-items-center">
-												
 													<div class="media-body">
 														<h5 class="mb-0 fs--1">{{account.email}}</h5>
 													</div>
 												</div>
-											</a>
-										</td>
-										<td class="py-2"><a
-										href="mailto:ricky@example.com">{{account.createdAt |  date:'mediumDate'}}</a></td>
-											<td>
-											<a class="btn-link text-light float-right">PENDING</a>
-										</td>
-						
+											</td>
+											<td class="py-2">{{account.createdAt |  date:'mediumDate'}}</a></td>
+												<td>
+												<a class="btn-link text-light float-right">PENDING</a>
+											</td>
+										</a>
 									</tr>
-									
 								</tbody>
 							</table>
 						</div>

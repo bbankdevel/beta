@@ -12,6 +12,7 @@ public waiting = true;
 public clear = true;
 public clear2 = true;
 public accounts:AccountInterface;
+public account:AccountInterface;
 public newAccounts:AccountInterface;
   constructor(
 public dataApi:DataApiService
@@ -34,6 +35,10 @@ public dataApi:DataApiService
         }
      });  
     }   
+    public view(account){
+        console.log("name"+account.name);
+
+    }
     getNewAccounts(){
         this.waiting=true;
         this.dataApi.getNewAccountsReturn().subscribe((res:any) => {
