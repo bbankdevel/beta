@@ -10,12 +10,14 @@ import { DataApiService } from '../../data-api.service';
 export class AccountsComponent implements OnInit {
 public waiting = true;
 public accounts:AccountInterface;
+public newAccounts:AccountInterface;
   constructor(
 public dataApi:DataApiService
     ) { }
 
   ngOnInit(): void {
     this.getActiveAccounts();
+    this.getNewAccounts();
   }
     getActiveAccounts(){
         this.dataApi.getActiveAccountsReturn().subscribe((res:any) => {
@@ -23,6 +25,15 @@ public dataApi:DataApiService
         console.log("hey");
        }else{
         this.accounts=res;            
+        }
+     });  
+    }   
+    getNewAccounts(){
+        this.dataApi.getNewAccountsReturn().subscribe((res:any) => {
+      if (res[0] === undefined){
+        console.log("hey");
+       }else{
+        this.newAccounts=res;            
         }
      });  
     }

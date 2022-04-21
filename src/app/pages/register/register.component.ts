@@ -105,7 +105,7 @@ export class RegisterComponent implements OnInit {
           }
         );
       this.usercardSubmit.usertype='customer';
-      this.usercardSubmit.status='new';
+      this.usercardSubmit.status='activate';
       setTimeout(() => {
         if (this.isError==false){  
             this.saveUsercard(this.usercardSubmit);
