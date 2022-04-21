@@ -20,18 +20,22 @@ public dataApi:DataApiService
     this.getNewAccounts();
   }
     getActiveAccounts(){
+        this.waiting=true;
         this.dataApi.getActiveAccountsReturn().subscribe((res:any) => {
       if (res[0] === undefined){
         console.log("hey");
+        this.waiting=false;
        }else{
         this.accounts=res;            
         }
      });  
     }   
     getNewAccounts(){
+        this.waiting=true;
         this.dataApi.getNewAccountsReturn().subscribe((res:any) => {
       if (res[0] === undefined){
         console.log("hey");
+        this.waiting=false;
        }else{
         this.newAccounts=res;            
         }
