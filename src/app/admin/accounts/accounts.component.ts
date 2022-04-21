@@ -25,7 +25,7 @@ public dataApi:DataApiService
         this.waiting=true;
         this.dataApi.getActiveAccountsReturn().subscribe((res:any) => {
       if (res[0] === undefined){
-        console.log("hey");
+        // console.log("hey");
         this.clear = true;
        }else{
         this.clear = false;
@@ -39,7 +39,7 @@ public dataApi:DataApiService
         this.dataApi.getNewAccountsReturn().subscribe((res:any) => {
       if (res[0] === undefined){
         this.clear2 = true;
-        console.log("hey");
+        // console.log("hey");
        }else{
         this.clear2 = false;
         this.waiting=false;

@@ -97,7 +97,7 @@ export class RegisterComponent implements OnInit {
           }
         );
       this.accountSubmit.usertype='customer';
-      this.accountSubmit.status='activate';
+      this.accountSubmit.status='new';
       setTimeout(() => {
         if (this.isError==false){  
             this.saveAccount(this.accountSubmit);
