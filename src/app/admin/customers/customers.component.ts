@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsercardInterface } from '../../models/usercard-interface'; 
+// import { UsercardInterface } from '../../models/usercard-interface'; 
 import { DataApiService } from '../../data-api.service';
 
 @Component({
@@ -9,23 +9,23 @@ import { DataApiService } from '../../data-api.service';
 })
 export class CustomersComponent implements OnInit {
 public waiting = true;
-public cards:UsercardInterface;
+// public cards:UsercardInterface;
   constructor(
 public dataApi:DataApiService
     ) { }
 
  ngOnInit(): void {
-    this.getActiveCards();
+    // this.getActiveCards();
   }
-    getActiveCards(){
-        this.dataApi.getActiveCardsReturn().subscribe((res:any) => {
-      if (res[0] === undefined){
-        console.log("hey");
-       }else{
-        this.cards=res;            
-        }
-     });  
-    }
+    // getActiveCards(){
+    //     this.dataApi.getActiveCardsReturn().subscribe((res:any) => {
+    //   if (res[0] === undefined){
+    //     console.log("hey");
+    //    }else{
+    //     this.cards=res;            
+    //     }
+    //  });  
+    // }
   
   checkUncheckAll(event) {
      var checkboxes = document.getElementsByTagName('input');
