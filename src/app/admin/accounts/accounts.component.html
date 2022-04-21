@@ -9,7 +9,7 @@
 			<div [hidden]="!this.waiting">Cargando...
 				<mat-progress-bar mode="indeterminate"></mat-progress-bar>
 			</div>
-		<div class="row page-titles mx-0" *ngIf="newAccounts[0].email!=undefined">
+		<div class="row page-titles mx-0" *ngIf="newAccounts!=undefined">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
                     <h4>Solicitudes </h4>
@@ -23,7 +23,7 @@
                 </ol>
             </div>
         </div>
-		<div class="row" *ngIf="newAccounts[0].email!=undefined">
+		<div class="row" *ngIf="newAccounts!=undefined">
 			
 			<div class="col-lg-12">
 				<div class="card">
@@ -70,7 +70,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row page-titles mx-0 " *ngIf="accounts[0].email!=undefined">
+		<div class="row page-titles mx-0 " *ngIf="accounts!=undefined">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
                     <h4>Cuentas </h4>
