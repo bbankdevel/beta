@@ -723,6 +723,7 @@ import { SwitcherComponent } from './switcher/switcher.component';
 	EcomCustomersComponent,
   CustomersComponent,
   AccountsComponent,
+  ActivateaccountComponent,
     
     ApexComponent,
 	LineComponent,
