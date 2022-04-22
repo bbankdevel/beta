@@ -42,7 +42,7 @@ constructor(
     }   
     public view(account,id){
         this._uw.accountToEdit=account;      
-        // console.log("id: "+this.accounts[id].id);
+         console.log("id: "+this.accounts[id].id);
         this.router.navigate(['/admin/activateaccount']);
 
     }
