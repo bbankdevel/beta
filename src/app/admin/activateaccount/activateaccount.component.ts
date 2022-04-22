@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../data-api.service';
 import { UserWService } from "../../user-w.service";
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-activateaccount',

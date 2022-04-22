@@ -89,7 +89,10 @@ get fval() {
               this._uw.usertype=data.user.usertype;
               this._uw.userW=data.user;
               this._uw.isLogged=true;
-              this._uw.appointmentUsercard= "p"+this._uw.appointmentUsercard;
+              this._ this.ngFormLogin = this.formBuilder.group({
+                email: ['', [Validators.required,Validators.email]],
+                password: ['', [Validators.required]]
+                });uw.appointmentUsercard= "p"+this._uw.appointmentUsercard;
               this.router.navigate(['/admin/index']);
               this.isError = false;
            
