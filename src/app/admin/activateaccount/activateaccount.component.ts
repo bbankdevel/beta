@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../data-api.service';
 import { UserWService } from "../../user-w.service";
+
+import { AccountInterface } from '../../models/account-interface'; 
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { AccountInterface } from '../../models/account-interface'; 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { isError } from "util";
 @Component({
   selector: 'app-activateaccount',
   templateUrl: './activateaccount.component.html',
   styleUrls: ['./activateaccount.component.css']
 })
 export class ActivateaccountComponent implements OnInit {
- 
+  ngFormActivateAccount: FormGroup;
+  submitted = false;
+
   constructor(
     public _uw:UserWService,
     public router: Router,
@@ -23,8 +24,6 @@ export class ActivateaccountComponent implements OnInit {
   public isError = false;
   public isLogged =false;
 
-  ngFormActivateAccount: FormGroup;
-  submitted = false;
 
  public account : AccountInterface ={
     name:"",
