@@ -42,19 +42,19 @@
 								</thead>
 								<tbody id="customers">
 										<tr class="btn-reveal-trigger" *ngFor="let account of newAccounts;let i = index">	
-									<div (click)="view(i)" style="cursor:pointer;">
-											<td class="py-3">
+									
+											<td class="py-3" (click)="view(i)" style="cursor:pointer;">
 												<div class="media d-flex align-items-center">
 													<div class="media-body">
 														<h5 class="mb-0 fs--1">{{account.email}}</h5>
 													</div>
 												</div>
 											</td>
-											<td class="py-2">{{account.createdAt |  date:'mediumDate'}}</td>
-												<td>
+											<td class="py-2" (click)="view(i)" style="cursor:pointer;">{{account.createdAt |  date:'mediumDate'}}</td>
+												<td (click)="view(i)" style="cursor:pointer;">
 												<a class="btn-link text-light float-right">PENDING</a>
 											</td>
-									</div>
+									
 										</tr>
 								</tbody>
 							</table>
