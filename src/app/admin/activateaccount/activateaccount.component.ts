@@ -36,7 +36,7 @@ export class ActivateaccountComponent implements OnInit {
   };
   message = "";  
   get fval() {
-    return this.ngFormLogin.controls;
+    return this.ngFormActivateAccount.controls;
     }
     public activate (){
       console.log("hola");
