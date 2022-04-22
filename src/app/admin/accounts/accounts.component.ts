@@ -40,9 +40,9 @@ constructor(
         }
      });  
     }   
-    public view(account,id){
+    public view(account,i){
         this._uw.accountToEdit=account;      
-         console.log("id: "+this.accounts[id].id);
+         console.log("id: "+this.accounts[i].id);
         this.router.navigate(['/admin/activateaccount']);
 
     }
