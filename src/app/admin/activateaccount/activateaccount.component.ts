@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../data-api.service';
 import { UserWService } from "../../user-w.service";
-
 import { AccountInterface } from '../../models/account-interface'; 
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
@@ -55,28 +54,5 @@ export class ActivateaccountComponent implements OnInit {
       numberAccount: ['', [Validators.required]]
       });
   }
-    
-  
- //  checkUncheckAll(event) {import { Location } from '@angular/common';
-
- //     var checkboxes = document.getElementsByTagName('input');
- //     if (event.target.checked) {
- //         for (var i = 0; i < checkboxes.length; i++) {
- //             if (checkboxes[i].type == 'checkbox') {
- //                 checkboxes[i].checked = true;
- //             }
- //         }
- //     } else {
- //         for (var i = 0; i < checkboxes.length; i++) {
- //             // console.log(i)
- //             if (checkboxes[i].type == 'checkbox') {
- //                 checkboxes[i].checked = false;
- //             }
- //         }
- //     }
- // }
-  
-  
-  
 
 }
