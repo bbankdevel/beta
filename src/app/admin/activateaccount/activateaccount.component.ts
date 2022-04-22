@@ -16,6 +16,7 @@ export class ActivateaccountComponent implements OnInit {
   constructor(
     public _uw:UserWService,
     public router: Router,
+    private formBuilder: FormBuilder, 
     public dataApi:DataApiService
   ) { }
   public isError = false;
