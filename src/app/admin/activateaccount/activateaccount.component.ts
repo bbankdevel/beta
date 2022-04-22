@@ -3,6 +3,7 @@ import { DataApiService } from '../../data-api.service';
 import { UserWService } from "../../user-w.service";
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { AccountInterface } from '../../models/account-interface'; 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-activateaccount',
@@ -19,11 +20,19 @@ export class ActivateaccountComponent implements OnInit {
   ) { }
   public isError = false;
   public isLogged =false;
- public user : UserInterface ={
+
+
+
+ public account : AccountInterface ={
     name:"",
-    email:"",
-    password:"",
-    usertype:""
+
+    numberAccount:"",
+    phone:"",
+    status:"",
+    type:"",
+    address:"",
+    userId:"",
+    email:""
   };
   message = "";  
   get fval() {
@@ -47,7 +56,8 @@ export class ActivateaccountComponent implements OnInit {
   }
     
   
- //  checkUncheckAll(event) {
+ //  checkUncheckAll(event) {import { Location } from '@angular/common';
+
  //     var checkboxes = document.getElementsByTagName('input');
  //     if (event.target.checked) {
  //         for (var i = 0; i < checkboxes.length; i++) {
