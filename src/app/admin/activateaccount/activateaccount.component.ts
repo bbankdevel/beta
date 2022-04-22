@@ -20,7 +20,6 @@ export class ActivateaccountComponent implements OnInit {
     public _uw:UserWService,
     public router: Router,
     private formBuilder: FormBuilder,
-    
     private FormGroup: FormGroup, 
     public dataApi:DataApiService
   ) { }
