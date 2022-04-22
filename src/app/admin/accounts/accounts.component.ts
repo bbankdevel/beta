@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountInterface } from '../../models/account-interface'; 
 import { DataApiService } from '../../data-api.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-accounts',
   templateUrl: './accounts.component.html',
@@ -15,6 +15,7 @@ public accounts:AccountInterface;
 public account:AccountInterface;
 public newAccounts:AccountInterface;
   constructor(
+    public router: Router,
 public dataApi:DataApiService
     ) { }
 
@@ -35,8 +36,10 @@ public dataApi:DataApiService
         }
      });  
     }   
-    public view(id){
-        console.log("name"+this.accounts[id].id);
+    public view(account,id){
+        this._uw.accountToEdit=account;      
+        // console.log("id: "+this.accounts[id].id);
+        this.router.navigate(['/admin/activateaccount']);
 
     }
     getNewAccounts(){

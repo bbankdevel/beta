@@ -9,6 +9,7 @@ export class UserWService {
 	allLoaded:boolean=false;
 	buttonDisabled:boolean=false;
 	card:any={};
+	accountToEdit:any={};
 	account:any={};
 	usercard:any={};
 	cardsResult:any[]=[];
