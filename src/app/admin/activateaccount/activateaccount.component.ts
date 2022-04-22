@@ -11,8 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./activateaccount.component.css']
 })
 export class ActivateaccountComponent implements OnInit {
-  ngFormActivateAccount: FormGroup;
-  submitted = false;
+ 
   constructor(
     public _uw:UserWService,
     public router: Router,
@@ -22,7 +21,8 @@ export class ActivateaccountComponent implements OnInit {
   public isError = false;
   public isLogged =false;
 
-
+  ngFormActivateAccount: FormGroup;
+  submitted = false;
 
  public account : AccountInterface ={
     name:"",

@@ -16,14 +16,13 @@ export class LoginComponent implements OnInit {
   ngFormLogin: FormGroup;
   submitted = false;
   constructor(
-
     public _uw:UserWService,
-    private formBuilder: FormBuilder, 
+    public formBuilder: FormBuilder, 
     private dataApi: DataApiService,
     private authService: AuthService, 
-    public router: Router,
-
-  ) { }
+    public router: Router
+  ) 
+  { }
   message = "";  
   public user : UserInterface ={
     name:"",

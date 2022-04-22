@@ -7,7 +7,7 @@
                         <div class="col-xl-12">
                             <div class="auth-form">
                                 <h4 class="text-center mb-4">{{_uw.accountToEdit.email}}</h4>
-                                <form [formGroup]="ngFormActivateAccount" (ngSubmit) ="activate()"> 
+                                <form [formGroup]="ngFormActivateAccount" (ngSubmit)="activate()"> 
                                     <div class="form-group form-focus">
                                         <label class="focus-label">Numero de cuenta</label>
                                         <input type="text" class="form-control floating" id="numberAccount" placeholder="numero de cuenta" formControlName="numberAccount" [(ngModel)]="account.numberAccount"required [ngClass]="{ 'is-invalid': submitted && fval.numberAccount.errors }">
