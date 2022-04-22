@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountInterface } from '../../models/account-interface'; 
 import { DataApiService } from '../../data-api.service';
+import { UserWService } from "../../user-w.service";
+
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-accounts',
@@ -14,9 +16,11 @@ public clear2 = true;
 public accounts:AccountInterface;
 public account:AccountInterface;
 public newAccounts:AccountInterface;
-  constructor(
+  
+constructor(
+    public _uw:UserWService,
     public router: Router,
-public dataApi:DataApiService
+    public dataApi:DataApiService
     ) { }
 
   ngOnInit(): void {
