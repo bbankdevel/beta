@@ -27,6 +27,9 @@ export class ActivateaccountComponent implements OnInit {
   get fval() {
     return this.ngFormLogin.controls;
     }
+    public activate (){
+      console.log("hola");
+    }
   onIsError(): void {
        
       this.isError = true;
