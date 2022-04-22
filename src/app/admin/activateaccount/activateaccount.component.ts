@@ -55,7 +55,6 @@ export class ActivateaccountComponent implements OnInit {
     }
   ngOnInit(): void {
     this.ngFormActivateAccount = this.formBuilder.group({
-      email: ['', [Validators.required]],
       numberAccount: ['', [Validators.required]]
       });
   }
