@@ -1,0 +1,40 @@
+<div class="authincation h-100">
+    <div class="container vh-100">
+        <div class="row justify-content-center h-100 align-items-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="authincation-content">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12">
+                            <div class="auth-form">
+                            
+                                <h4 class="text-center mb-4">{{_uw.accountToEdit.email}}</h4>
+                                <form [formGroup]="ngFormActivateAccount" (ngSubmit) ="onLogin()">
+                                    <div class="form-group form-focus">
+                                        <label class="focus-label">Numero de cuenta</label>
+                                            
+                                        <input type="text" class="form-control floating" id="numberAccount" placeholder="numero de cuenta" formControlName="numberaccount" [(ngModel)]="account.numberAccount"required [ngClass]="{ 'is-invalid': submitted && fval.numberAccount.errors }">
+                                        <div *ngIf="submitted && fval.numberAccount.errors" class="invalid-feedback">
+                                                <div *ngIf="fval.numberAccount.errors.required">Campo requerido</div>
+                                              
+                                            </div>
+                                    </div>
+                                    
+                                    <div class="text-right">
+                                    <div [hidden]="!isError">
+                                        <div style="color: red;text-align: left;">
+                                        {{message}}
+                                        </div>
+    
+                                    </div>
+                                    </div>
+                                    <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Activar cuenta</button>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
