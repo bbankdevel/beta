@@ -4,6 +4,8 @@ import { UserWService } from "../../user-w.service";
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { AccountInterface } from '../../models/account-interface'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-activateaccount',
