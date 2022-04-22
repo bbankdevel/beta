@@ -26,7 +26,6 @@ export class ActivateaccountComponent implements OnInit {
 
  public account : AccountInterface ={
     name:"",
-
     numberAccount:"",
     phone:"",
     status:"",
