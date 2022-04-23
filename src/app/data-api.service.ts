@@ -41,13 +41,7 @@ export class DataApiService {
 		return (this.accounts = this.http.get(url_api));
 	}
 
-	updateAccount(account :AccountInterface, id: string){
-		// let token = this.authService.getToken();
-		const url_api=`https://db.bbevolutionbank.com:3025/api/account/${id}`;
-		return this.http
-		.put<AccountInterface>(url_api, account)
-		.pipe(map(data => data));
-	}
+	
 	sendMailNewCustomer(emailm){
 		const url_api='https://zqqvy9pk23.execute-api.us-east-1.amazonaws.com/production/newcustomer';
 		return this.http
