@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { SuccessComponent } from './success/success.component';
 import { AdminComponent } from './admin/admin.component';
 import { Index1Component } from './dashboard/index1/index1.component';
-
 
 import { ProfileComponent } from './apps/profile/profile.component';
 import { PostDetailsComponent } from './apps/post-details/post-details.component';
@@ -24,7 +22,6 @@ import { AccountsComponent } from './admin/accounts/accounts.component';
 import { CreditcardsComponent } from './admin/creditcards/creditcards.component';
 import { ActivateaccountComponent } from './admin/activateaccount/activateaccount.component';
 import { SuccessaaComponent } from './admin/successaa/successaa.component';
-//import { TransactionsComponent } from './admin/transactions/transactions.component';
 
 import { ApexComponent } from './charts/apex/apex.component';
 import { LineComponent } from './charts/apex/line/line.component';
