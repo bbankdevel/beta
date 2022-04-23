@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from '../../auth.service';
 import { UserInterface } from '../../models/user-interface'; 
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder,  FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
