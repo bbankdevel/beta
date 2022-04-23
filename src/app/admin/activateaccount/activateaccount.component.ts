@@ -38,10 +38,10 @@ export class ActivateaccountComponent implements OnInit {
         } 
         let id = this._uw.accountToEdit.id;
         console.log("id : "+id);
-      this.dataApi.updateAccount(this.account.numberAccount,id)
-      .subscribe(
-        // tix => this.router.navigate(['/succesConfig'])
-    );
+    //   this.dataApi.updateAccount(this.account.numberAccount,id)
+    //   .subscribe(
+    //     // tix => this.router.navigate(['/succesConfig'])
+    // );
       console.log("hola");
     }
   onIsError(): void {
