@@ -45,7 +45,8 @@ export class ActivateaccountComponent implements OnInit {
       if (this.ngFormActivateAccount.invalid) {
       return;
         } 
-      this.dataApi.updateAccount(this.account.numberAccount,this._uw.accountToEdit.id)
+        let id = this._uw.accountToEdit.id;
+      this.dataApi.updateAccount(this.account.numberAccount,id)
       .subscribe(
         // tix => this.router.navigate(['/succesConfig'])
     );
