@@ -133,6 +133,7 @@ import { CustomersComponent } from './admin/customers/customers.component';
 import { AccountsComponent } from './admin/accounts/accounts.component';
 import { ActivateaccountComponent } from './admin/activateaccount/activateaccount.component';
 
+import { SuccessaaComponent } from './admin/successaa/successaa.component';
 
 import { ApexComponent } from './charts/apex/apex.component';
 import { LineComponent } from './charts/apex/line/line.component';
@@ -724,7 +725,7 @@ import { SwitcherComponent } from './switcher/switcher.component';
   CustomersComponent,
   AccountsComponent,
   ActivateaccountComponent,
-    
+  SuccessaaComponent,
     ApexComponent,
 	LineComponent,
 	BasicLineChartComponent,
