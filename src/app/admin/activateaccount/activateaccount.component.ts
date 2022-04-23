@@ -26,7 +26,16 @@ export class ActivateaccountComponent implements OnInit {
   public isLogged =false;
 
 
- public account : AccountInterface;
+  public account : AccountInterface ={
+    name:"",
+    numberAccount:"",
+    phone:"",
+    status:"",
+    type:"",
+    address:"",
+    userId:"",
+    email:""
+  };
   message = "";  
   get fval() {
     return this.ngFormActivateAccount.controls;
