@@ -50,7 +50,7 @@ export class ActivateaccountComponent implements OnInit {
         console.log("id : "+id);
       this.dataApi.updateAccount(this._uw.accountToEdit,id)
       .subscribe(
-        // tix => this.router.navigate(['/succesConfig'])
+         account => this.router.navigate(['/succesActivateAccount'])
     );
       console.log("hola");
     }
