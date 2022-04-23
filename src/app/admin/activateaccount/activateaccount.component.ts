@@ -5,7 +5,7 @@ import { AccountInterface } from '../../models/account-interface';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { isError } from "util";
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-activateaccount',
@@ -20,7 +20,6 @@ export class ActivateaccountComponent implements OnInit {
     public _uw:UserWService,
     public router: Router,
     private formBuilder: FormBuilder,
-    private FormGroup: FormGroup, 
     public dataApi:DataApiService
   ) { }
   public isError = false;
