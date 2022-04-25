@@ -26,7 +26,9 @@ export class SettingsComponent implements OnInit {
   public isLogged =false;
 
 
-  public info : InfoInterface;
+  public info : InfoInterface={
+    adminEmail:""
+  };
   message = ""; 
   get fval() {
     return this.ngFormSettingsUpdate.controls;
