@@ -25,7 +25,6 @@ export class ActivateaccountComponent implements OnInit {
   public isError = false;
   public isLogged =false;
 
-
   public account : AccountInterface ={
     name:"",
     numberAccount:"",
