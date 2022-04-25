@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
-  ngFormActivateSettingsUpdate: FormGroup;
+  ngFormSettingsUpdate: FormGroup;
   submitted = false;
   constructor(
     public _uw:UserWService,
@@ -21,13 +21,13 @@ export class SettingsComponent implements OnInit {
     public dataApi:DataApiService
 
   ) { 
-    
+
   }message = ""; 
   public info : InfoInterface;
   public isError = false;
   public isLogged =false;
   get fval() {
-    return this.ngFormActivateSettingsUpdate.controls;
+    return this.ngFormSettingsUpdate.controls;
     }
     onIsError(): void {
        
@@ -40,7 +40,7 @@ export class SettingsComponent implements OnInit {
     activate(){}
   ngOnInit(): void {
 
-    this.ngFormActivateSettingsUpdate = this.formBuilder.group({
+    this.ngFormSettingsUpdate = this.formBuilder.group({
       adminEmail: ['', [Validators.required]]
       });
   }

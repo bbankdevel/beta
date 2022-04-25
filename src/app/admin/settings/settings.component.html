@@ -19,7 +19,7 @@
                         <div class="col-xl-12">
                             <div class="auth-form">
                                 <h4 class="text-center mb-4">{{_uw.accountToEdit.email}}</h4>
-                                <form [formGroup]="ngFormActivateSettingsUpdate" (ngSubmit)="activate()">
+                                <form [formGroup]="ngFormSettingsUpdate" (ngSubmit)="activate()">
                                     <div class="form-group form-focus">
                                         <label class="focus-label">Email de administrador</label>
                                         <input type="text" class="form-control floating" id="adminEmail" placeholder="Email de administrador" formControlName="adminEmail" [(ngModel)]="info.adminEmail"required [ngClass]="{ 'is-invalid': submitted && fval.adminEmail.errors }">
