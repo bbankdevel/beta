@@ -20,7 +20,9 @@ export class SettingsComponent implements OnInit {
     private formBuilder: FormBuilder,
     public dataApi:DataApiService
 
-  ) { }
+  ) { 
+    
+  }message = ""; 
   public info : InfoInterface;
   public isError = false;
   public isLogged =false;
