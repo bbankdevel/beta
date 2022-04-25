@@ -23,6 +23,7 @@ import { CreditcardsComponent } from './admin/creditcards/creditcards.component'
 import { ActivateaccountComponent } from './admin/activateaccount/activateaccount.component';
 import { SuccessaaComponent } from './admin/successaa/successaa.component';
 import { AccComponent } from './admin/acc/acc.component';
+import { SettingsComponent } from './admin/settings/settings.component';
 
 
 import { ApexComponent } from './charts/apex/apex.component';
@@ -175,6 +176,8 @@ const routes: Routes = [
                         {path: 'activateaccount', component: ActivateaccountComponent},
                         {path: 'successaa', component: SuccessaaComponent},
                         {path: 'acc', component: AccComponent},
+
+                        {path: 'settings', component: SettingsComponent},
 
                         // {path: 'transactions', component: TransactionsComponent},
                         
