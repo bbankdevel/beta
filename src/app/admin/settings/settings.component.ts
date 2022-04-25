@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { isError } from "util";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
@@ -14,18 +15,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SettingsComponent implements OnInit {
   ngFormSettingsUpdate: FormGroup;
   submitted = false;
+
   constructor(
     public _uw:UserWService,
     public router: Router,
     private formBuilder: FormBuilder,
     public dataApi:DataApiService
-
-  ) { 
-
-  }message = ""; 
-  public info : InfoInterface;
+  ) { }
   public isError = false;
   public isLogged =false;
+
+
+  public info : InfoInterface;
+  message = ""; 
   get fval() {
     return this.ngFormSettingsUpdate.controls;
     }
@@ -44,28 +46,4 @@ export class SettingsComponent implements OnInit {
       adminEmail: ['', [Validators.required]]
       });
   }
-  
-    
-  
- //  checkUncheckAll(event) {
- //     var checkboxes = document.getElementsByTagName('input');
- //     if (event.target.checked) {
- //         for (var i = 0; i < checkboxes.length; i++) {
- //             if (checkboxes[i].type == 'checkbox') {
- //                 checkboxes[i].checked = true;
- //             }
- //         }
- //     } else {
- //         for (var i = 0; i < checkboxes.length; i++) {
- //             // console.log(i)
- //             if (checkboxes[i].type == 'checkbox') {
- //                 checkboxes[i].checked = false;
- //             }
- //         }
- //     }
- // }
-  
-  
-  
-
 }
