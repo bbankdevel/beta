@@ -35,6 +35,7 @@ export class SettingsComponent implements OnInit {
         //this.isError = false;
       }, 4000);
     }
+    activate(){}
   ngOnInit(): void {
 
     this.ngFormActivateSettingsUpdate = this.formBuilder.group({
