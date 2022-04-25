@@ -45,8 +45,6 @@ export class SettingsComponent implements OnInit {
     activate(){}
   ngOnInit(): void {
     this.getInfo();  
-    this.info.adminEmail=this._uw.info[0].adminEmail;
-
     this.ngFormSettingsUpdate = this.formBuilder.group({
       adminEmail: ['', [Validators.required]]
       });
