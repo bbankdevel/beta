@@ -132,6 +132,7 @@ import { EcomCustomersComponent } from './apps/shop/ecom-customers/ecom-customer
 import { CustomersComponent } from './admin/customers/customers.component';
 import { AccountsComponent } from './admin/accounts/accounts.component';
 import { ActivateaccountComponent } from './admin/activateaccount/activateaccount.component';
+import { AccComponent } from './admin/acc/acc.component';
 
 import { SuccessaaComponent } from './admin/successaa/successaa.component';
 
@@ -726,6 +727,7 @@ import { SwitcherComponent } from './switcher/switcher.component';
   AccountsComponent,
   ActivateaccountComponent,
   SuccessaaComponent,
+  AccComponent,
     ApexComponent,
 	LineComponent,
 	BasicLineChartComponent,
