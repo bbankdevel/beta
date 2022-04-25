@@ -24,11 +24,12 @@ export class SettingsComponent implements OnInit {
   ) { }
   public isError = false;
   public isLogged =false;
-
-
-  public info : InfoInterface={
-    adminEmail:""
-  };
+  public info : InfoInterface;
+  public getInfo(){
+    this.dataApi.getInfo()
+    .subscribe((info: InfoInterface) => (this.info=info));
+  }
+ 
   message = ""; 
   get fval() {
     return this.ngFormSettingsUpdate.controls;
@@ -43,6 +44,7 @@ export class SettingsComponent implements OnInit {
     }
     activate(){}
   ngOnInit(): void {
+    this.getInfo();  
     this.info.adminEmail=this._uw.info[0].adminEmail;
 
     this.ngFormSettingsUpdate = this.formBuilder.group({
