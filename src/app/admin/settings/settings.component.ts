@@ -36,12 +36,12 @@ export class SettingsComponent implements OnInit {
       }, 4000);
     }
   ngOnInit(): void {
-    
+
     this.ngFormActivateSettingsUpdate = this.formBuilder.group({
       adminEmail: ['', [Validators.required]]
       });
   }
-  }
+  
     
   
  //  checkUncheckAll(event) {
