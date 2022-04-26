@@ -15,6 +15,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SettingsComponent implements OnInit {
   ngFormSettingsUpdate: FormGroup;
   submitted = false;
+  public waiting = true;
 
   constructor(
     public _uw:UserWService,
@@ -22,27 +23,39 @@ export class SettingsComponent implements OnInit {
     private formBuilder: FormBuilder,
     public dataApi:DataApiService
   ) { }
-  public isError = false;
-  public isLogged =false;
-  public info : InfoInterface;
-  public getInfo(){
-    this.dataApi.getInfo()
-    .subscribe((info: InfoInterface) => (this.info=info));
-  }
- 
-  message = ""; 
-  get fval() {
-    return this.ngFormSettingsUpdate.controls;
+    public isError = false;
+    public isLogged =false;
+    public info : InfoInterface;
+    public getInfo(){
+      this.dataApi.getInfo()
+        .subscribe((info: InfoInterface) => (
+          this.info=info[0],
+          this.waiting=false
+        ) 
+      );
     }
+ 
+    message = ""; 
+    
+    get fval() {
+      return this.ngFormSettingsUpdate.controls;
+    }
+
     onIsError(): void {
-       
       this.isError = true;
       setTimeout(() => {
       this.isError = true;
-        //this.isError = false;
       }, 4000);
     }
-    activate(){}
+
+    activate(){
+      let id = this.info.id;
+      this.dataApi.settingsUpdate(this.info, id)
+        .subscribe(
+           info => this.router.navigate(['/admin/index']
+        )
+      );
+    }
   ngOnInit(): void {
     this.getInfo();  
     this.ngFormSettingsUpdate = this.formBuilder.group({

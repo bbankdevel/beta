@@ -1,4 +1,5 @@
 export interface InfoInterface {
+		id?:string;
 	men1?:string;
 	men2?:string;
 	adminEmail?:string;

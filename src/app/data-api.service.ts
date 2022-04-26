@@ -69,5 +69,11 @@ export class DataApiService {
 		this.account = this.http.get(url_api);
 		return (this.account);
 	}
-	
+		settingsUpdate(info :InfoInterface, id: string){
+		// let token = this.authService.getToken();
+		const url_api=`https://db.bbevolutionbank.com:3025/api/infos/${id}`;
+		return this.http
+		.put<InfoInterface>(url_api, info)
+		.pipe(map(data => data));
+	}
 }

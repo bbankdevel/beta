@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { SuccessComponent } from './success/success.component';
 import { AdminComponent } from './admin/admin.component';
 import { Index1Component } from './dashboard/index1/index1.component';
-
 import { ProfileComponent } from './apps/profile/profile.component';
 import { PostDetailsComponent } from './apps/post-details/post-details.component';
 import { ComposeComponent } from './apps/email/compose/compose.component';
@@ -24,6 +23,8 @@ import { ActivateaccountComponent } from './admin/activateaccount/activateaccoun
 import { SuccessaaComponent } from './admin/successaa/successaa.component';
 import { AccComponent } from './admin/acc/acc.component';
 import { SettingsComponent } from './admin/settings/settings.component';
+import { HistoryComponent } from './admin/history/history.component';
+import { NewrequestComponent } from './admin/newrequest/newrequest.component';
 
 
 import { ApexComponent } from './charts/apex/apex.component';
@@ -44,9 +45,6 @@ import { HeatmapComponent } from './charts/apex/heatmap/heatmap.component';
 import { TreemapComponent } from './charts/apex/treemap/treemap.component';
 import { SparklinesComponent } from './charts/apex/sparklines/sparklines.component';
 import { ChartjsComponent } from './charts/chartjs/chartjs.component';
-
-
-
 import { AccordionComponent } from './bootstrap/accordion/accordion.component';
 import { AlertComponent } from './bootstrap/alert/alert.component';
 import { ButtonComponent } from './bootstrap/button/button.component';
@@ -71,9 +69,6 @@ import { TooltipComponent } from './bootstrap/tooltip/tooltip.component';
 import { TypeaheadComponent } from './bootstrap/typeahead/typeahead.component';
 import { TypographyComponent } from './bootstrap/typography/typography.component';
 import { GridComponent } from './bootstrap/grid/grid.component';
-
-
-
 import { DzmtAutocompleteComponent } from './material/dzmt-autocomplete/dzmt-autocomplete.component';
 import { DzmtBadgeComponent } from './material/dzmt-badge/dzmt-badge.component';
 import { DzmtBottomSheetComponent } from './material/dzmt-bottom-sheet/dzmt-bottom-sheet.component';
@@ -109,21 +104,13 @@ import { DzmtTabsComponent } from './material/dzmt-tabs/dzmt-tabs.component';
 import { DzmtTooltipComponent } from './material/dzmt-tooltip/dzmt-tooltip.component';
 import { DzmtTreeComponent } from './material/dzmt-tree/dzmt-tree.component';
 import { DzmtToolbarComponent } from './material/dzmt-toolbar/dzmt-toolbar.component';
-
-
 import { NestableComponent } from './plugins/nestable/nestable.component';
 import { LightGalleryComponent } from './plugins/light-gallery/light-gallery.component';
-
 import { WidgetComponent } from './widget/widget.component';
-
-
 import { ElementsComponent } from './forms/elements/elements.component';
 import { FormValidateComponent } from './forms/form-validate/form-validate.component';
-
-
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
-
 import { LockScreenComponent } from './pages/lock-screen/lock-screen.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { Error400Component } from './pages/error400/error400.component';
@@ -160,9 +147,7 @@ const routes: Routes = [
                         {path: 'email-compose', component: ComposeComponent},
                         {path: 'email-inbox', component: InboxComponent},
                         {path: 'email-read', component: ReadComponent},
-                        {path: 'app-calender', component: CalenderComponent},
-                       
-                        
+                        {path: 'app-calender', component: CalenderComponent},   
                         {path: 'ecom-product-grid', component: ProductGridComponent},
                         {path: 'ecom-product-list', component: ProductListComponent},
                         {path: 'ecom-product-detail', component: ProductDetailComponent},
@@ -176,9 +161,9 @@ const routes: Routes = [
                         {path: 'activateaccount', component: ActivateaccountComponent},
                         {path: 'successaa', component: SuccessaaComponent},
                         {path: 'acc', component: AccComponent},
-
                         {path: 'settings', component: SettingsComponent},
-
+                        {path: 'history', component: HistoryComponent},
+                        {path: 'newrequest', component: NewrequestComponent},
                         // {path: 'transactions', component: TransactionsComponent},
                         
                         {path: 'chart-apex', component: ApexComponent},
@@ -198,9 +183,7 @@ const routes: Routes = [
                         {path: 'apex-heatmap', component: HeatmapComponent},
                         {path: 'apex-treemap', component: TreemapComponent},
                         {path: 'apex-sparklines', component: SparklinesComponent},
-                        {path: 'chart-chartjs', component: ChartjsComponent},
-                        
-                        
+                        {path: 'chart-chartjs', component: ChartjsComponent},    
                         {path: 'ui-accordion', component: AccordionComponent},
                         {path: 'ui-alert', component: AlertComponent},
                         {path: 'ui-button', component: ButtonComponent},
@@ -225,10 +208,6 @@ const routes: Routes = [
                         {path: 'ui-typeahead', component: TypeaheadComponent},
                         {path: 'ui-typography', component: TypographyComponent},
                         {path: 'ui-grid', component: GridComponent},
-                        
-                        
-                        
-                        
                         {path: 'mat-autocomplete', component: DzmtAutocompleteComponent},
                         {path: 'mat-badge', component: DzmtBadgeComponent},
                         {path: 'mat-bottom-sheet', component: DzmtBottomSheetComponent},
@@ -264,24 +243,18 @@ const routes: Routes = [
                         {path: 'mat-tooltip', component: DzmtTooltipComponent},
                         {path: 'mat-tree', component: DzmtTreeComponent},
                         {path: 'mat-toolbar', component: DzmtToolbarComponent},
-                        
                         {path: 'uc-nestable', component: NestableComponent},
-                        {path: 'uc-lightgallery', component: LightGalleryComponent},
-                        
-                        {path: 'widget-basic', component: WidgetComponent},
-                        
+                        {path: 'uc-lightgallery', component: LightGalleryComponent},                        
+                        {path: 'widget-basic', component: WidgetComponent},                        
                         {path: 'form-element', component: ElementsComponent},
-                        {path: 'form-validate', component: FormValidateComponent},
-                        
+                        {path: 'form-validate', component: FormValidateComponent},                        
                         {path: 'coin-details', component: CoinDetailsComponent},
                         {path: 'my-wallets', component: MyWalletsComponent},
                         {path: 'transactions', component: TransactionsComponent},
                         {path: 'portofolio', component: PortofolioComponent},
-                        {path: 'market-capital', component: MarketCapitalComponent},
-                
+                        {path: 'market-capital', component: MarketCapitalComponent},                
                     ]
                 },
-                        
                         {path: 'success', component: SuccessComponent},
                         {path: 'page-register', component: RegisterComponent},
                         {path: 'page-login', component: LoginComponent},
@@ -291,12 +264,8 @@ const routes: Routes = [
                         {path: 'page-error-403', component: Error403Component},
                         {path: 'page-error-404', component: Error404Component},
                         {path: 'page-error-500', component: Error500Component},
-                        {path: 'page-error-503', component: Error503Component},
-                        
-                        {path: '**', component: Error404Component},
-
-                
-                
+                        {path: 'page-error-503', component: Error503Component},                        
+                        {path: '**', component: Error404Component},  
               ];
 
 @NgModule({
