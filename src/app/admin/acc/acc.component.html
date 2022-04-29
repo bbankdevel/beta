@@ -1,0 +1,70 @@
+
+<div class="content-body" >
+    <!-- row -->
+    <div class="container-fluid" *ngIf="_uw.usertype!=undefined">
+        <div *ngIf="fullProfile!=undefined">
+            <div class="row justify-content-center h-100 align-items-center"  [hidden]="_uw.usertype!=='customer' ">
+                <div class="col-lg-6 col-md-8">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+                                    <div class="text-center mb-3">
+                                        <form [formGroup]="ngFormCompleteAccount" (ngSubmit)="complete()">
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Numero de cuenta bancaria</label>
+                                                <input type="text" class="form-control floating" id="numberBankAccount" placeholder="# de cuenta Bancaria" formControlName="numberBankAccount" [(ngModel)]="account.numberBankAccount"required [ngClass]="{ 'is-invalid': submitted && fval.numberBankAccount.errors }">
+                                                <div *ngIf="submitted && fval.numberBankAccount.errors" class="invalid-feedback">
+                                                    <div ngClass="fval.numberBankAccount.errors.required">
+                                                       Campo requerido.
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Entidad bancaria</label>
+                                                <input type="text" class="form-control floating" id="bankEntity" placeholder="Entidad bancaria" formControlName="bankEntity" [(ngModel)]="account.bankEntity"required [ngClass]="{ 'is-invalid': submitted && fval.bankEntity.errors }">
+                                                <div *ngIf="submitted && fval.bankEntity.errors" class="invalid-feedback">
+                                                    <div ngClass="fval.bankEntity.errors.required">
+                                                   Campo requerido.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Direccion</label>
+                                                <input type="text" class="form-control floating" id="address" placeholder="Dirección" formControlName="address" [(ngModel)]="account.address"required [ngClass]="{ 'is-invalid': submitted && fval.address.errors }">
+                                                <div *ngIf="submitted && fval.address.errors" class="invalid-feedback">
+                                                <div ngClass="fval.address.errors.required">
+                                                   Campo requerido.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Teléfono</label>
+                                                <input type="text" class="form-control floating" id="phone" placeholder="Teléfono" formControlName="phone" [(ngModel)]="account.phone"required [ngClass]="{ 'is-invalid': submitted && fval.phone.errors }">
+                                                <div *ngIf="submitted && fval.phone.errors" class="invalid-feedback">
+                                                    <div ngClass="fval.phone.errors.required">
+                                                   Campo requerido.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-right">
+                                            <div [hidden]="!isError">
+                                                <div style="color: red;text-align: left;">
+                                                {{message}}
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Activar cuenta</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        
+        
+    </div>
+</div>
