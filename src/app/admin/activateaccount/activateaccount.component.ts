@@ -33,7 +33,8 @@ export class ActivateaccountComponent implements OnInit {
     type:"",
     address:"",
     userId:"",
-    email:""
+    email:"",
+    fullProfile:false
   };
   message = "";  
   get fval() {
@@ -51,7 +52,7 @@ export class ActivateaccountComponent implements OnInit {
       .subscribe(
          account => this.router.navigate(['/succesActivateAccount'])
     );
-      console.log("hola");
+
     }
   onIsError(): void {
        

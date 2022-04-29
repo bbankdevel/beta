@@ -7,6 +7,7 @@ import { EmailmInterface } from './models/emailm-interface';
 import { UserWService } from "./user-w.service";
 import { InfoInterface } from './models/info-interface';
 import { AccountInterface } from './models/account-interface';
+import { TransactionInterface } from './models/transaction-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,8 @@ import { AccountInterface } from './models/account-interface';
 export class DataApiService {	
 
 	emailm: Observable<any>;
+	transaction: Observable<any>;
+	transactions: Observable<any>;
 	usercards: Observable<any>;
 	accounts: Observable<any>;
 	account: Observable<any>;
@@ -35,6 +38,10 @@ export class DataApiService {
 	getActiveAccountsReturn(){
 		const url_api = 'https://db.bbevolutionbank.com:3025/api/account?filter[where][status]=active';
 		return (this.accounts = this.http.get(url_api));
+	}	
+	getTransationsReturn(){
+		const url_api = 'https://db.bbevolutionbank.com:3025/api/transaction';
+		return (this.transactions = this.http.get(url_api));
 	}	
 	getNewAccountsReturn(){
 		const url_api = 'https://db.bbevolutionbank.com:3025/api/account?filter[where][status]=new';
@@ -62,11 +69,18 @@ export class DataApiService {
 		.put<AccountInterface>(url_api, account)
 		.pipe(map(data => data));
 	}
+	// 	updateuserAccount(user :UserInterface, id: string){
+	// 	const url_api=`https://db.bbevolutionbank.com:3025/api/user/${id}`;
+	// 	return this.http
+	// 	.put<UserInterface>(url_api, user)
+	// 	.pipe(map(data => data));
+	// }
 		
 	getAccountByUserd2(userd: string){
 		let indice = userd;
 		const url_api =  "https://db.bbevolutionbank.com:3025/api/account?filter[where][userId]=p"+indice;
 		this.account = this.http.get(url_api);
+
 		return (this.account);
 	}
 		settingsUpdate(info :InfoInterface, id: string){
@@ -74,6 +88,12 @@ export class DataApiService {
 		const url_api=`https://db.bbevolutionbank.com:3025/api/infos/${id}`;
 		return this.http
 		.put<InfoInterface>(url_api, info)
+		.pipe(map(data => data));
+	}
+	saveTransaction(transaction :TransactionInterface){
+		const url_api='https://db.bbevolutionbank.com:3025/api/transaction';
+		return this.http
+		.post<TransactionInterface>(url_api, transaction)
 		.pipe(map(data => data));
 	}
 }

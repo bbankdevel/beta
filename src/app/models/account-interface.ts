@@ -1,10 +1,12 @@
 export interface AccountInterface{
 	id?:string;
 	numberAccount?:string;
+	numberBankAccount?:string;
 	name?:string;
 	phone?:string;
 	email?:string;
 	subjectEmail?:string;
+	bankEntity?:string;
 	adminEmail?:string;
 	status?:string;
 	message?:string;
@@ -12,5 +14,6 @@ export interface AccountInterface{
 	address?:string;
 	usertype?:string;
 	userId?:string;
+	fullProfile?:boolean;
 	images?:Array<string>;
 }

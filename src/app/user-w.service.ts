@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class UserWService {
 	admin:boolean=false;
 	adminName:string;
+	accountActive:any={};
 	allLoaded:boolean=false;
 	buttonDisabled:boolean=false;
 	card:any={};
@@ -21,6 +22,7 @@ export class UserWService {
 	images:any[]=[];
 	info:any={};
 	isLogged:boolean=false;
+	fullProfile:boolean=false;
 	loginError:boolean=false;
 	loaded:boolean=false;
 	method:string;
@@ -30,8 +32,9 @@ export class UserWService {
 	type:string;
 	usertype:string;
 	user:any={};
+	userActive:any={};
 	userActiveId:string;
-
+	transactionType:string;
 	userId:string;
 	userW:any={};
 	appointmentUsercard:string;

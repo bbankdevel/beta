@@ -77,7 +77,7 @@ get fval() {
       .subscribe( 
         data => {
           //console.log(data);
-
+              this._uw.userActive=data.user;
               this.authService.setUser(data.user);
               const token = data.id;
               this.authService.setToken(token);
@@ -86,6 +86,9 @@ get fval() {
               this._uw.name=data.name;
               this._uw.email=data.user.email;
               this._uw.usertype=data.user.usertype;
+              this._uw.userActiveId=data.user.id;
+              this._uw.fullProfile=data.user.fullProfile;
+        //   console.log("id : "+this._uw.userActiveId);
               this._uw.userW=data.user;
               this._uw.isLogged=true;
               this._uw.appointmentUsercard= "p"+this._uw.appointmentUsercard;

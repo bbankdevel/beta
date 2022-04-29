@@ -7,4 +7,5 @@ export interface UserInterface{
 	status?:string;
 	message?:string;
 	usertype?:string;
+	fullProfile?:boolean;
 }

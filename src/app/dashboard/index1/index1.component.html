@@ -1,17 +1,77 @@
 
-<!--**********************************
-    Content body start
-***********************************-->
-<div class="content-body">
+<div class="content-body" >
     <!-- row -->
     <div class="container-fluid" *ngIf="_uw.usertype!=undefined">
-        <div class="row" [hidden]="_uw.usertype!=='customer'">
+        <div *ngIf="fullProfile!=undefined">
+            <div class="row justify-content-center h-100 align-items-center"  [hidden]="_uw.usertype!=='customer' || fullProfile">
+                <div class="col-lg-6 col-md-8">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+                                    <div class="text-center mb-3">
+                                        <form [formGroup]="ngFormCompleteAccount" (ngSubmit)="complete()">
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Numero de cuenta bancaria</label>
+                                                <input type="text" class="form-control floating" id="numberBankAccount" placeholder="# de cuenta Bancaria" formControlName="numberBankAccount" [(ngModel)]="account.numberBankAccount"required [ngClass]="{ 'is-invalid': submitted && fval.numberBankAccount.errors }">
+                                                <div *ngIf="submitted && fval.numberBankAccount.errors" class="invalid-feedback">
+                                                    <div ngClass="fval.numberBankAccount.errors.required">
+                                                       Campo requerido.
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Entidad bancaria</label>
+                                                <input type="text" class="form-control floating" id="bankEntity" placeholder="Entidad bancaria" formControlName="bankEntity" [(ngModel)]="account.bankEntity"required [ngClass]="{ 'is-invalid': submitted && fval.bankEntity.errors }">
+                                                <div *ngIf="submitted && fval.bankEntity.errors" class="invalid-feedback">
+                                                    <div ngClass="fval.bankEntity.errors.required">
+                                                   Campo requerido.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Direccion</label>
+                                                <input type="text" class="form-control floating" id="address" placeholder="Dirección" formControlName="address" [(ngModel)]="account.address"required [ngClass]="{ 'is-invalid': submitted && fval.address.errors }">
+                                                <div *ngIf="submitted && fval.address.errors" class="invalid-feedback">
+                                                <div ngClass="fval.address.errors.required">
+                                                   Campo requerido.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Teléfono</label>
+                                                <input type="text" class="form-control floating" id="phone" placeholder="Teléfono" formControlName="phone" [(ngModel)]="account.phone"required [ngClass]="{ 'is-invalid': submitted && fval.phone.errors }">
+                                                <div *ngIf="submitted && fval.phone.errors" class="invalid-feedback">
+                                                    <div ngClass="fval.phone.errors.required">
+                                                   Campo requerido.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-right">
+                                            <div [hidden]="!isError">
+                                                <div style="color: red;text-align: left;">
+                                                {{message}}
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Activar cuenta</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        
+        <div class="row" [hidden]="_uw.usertype!=='customer' || !fullProfile">
             <div class="col-xl-3 col-sm-6">
                 <div class="card overflow-hidden">
                     <div class="card overflow-hidden">
-                        <div class="card-header align-items-start border-0 pb-0" (click)="newRequest('one')">
+                        <div class="card-header align-items-start border-0 pb-0" (click)="newRequest('one')"style="cursor:pointer;">
                             <div class="mr-auto">
-                                <!-- <p class="mb-2 fs-13"><i class="fa fa-caret-up scale5 mr-2 text-success" aria-hidden="true"></i>4%(30 days)</p> -->
+                          
                                 <img style="max-width: 100%;"src="assets/images/operations/bankToUser.png" >
                                 <h4 class="text-black mb-0 font-w600">Cargar fondos a cuenta</h4>
                             </div>
@@ -19,7 +79,7 @@
                         </div>
                         <div class="card-body p-0">
                             
-                            <!-- <canvas id="widgetChart" class="max-h80 mt-auto"></canvas> -->
+                           
                             <div class="chart-wrapper">
                         
                             </div>
@@ -30,17 +90,16 @@
             <div class="col-xl-3 col-sm-6">
                 <div class="card overflow-hidden">
                     <div class="card overflow-hidden">
-                        <div class="card-header align-items-start border-0 pb-0">
+                        <div class="card-header align-items-start border-0 pb-0"  (click)="newRequest('two')"style="cursor:pointer;">
                             <div class="mr-auto">
-                                <!-- <p class="mb-2 fs-13"><i class="fa fa-caret-up scale5 mr-2 text-success" aria-hidden="true"></i>4%(30 days)</p> -->
+                              
                                 <img  style="max-width: 100%;"       src="assets/images/operations/userToCard.png">
                                 <h4 class="text-black mb-0 font-w600">Cargar fondos a tarjeta</h4>
                             </div>
                     
                         </div>
                         <div class="card-body p-0">
-                            
-                            <!-- <canvas id="widgetChart" class="max-h80 mt-auto"></canvas> -->
+                         
                             <div class="chart-wrapper">
                         
                             </div>
@@ -50,9 +109,9 @@
             </div>
             <div class="col-xl-3 col-sm-6">
                 <div class="card overflow-hidden">
-                    <div class="card-header align-items-start border-0 pb-0">
+                    <div class="card-header align-items-start border-0 pb-0"  (click)="newRequest('three')"style="cursor:pointer;">
                         <div class="mr-auto">
-                            <!-- <p class="mb-2 fs-13"><i class="fa fa-caret-up scale5 mr-2 text-success" aria-hidden="true"></i>4%(30 days)</p> -->
+                           
                             <img  style="max-width: 100%;"   src="assets/images/operations/userToUser.png">
                             <h4 class="text-black mb-0 font-w600">Transferir a otro usuario</h4>
                         </div>
@@ -60,7 +119,7 @@
                     </div>
                     <div class="card-body p-0">
                         
-                        <!-- <canvas id="widgetChart" class="max-h80 mt-auto"></canvas> -->
+                      
                         <div class="chart-wrapper">
                       
                         </div>
@@ -69,9 +128,9 @@
             </div>
             <div class="col-xl-3 col-sm-6">
                 <div class="card overflow-hidden">
-                    <div class="card-header align-items-start border-0 pb-0">
+                    <div class="card-header align-items-start border-0 pb-0"  (click)="newRequest('four')" style="cursor:pointer;">
                         <div class="mr-auto">
-                            <!-- <p class="mb-2 fs-13"><i class="fa fa-caret-up scale5 mr-2 text-success" aria-hidden="true"></i>4%(30 days)</p> -->
+                           
                             <img  style="max-width: 100%;"   src="assets/images/operations/userToBank.png">
                             <h4 class="text-black mb-0 font-w600">Retirar fondos</h4>
                         </div>
@@ -79,7 +138,7 @@
                     </div>
                     <div class="card-body p-0">
                         
-                        <!-- <canvas id="widgetChart" class="max-h80 mt-auto"></canvas> -->
+                  
                         <div class="chart-wrapper">
                       
                         </div>
@@ -99,17 +158,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-6 col-xxl-12" [hidden]="_uw.usertype!=='customer'">
+            <!-- <div class="col-xl-6 col-xxl-12" [hidden]="_uw.usertype!=='customer'">
                 <div class="row" >
                     <div class="col-sm-12">
                      Nada que mostrar por ahora.
                     </div>
                    
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
-<!--**********************************
-    Content body end
-***********************************-->

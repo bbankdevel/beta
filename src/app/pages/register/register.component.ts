@@ -47,15 +47,16 @@ export class RegisterComponent implements OnInit {
     numberAccount:"",
     status:"new",
     userId:"",
-     name:"",
+    name:"",
     email:"",
     subjectEmail:"",
     address:"",
     message:"",
     images:[],
-     usertype:"",
+    usertype:"",
     phone:"",
-    type:"default"
+    type:"default",
+    fullProfile:false
   }; 
 
   loadAPI = null;
@@ -98,6 +99,7 @@ export class RegisterComponent implements OnInit {
         );
       this.accountSubmit.usertype='customer';
       this.accountSubmit.status='new';
+      this.accountSubmit.fullProfile=false
       setTimeout(() => {
         if (this.isError==false){  
             this.saveAccount(this.accountSubmit);
