@@ -272,8 +272,8 @@ public transactions: transaction[] = [{}]
  public getTransactions(){
 	 	this.dataApi.getTransationsReturn().subscribe(
 	 		(resp)=>(
-	 			transactions = resp, 
-	 			collectionSize = (transactions).length)
+	 			this.transactions = resp, 
+	 			collectionSize = (this.transactions).length)
 	 		);
  }    
     
@@ -283,8 +283,8 @@ public transactions: transaction[] = [{}]
   transactions: TRANSACTIONS[];
   
   updateTransactionListing() {
-      if (!!(transactions)){
-        transactions = transactions
+      if (!!(this.transactions)){
+        this.transactions = this.transactions
           .map((customer, i) => ({id: i + 1, ...customer}))
           .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
       }  
