@@ -47,10 +47,11 @@ export class ActivateaccountComponent implements OnInit {
         } 
         this._uw.accountToEdit.numberAccount=this.account.numberAccount;
         let id = this._uw.accountToEdit.id;
-        console.log("id : "+id);
+        this._uw.accountToEdit.fullProfile=true;
+      //  console.log("id : "+id);
       this.dataApi.updateAccount(this._uw.accountToEdit,id)
       .subscribe(
-         account => this.router.navigate(['/succesActivateAccount'])
+         account => this.router.navigate(['/admin/index1'])
     );
 
     }
