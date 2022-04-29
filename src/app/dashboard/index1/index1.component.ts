@@ -75,6 +75,11 @@ export class Index1Component implements OnInit {
       return;
         } 
       this.account.fullProfile=true;
+      this.account.zero=true;
+      this.account.one=true;
+      this.account.two=false;
+      this.account.three=false;
+      this.account.four=true;
       this.fullProfile=true;
       this.dataApi.updateAccount(this.account, this.accountId)
       .subscribe();

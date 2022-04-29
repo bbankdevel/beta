@@ -63,7 +63,7 @@ export class AccComponent implements OnInit {
   }
   
  public loadAccount(){
-  if (this._uw.userActiveId!==undefined &&  this._uw.usertype=='customer' ){
+  if (!!this._uw.userActiveId&&  this._uw.usertype=='customer' ){
       this.dataApi.getAccountByUserd2(this._uw.userActiveId)
       .subscribe(
         (account: AccountInterface) => (
