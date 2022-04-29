@@ -5,6 +5,8 @@ import { AccountInterface } from '../../models/account-interface';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { isError } from "util";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-acc',
   templateUrl: './acc.component.html',
