@@ -23,6 +23,11 @@ export class Index1Component implements OnInit {
   ) { }
   public isError = false;
   public fullProfile = false;
+  public zero = false;
+  public one = false;
+  public two = false;
+  public three = false;
+  public four = false;
   public accountId = "";
   public isLogged =false;
   public accounts : AccountInterface ;
@@ -44,6 +49,11 @@ export class Index1Component implements OnInit {
            // console.log(""+this.accounts[0].fullProfile),
            this.accountId=this.accounts[0].id,
           this.fullProfile=this.accounts[0].fullProfile,
+          this.zero=this.accounts[0].zero,
+          this.one=this.accounts[0].one,
+          this.two=this.accounts[0].two,
+          this.three=this.accounts[0].three,
+          this.four=this.accounts[0].four,
           this.account=this.accounts[0]
           )
         );

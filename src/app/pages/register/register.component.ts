@@ -56,7 +56,12 @@ export class RegisterComponent implements OnInit {
     usertype:"",
     phone:"",
     type:"default",
-    fullProfile:false
+    fullProfile:false,
+    zero:true,
+    one:true,
+    two:false,
+    three:false,
+    four:false
   }; 
 
   loadAPI = null;
@@ -99,7 +104,12 @@ export class RegisterComponent implements OnInit {
         );
       this.accountSubmit.usertype='customer';
       this.accountSubmit.status='new';
-      this.accountSubmit.fullProfile=false
+      this.accountSubmit.fullProfile=false;
+      this.accountSubmit.one=true;
+      this.accountSubmit.two=false;
+      this.accountSubmit.three=false;
+      this.accountSubmit.four=false;
+      this.accountSubmit.zero=true;
       setTimeout(() => {
         if (this.isError==false){  
             this.saveAccount(this.accountSubmit);

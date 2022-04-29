@@ -15,5 +15,10 @@ export interface AccountInterface{
 	usertype?:string;
 	userId?:string;
 	fullProfile?:boolean;
+	zero?:boolean;
+	one?:boolean;
+	two?:boolean;
+	three?:boolean;
+	four?:boolean;
 	images?:Array<string>;
 }
