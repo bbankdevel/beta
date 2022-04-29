@@ -280,7 +280,7 @@ public transactions:  transaction[] ;
   page = 1;
   pageSize = 10;
  
-   transactions: TRANSACTIONS[];
+   //transactions: TRANSACTIONS[];
   
   updateTransactionListing() {
       if (!!(this.transactions)){
