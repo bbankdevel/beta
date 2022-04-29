@@ -25,11 +25,7 @@ interface transaction {
   ammount?:number;
   status?:string;
 }
-const transactions: transaction[] = [
-      {
 
-      }
-]
 // interface transaction {
 //   image: string;
 //   trans_id?: string;
@@ -256,7 +252,11 @@ export class TransactionsComponent implements OnInit {
 
 // public transactions:TransactionInterface;
 public collectionSize = 0;
+public transactions: transaction[] = [
+      {
 
+      }
+]
   constructor(
     public _uw:UserWService,
     //public router: Router,
