@@ -25,7 +25,7 @@ interface transaction {
   ammount?:number;
   status?:string;
 }
-const TRANSACTIONS: transaction[] = [
+const transactions: transaction[] = [
       {
 
       }
@@ -275,8 +275,8 @@ public collectionSize = 0;
 
  public getTransactions(){
 	 	this.dataApi.getTransationsReturn().subscribe(
-	 		(transactions)=>(
-	 			transactions = transactions, 
+	 		(resp)=>(
+	 			transactions = resp, 
 	 			collectionSize = (transactions).length)
 	 		);
  }    
@@ -284,7 +284,7 @@ public collectionSize = 0;
   page = 1;
   pageSize = 10;
  
-  transactions: transactions[];
+  transactions: TRANSACTIONS[];
   
   updateTransactionListing() {
       if (!!(transactions)){
