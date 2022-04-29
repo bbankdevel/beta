@@ -252,11 +252,7 @@ export class TransactionsComponent implements OnInit {
 
 // public transactions:TransactionInterface;
 public collectionSize = 0;
-public transactions: transaction[] = [
-      {
-
-      }
-]
+public transactions: transaction[] = [{}]
   constructor(
     public _uw:UserWService,
     //public router: Router,
