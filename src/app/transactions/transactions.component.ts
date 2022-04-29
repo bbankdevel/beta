@@ -6,6 +6,7 @@ import {  throwError } from 'rxjs';
 import { Observable }  from 'rxjs/internal/Observable';
 import { map, catchError } from 'rxjs/operators';
 
+
 //import 'rxjs/add/operator/map'
 
 
@@ -28,7 +29,7 @@ const TRANSACTIONS: transaction[] = [
       {
 
       }
-],
+]
 // interface transaction {
 //   image: string;
 //   trans_id?: string;
