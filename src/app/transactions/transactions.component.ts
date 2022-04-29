@@ -271,8 +271,8 @@ public transactions: transaction[] = [{}]
 
  public getTransactions(){
 	 	this.dataApi.getTransationsReturn().subscribe(
-	 		(resp)=>(
-	 			this.transactions = resp, 
+	 		(transactions)=>(
+	 			this.transactions = transactions, 
 	 			collectionSize = (this.transactions).length)
 	 		);
  }    
