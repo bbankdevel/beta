@@ -34,7 +34,6 @@ export class DataApiService {
 		this.info = this.http.get(url_api);
 		return (this.info);
 	}
-
 	getActiveAccountsReturn(){
 		const url_api = 'https://db.bbevolutionbank.com:3025/api/account?filter[where][status]=active';
 		return (this.accounts = this.http.get(url_api));
@@ -47,40 +46,28 @@ export class DataApiService {
 		const url_api = 'https://db.bbevolutionbank.com:3025/api/account?filter[where][status]=new';
 		return (this.accounts = this.http.get(url_api));
 	}
-
-	
 	sendMailNewCustomer(emailm){
 		const url_api='https://zqqvy9pk23.execute-api.us-east-1.amazonaws.com/production/newcustomer';
 		return this.http
 		.post(url_api, emailm)
 		.pipe(map(data => data));
 	}
-
 	saveAccount(account :AccountInterface){
 		const url_api='https://db.bbevolutionbank.com:3025/api/account';
 		return this.http
 		.post<AccountInterface>(url_api, account)
 		.pipe(map(data => data));
 	}
-			
 	updateAccount(account :AccountInterface, id: string){
 		const url_api=`https://db.bbevolutionbank.com:3025/api/account/${id}`;
 		return this.http
 		.put<AccountInterface>(url_api, account)
 		.pipe(map(data => data));
 	}
-	// 	updateuserAccount(user :UserInterface, id: string){
-	// 	const url_api=`https://db.bbevolutionbank.com:3025/api/user/${id}`;
-	// 	return this.http
-	// 	.put<UserInterface>(url_api, user)
-	// 	.pipe(map(data => data));
-	// }
-		
 	getAccountByUserd2(userd: string){
 		let indice = userd;
 		const url_api =  "https://db.bbevolutionbank.com:3025/api/account?filter[where][userId]=p"+indice;
 		this.account = this.http.get(url_api);
-
 		return (this.account);
 	}
 		settingsUpdate(info :InfoInterface, id: string){

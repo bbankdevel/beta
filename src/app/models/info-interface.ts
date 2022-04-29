@@ -6,6 +6,7 @@ export interface InfoInterface {
 	adminName?:string;
 	type?:string;
 	bitcoinaddress?:string;
+	terms?:string;
 	paypaladdress?:string;
 	zelleaddress?:string;
 	bitcoin?:number;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 import { UserWService } from "../../user-w.service";
 import { DataApiService } from '../../data-api.service';
 import { Location } from '@angular/common';
@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../auth.service';
 import { InfoInterface } from '../../models/info-interface';
 import { AccountInterface } from '../../models/account-interface';
-
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
