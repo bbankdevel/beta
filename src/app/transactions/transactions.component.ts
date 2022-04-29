@@ -19,7 +19,7 @@ import { map, catchError } from 'rxjs/operators';
 
 interface transaction {
 
-  id?:string;
+  id?:number;
   type?:string;
   beneficiaryId?:string;
   ammount?:number;
@@ -280,7 +280,7 @@ public transactions: transaction[] = [{}]
   page = 1;
   pageSize = 10;
  
-  transactions: TRANSACTIONS[];
+  // transactions: TRANSACTIONS[];
   
   updateTransactionListing() {
       if (!!(this.transactions)){
