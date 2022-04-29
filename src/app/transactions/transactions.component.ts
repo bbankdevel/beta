@@ -252,7 +252,7 @@ export class TransactionsComponent implements OnInit {
 
 // public transactions:TransactionInterface;
 public collectionSize = 0;
-public transactions: transaction[] = [{}]
+public transactions: transaction;
   constructor(
     public _uw:UserWService,
     //public router: Router,
@@ -273,7 +273,7 @@ public transactions: transaction[] = [{}]
 	 	this.dataApi.getTransationsReturn().subscribe(
 	 		(transactions)=>(
 	 			this.transactions = transactions, 
-	 			collectionSize = (this.transactions).length)
+	 			this.collectionSize = (this.transactions).length)
 	 		);
  }    
     
