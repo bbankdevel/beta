@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AccountInterface } from '../../models/account-interface'; 
 import { DataApiService } from '../../data-api.service';
 import { UserWService } from "../../user-w.service";
-
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-accounts',

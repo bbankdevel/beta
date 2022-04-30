@@ -3,6 +3,7 @@ import { DataApiService } from '../../data-api.service';
 import { UserWService } from "../../user-w.service";
 import { AccountInterface } from '../../models/account-interface'; 
 import { TransactionInterface } from '../../models/transaction-interface'; 
+import { CreditcardInterface } from '../../models/creditcard-interface'; 
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { isError } from "util";
@@ -28,6 +29,9 @@ export class NewrequestComponent implements OnInit {
       public dataApi:DataApiService
   ) { }
 
+  public creditcard : CreditcardInterface={
+    status:"new"
+  }; 
   public transaction : TransactionInterface={
     type:"one",
     beneficiaryId:"",
@@ -46,9 +50,15 @@ export class NewrequestComponent implements OnInit {
     return this.ngFormOne.controls;
   }
 
+
   public saveTransaction(transaction){
     return this.dataApi.saveTransaction(this.transaction)
        .subscribe(transaction => this.router.navigate(['/admin/index'])
+        );
+  }
+  public newCreditcard(creditcard){
+    return this.dataApi.newCreditcard(this.creditcard)
+       .subscribe(creditcard => this.router.navigate(['/admin/index'])
         );
   }
 
@@ -61,6 +71,11 @@ export class NewrequestComponent implements OnInit {
       this.transaction.beneficiaryId="p"+this._uw.userActive.id;
       this.saveTransaction(this.transaction);
     }
+  }
+  public goNewCard(){
+    this.creditcard.userId="p"+this._uw.userActive.id;
+    this.creditcard.email=this._uw.email;
+    this.newCreditcard(this.creditcard);    
   }
 
   onIsError(): void {

@@ -101,6 +101,7 @@ import { InvoiceComponent } from './apps/shop/invoice/invoice.component';
 import { EcomCustomersComponent } from './apps/shop/ecom-customers/ecom-customers.component';
 import { CustomersComponent } from './admin/customers/customers.component';
 import { AccountsComponent } from './admin/accounts/accounts.component';
+import { CreditcardsComponent } from './admin/creditcards/creditcards.component';
 import { ActivateaccountComponent } from './admin/activateaccount/activateaccount.component';
 import { AccComponent } from './admin/acc/acc.component';
 import { SettingsComponent } from './admin/settings/settings.component';
@@ -677,6 +678,7 @@ import { SwitcherComponent } from './switcher/switcher.component';
   	EcomCustomersComponent,
     CustomersComponent,
     AccountsComponent,
+    CreditcardsComponent,
     ActivateaccountComponent,
     SuccessaaComponent,
     AccComponent,

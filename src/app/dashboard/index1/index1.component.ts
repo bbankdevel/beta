@@ -6,7 +6,17 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { isError } from "util";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+interface Alert {
+  type: string;
+  message: string;
+}
 
+const ALERTS: Alert[] = [{
+  
+    type: 'info',
+    message: 'Cuenta activada con éxito',
+  }
+];
 @Component({
   selector: 'app-index1',
   templateUrl: './index1.component.html',
@@ -15,12 +25,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class Index1Component implements OnInit {
   ngFormCompleteAccount: FormGroup;
   submitted = false;
+   alerts: Alert[];
   constructor(    
     public _uw:UserWService,
     public router: Router,
     private formBuilder: FormBuilder,
     public dataApi:DataApiService
-  ) { }
+  ) { 
+  this.reset();
+  }
   public isError = false;
   public fullProfile = false;
   public zero = false;
@@ -37,7 +50,13 @@ export class Index1Component implements OnInit {
     address:"",
     phone:""
   };
+  close(alert: Alert) {
+    this.alerts.splice(this.alerts.indexOf(alert), 1);
+  }
 
+  reset() {
+    this.alerts = Array.from(ALERTS);
+  }
 
 
  public loadAccount(){

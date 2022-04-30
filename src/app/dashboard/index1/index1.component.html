@@ -1,7 +1,14 @@
 
 <div class="content-body" >
     <!-- row -->
+  
     <div class="container-fluid" *ngIf="_uw.usertype!=undefined">
+      <!--   <p *ngFor="let alert of alerts">
+          <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
+        </p>
+        <p>
+          <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+        </p> -->
         <div *ngIf="fullProfile!=undefined">
             <div class="row justify-content-center h-100 align-items-center"  [hidden]="_uw.usertype!=='customer' || fullProfile">
                 <div class="col-lg-6 col-md-8">

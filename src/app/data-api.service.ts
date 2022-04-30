@@ -6,6 +6,7 @@ import { AuthService } from './auth.service';
 import { EmailmInterface } from './models/emailm-interface';
 import { UserWService } from "./user-w.service";
 import { InfoInterface } from './models/info-interface';
+import { CreditcardInterface } from './models/creditcard-interface';
 import { AccountInterface } from './models/account-interface';
 import { TransactionInterface } from './models/transaction-interface';
 
@@ -18,6 +19,8 @@ export class DataApiService {
 	transaction: Observable<any>;
 	transactions: Observable<any>;
 	usercards: Observable<any>;
+	creditcards: Observable<any>;
+	creditcard: Observable<any>;
 	accounts: Observable<any>;
 	account: Observable<any>;
 	info: Observable<any>;
@@ -34,6 +37,14 @@ export class DataApiService {
 		this.info = this.http.get(url_api);
 		return (this.info);
 	}
+	getNewCreditcardsReturn(){
+		const url_api = 'https://db.bbevolutionbank.com:3025/api/creditcard?filter[where][status]=new';
+		return (this.creditcards = this.http.get(url_api));
+	}
+	getActiveCreditcardsReturn(){
+		const url_api = 'https://db.bbevolutionbank.com:3025/api/creditcard?filter[where][status]=active';
+		return (this.creditcards = this.http.get(url_api));
+	}	
 	getActiveAccountsReturn(){
 		const url_api = 'https://db.bbevolutionbank.com:3025/api/account?filter[where][status]=active';
 		return (this.accounts = this.http.get(url_api));
@@ -45,7 +56,7 @@ export class DataApiService {
 	getNewAccountsReturn(){
 		const url_api = 'https://db.bbevolutionbank.com:3025/api/account?filter[where][status]=new';
 		return (this.accounts = this.http.get(url_api));
-	}
+	}	
 	sendMailNewCustomer(emailm){
 		const url_api='https://zqqvy9pk23.execute-api.us-east-1.amazonaws.com/production/newcustomer';
 		return this.http
@@ -56,6 +67,12 @@ export class DataApiService {
 		const url_api='https://db.bbevolutionbank.com:3025/api/account';
 		return this.http
 		.post<AccountInterface>(url_api, account)
+		.pipe(map(data => data));
+	}
+	newCreditcard(creditcard :CreditcardInterface){
+		const url_api='https://db.bbevolutionbank.com:3025/api/creditcard';
+		return this.http
+		.post<CreditcardInterface>(url_api, creditcard)
 		.pipe(map(data => data));
 	}
 	updateAccount(account :AccountInterface, id: string){

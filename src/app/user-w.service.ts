@@ -11,6 +11,7 @@ export class UserWService {
 	buttonDisabled:boolean=false;
 	card:any={};
 	accountToEdit:any={};
+	creditcardToEdit:any={};
 	account:any={};
 	usercard:any={};
 	cardsResult:any[]=[];
