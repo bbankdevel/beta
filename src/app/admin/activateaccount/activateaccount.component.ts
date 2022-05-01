@@ -24,7 +24,6 @@ export class ActivateaccountComponent implements OnInit {
   ) { }
   public isError = false;
   public isLogged =false;
-
   public account : AccountInterface ={
     name:"",
     numberAccount:"",
@@ -37,24 +36,30 @@ export class ActivateaccountComponent implements OnInit {
     fullProfile:false
   };
   message = "";  
+
   get fval() {
     return this.ngFormActivateAccount.controls;
     }
+
     public activate (){
       this.submitted = true;
       if (this.ngFormActivateAccount.invalid) {
-      return;
+        return;
         } 
-        this._uw.accountToEdit.numberAccount=this.account.numberAccount;
-        let id = this._uw.accountToEdit.id;
-        this._uw.accountToEdit.fullProfile=true;
-      //  console.log("id : "+id);
+      this._uw.accountToEdit.numberAccount=this.account.numberAccount;
+      let id = this._uw.accountToEdit.id;
+      // this._uw.accountToEdit.fullProfile=false;
+      this._uw.accountToEdit.status="active";
+      this._uw.alerts.push({
+            type: "info",
+            message: "Cuenta activada con exito"
+        });
       this.dataApi.updateAccount(this._uw.accountToEdit,id)
-      .subscribe(
-         account => this.router.navigate(['/admin/index1'])
-    );
-
+        .subscribe(
+           account => this.router.navigate(['/admin/index'])
+        );
     }
+
   onIsError(): void {
        
       this.isError = true;
@@ -63,6 +68,7 @@ export class ActivateaccountComponent implements OnInit {
         //this.isError = false;
       }, 4000);
     }
+
   ngOnInit(): void {
     this.ngFormActivateAccount = this.formBuilder.group({
       numberAccount: ['', [Validators.required]]

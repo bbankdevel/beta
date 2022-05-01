@@ -53,13 +53,25 @@ export class NewrequestComponent implements OnInit {
 
   public saveTransaction(transaction){
     return this.dataApi.saveTransaction(this.transaction)
-       .subscribe(transaction => this.router.navigate(['/admin/index'])
-        );
+      .subscribe((transaction) => (
+          this.router.navigate(['/admin/index']),
+          this._uw.alerts.push({
+              type: "info",
+              message: "Su solicitud 'carga de fondos' fue registrada con éxito"
+          })
+        )
+      );
   }
   public newCreditcard(creditcard){
     return this.dataApi.newCreditcard(this.creditcard)
-       .subscribe(creditcard => this.router.navigate(['/admin/index'])
-        );
+       .subscribe((creditcard) => (
+        this.router.navigate(['/admin/index']),
+        this._uw.alerts.push({
+              type: "info",
+              message: "Su solicitud de tarjeta fue registrada con éxito"
+          })
+        )
+      );
   }
 
   

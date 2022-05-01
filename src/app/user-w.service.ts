@@ -15,6 +15,7 @@ export class UserWService {
 	account:any={};
 	usercard:any={};
 	cardsResult:any[]=[];
+	alerts:any[]=[];
 	errorFormUpdateUsercard:boolean;
 	file:any[]=[];st
 	filter:boolean=false;

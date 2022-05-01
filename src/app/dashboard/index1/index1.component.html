@@ -3,16 +3,16 @@
     <!-- row -->
   
     <div class="container-fluid" *ngIf="_uw.usertype!=undefined">
-      <!--   <p *ngFor="let alert of alerts">
+        <p *ngFor="let alert of alerts">
           <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
         </p>
-        <p>
-          <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+       <!--  <p>
+          <button type="button" class="btn btn-primary" (click)="reset()">load</button>
         </p> -->
         <div *ngIf="fullProfile!=undefined">
             <div class="row justify-content-center h-100 align-items-center"  [hidden]="_uw.usertype!=='customer' || fullProfile">
                 <div class="col-lg-6 col-md-8">
-                    <div class="authincation-content">
+                    <!-- <div class="">
                         <div class="row no-gutters">
                             <div class="col-xl-12">
                                 <div class="auth-form">
@@ -67,7 +67,11 @@
                                 </div>
                             </div>
                         </div>
+                    </div> 
                     </div>
+                        -->
+                    Actualizando...
+                    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
                 </div>
             </div>
         </div>    
@@ -75,69 +79,62 @@
         <div class="row" [hidden]="_uw.usertype!=='customer' || !fullProfile">
             <div class="col-xl-3 col-sm-6" *ngIf="one">
                 <div class="card overflow-hidden">
-                    <div class="card overflow-hidden">
-                        <div class="card-header align-items-start border-0 pb-0" (click)="newRequest('one')"style="cursor:pointer;">
-                            <div class="mr-auto">
-                          
-                                <img style="max-width: 100%;"src="assets/images/operations/bankToUser.png" >
-                                <h4 class="text-black mb-0 font-w600">Cargar fondos a cuenta</h4>
-                            </div>
+                    <div class="card-header align-items-start border-0 pb-0" (click)="newRequest('one')"style="cursor:pointer;">
+                        <div class="mr-auto" style="padding-bottom: 12%;">
+                      
+                            <img style="max-width: 100%;"src="assets/images/operations/bankToUser.png" >
+                            <h4 class="text-black mb-0 font-w600">Cargar fondos a cuenta</h4>
+                        </div>
+                
+                    </div>
+                    <div class="card-body p-0">                   
+                       
+                        <div class="chart-wrapper">
                     
                         </div>
-                        <div class="card-body p-0">
-                            
-                           
-                            <div class="chart-wrapper">
-                        
-                            </div>
-                        </div>
                     </div>
-                </div>
+                </div>                
             </div>
             <div class="col-xl-3 col-sm-6" disabled="disabled" *ngIf="zero">
                 <div class="card overflow-hidden">
-                    <div class="card overflow-hidden">
-                        <div class="card-header align-items-start border-0 pb-0"  (click)="newRequest('zero')"style="cursor:pointer;">
-                            <div class="mr-auto">
-                              
-                                <img  style="max-width: 100%;"       src="assets/images/operations/newCard.png">
-                                <h4 class="text-black mb-0 font-w600">Solicitar tarjeta</h4>
-                            </div>
+                    <div class="card-header align-items-start border-0 pb-0"  (click)="newRequest('zero')"style="cursor:pointer;">
+                        <div class="mr-auto" style="padding-bottom: 12%;">
+                          
+                            <img  style="max-width: 100%;"       src="assets/images/operations/newCard.png">
+                            <h4 class="text-black mb-0 font-w600">Solicitar tarjeta</h4>
+                        </div>
+                
+                    </div>
+                    <div class="card-body p-0">
+                     
+                        <div class="chart-wrapper">
                     
                         </div>
-                        <div class="card-body p-0">
-                         
-                            <div class="chart-wrapper">
-                        
-                            </div>
-                        </div>
                     </div>
-                </div>
+                </div>                
             </div>
             <div class="col-xl-3 col-sm-6" disabled="disabled" *ngIf="two">
                 <div class="card overflow-hidden">
-                    <div class="card overflow-hidden">
-                        <div class="card-header align-items-start border-0 pb-0"  (click)="newRequest('two')"style="cursor:pointer;">
-                            <div class="mr-auto">
-                              
-                                <img  style="max-width: 100%;"       src="assets/images/operations/userToCard.png">
-                                <h4 class="text-black mb-0 font-w600">Cargar fondos a tarjeta</h4>
-                            </div>
+                    <div class="card-header align-items-start border-0 pb-0"  (click)="newRequest('two')"style="cursor:pointer;">
+                        <div class="mr-auto" style="padding-bottom: 12%;">
+                          
+                            <img  style="max-width: 100%;"       src="assets/images/operations/userToCard.png">
+                            <h4 class="text-black mb-0 font-w600">Cargar fondos a tarjeta</h4>
+                        </div>
+                
+                    </div>
+                    <div class="card-body p-0">
+                     
+                        <div class="chart-wrapper">
                     
                         </div>
-                        <div class="card-body p-0">
-                         
-                            <div class="chart-wrapper">
-                        
-                            </div>
-                        </div>
                     </div>
-                </div>
+                </div>                
             </div>
             <div class="col-xl-3 col-sm-6" *ngIf="three">
                 <div class="card overflow-hidden">
                     <div class="card-header align-items-start border-0 pb-0"  (click)="newRequest('three')"style="cursor:pointer;"  enabled="enabled">
-                        <div class="mr-auto">
+                        <div class="mr-auto" style="padding-bottom: 12%;">
                            
                             <img  style="max-width: 100%;"   src="assets/images/operations/userToUser.png">
                             <h4 class="text-black mb-0 font-w600">Transferir a otro usuario</h4>
@@ -156,7 +153,7 @@
             <div class="col-xl-3 col-sm-6" *ngIf="four">
                 <div class="card overflow-hidden">
                     <div class="card-header align-items-start border-0 pb-0"  (click)="newRequest('four')" style="cursor:pointer;">
-                        <div class="mr-auto">
+                        <div class="mr-auto" style="padding-bottom: 12%;">
                            
                             <img  style="max-width: 100%;"   src="assets/images/operations/userToBank.png"  enabled="enabled">
                             <h4 class="text-black mb-0 font-w600">Retirar fondos</h4>

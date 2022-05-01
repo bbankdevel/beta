@@ -32,6 +32,12 @@ export class AccComponent implements OnInit {
   };
   ngOnInit(): void {
       this.loadAccount();
+      this.ngFormCompleteAccount = this.formBuilder.group({
+      numberBankAccount: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      bankEntity: ['', [Validators.required]],
+      phone: ['', [Validators.required]]
+      });
   }
     
      public complete(){
@@ -42,7 +48,14 @@ export class AccComponent implements OnInit {
       this.account.fullProfile=true;
       this.fullProfile=true;
       this.dataApi.updateAccount(this.account, this.accountId)
-      .subscribe();
+      .subscribe((account)=>(
+        this._uw.alerts.push({
+            type: "info",
+            message: "Los datos de la cuenta han sido actualizados con éxito"
+          }),
+        this.router.navigate(['/admin/index'])
+        )
+      );
   }
    get fval() {
     return this.ngFormCompleteAccount.controls;

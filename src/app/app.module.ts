@@ -108,6 +108,7 @@ import { SettingsComponent } from './admin/settings/settings.component';
 import { SuccessaaComponent } from './admin/successaa/successaa.component';
 import { HistoryComponent } from './admin/history/history.component';
 import { NewrequestComponent } from './admin/newrequest/newrequest.component';
+import { TransdetailComponent } from './admin/transdetail/transdetail.component';
 
 
 import { ApexComponent } from './charts/apex/apex.component';
@@ -685,7 +686,7 @@ import { SwitcherComponent } from './switcher/switcher.component';
     SettingsComponent,
     HistoryComponent,
     NewrequestComponent,
-
+    TransdetailComponent,
     ApexComponent,
   	LineComponent,
   	BasicLineChartComponent,

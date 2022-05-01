@@ -12,11 +12,12 @@ interface Alert {
 }
 
 const ALERTS: Alert[] = [{
-  
     type: 'info',
-    message: 'Cuenta activada con éxito',
+    message: 'example text',
   }
 ];
+
+
 @Component({
   selector: 'app-index1',
   templateUrl: './index1.component.html',
@@ -52,14 +53,18 @@ export class Index1Component implements OnInit {
   };
   close(alert: Alert) {
     this.alerts.splice(this.alerts.indexOf(alert), 1);
+    this._uw.alerts=this.alerts;
   }
 
   reset() {
-    this.alerts = Array.from(ALERTS);
+    this.alerts = Array.from(this._uw.alerts);
   }
 
 
  public loadAccount(){
+
+   
+
   if (this._uw.userActiveId!==undefined &&  this._uw.usertype=='customer' ){
       this.dataApi.getAccountByUserd2(this._uw.userActiveId)
       .subscribe(
@@ -77,9 +82,15 @@ export class Index1Component implements OnInit {
           )
         );
     }
+    setTimeout(() => {
+        if(!this.fullProfile){this.router.navigate(['/admin/acc'])}
+      }, 4000);
+
   }
 
   ngOnInit(): void {
+    // this,alerts=this._uw.alerts;
+    // this.alerts = Array.from(this._uw.alerts);
     this.loadAccount();
     this.ngFormCompleteAccount = this.formBuilder.group({
       numberBankAccount: ['', [Validators.required]],
@@ -97,11 +108,19 @@ export class Index1Component implements OnInit {
       this.account.zero=true;
       this.account.one=true;
       this.account.two=false;
-      this.account.three=false;
+      this.account.three=true;
       this.account.four=true;
       this.fullProfile=true;
       this.dataApi.updateAccount(this.account, this.accountId)
-      .subscribe();
+      .subscribe((account)=>(
+        // this.router.navigate(['/admin/index']),
+         this.reset(),
+          this._uw.alerts.push({
+            type: "info",
+            message: "Los datos de la cuenta han sido actualizados con éxito"
+          })
+        )
+      );
   }
    get fval() {
     return this.ngFormCompleteAccount.controls;
