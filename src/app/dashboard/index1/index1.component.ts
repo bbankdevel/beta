@@ -62,7 +62,6 @@ public transaction:TransactionInterface;
       .subscribe(
         (transactions: TransactionInterface) => (
           this.transactions=transactions,
-          this.size= this.transactions.length,
           this.saldoSumary()
 
         )
