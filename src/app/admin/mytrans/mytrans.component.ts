@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 
 export class MytransComponent implements OnInit {
 public clear = true;
-public waiting=false         
+public waiting=false ;        
 public transactions:TransactionInterface;
 public transaction:TransactionInterface;
   constructor(
@@ -28,6 +28,7 @@ public transaction:TransactionInterface;
 
   public getMyTansactions(){
     if (this._uw.userActiveId!==undefined &&  this._uw.usertype=='customer' ){
+      this.waiting=true;         
       this.dataApi.getTransactionsByUserId(this._uw.userActiveId)
       .subscribe(
         (transactions: TransactionInterface) => (

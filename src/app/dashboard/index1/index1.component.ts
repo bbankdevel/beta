@@ -86,9 +86,11 @@ public transaction:TransactionInterface;
   }
   public saldoSumary(){
     console.log(+this._uw.transactionsSize);
-    for(let i=0 ;i <=this._uw.transactionsSize; i++){
-      if(this.transactions[i].type==='one' && this.transactions[i].status==='complete' ){ 
-        this.saldo=this.saldo+this.transactions[i].ammount;
+    if(!!this.transactions){
+      for(let i=0 ;i <=this._uw.transactionsSize; i++){
+        if(this.transactions[i].type==='one' && this.transactions[i].status==='complete' ){ 
+          this.saldo=this.saldo+this.transactions[i].ammount;
+        }
       }
     }
   }
