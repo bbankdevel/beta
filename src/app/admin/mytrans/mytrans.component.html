@@ -1,0 +1,74 @@
+
+<div class="content-body">
+	<div class="container-fluid">
+		<div >
+			<span [hidden]="this.waiting  || !this.clear">
+				Nada que mostar por ahora
+			</span>
+		</div>
+			<div [hidden]="!this.waiting">Cargando...
+				<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+			</div>
+		
+		
+		<div class="row page-titles mx-0 " *ngIf="!this.clear">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Transacciones </h4>
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+            	</ol>
+            </div>
+        </div>
+		<div class="row" >			
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-body">
+						<div class="table-responsive"> 
+						<!-- <span [hidden]="!waiting">Loading, please wait...</soan>	  -->
+							<table class="table table-responsive-md mb-0 table-striped" *ngIf="transactions!=undefined">
+								<thead>
+									<tr>
+										<th>Monto</th>
+										<th>Fecha</th>
+										<th>Tipo</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody id="customers">
+									<tr class="btn-reveal-trigger" *ngFor="let transaction of transactions">
+										<td class="py-3">
+											<a href="javascript:void(0);">
+												<div class="media d-flex align-items-center">												
+													<div class="media-body">
+														<h5 class="mb-0 fs--1">{{transaction.ammount}}</h5>
+													</div>
+												</div>
+											</a>
+										</td>
+										<td class="py-2" *ngIf="transaction.type==='one'">
+											Carga de fondos a cuenta
+										</td>
+										<td class="py-2"><a
+										href="mailto:ricky@example.com">{{transaction.createdAt |  date:'mediumDate'}}</a>
+										</td>
+										<td *ngIf="transaction.status==='active'">
+											<a class="btn-link text-success float-right">ACTIVE</a>
+										</td>
+										<td *ngIf="transaction.status==='new'">
+											<a class="btn-link text-light float-right">PENDING</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					<!-- 	<app-indeterminate-progress-bar></app-indeterminate-progress-bar> -->
+					<!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

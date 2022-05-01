@@ -41,7 +41,7 @@
             </li>
         </ul>
         <ul class="metismenu" id="menu2" metis-menu [hidden]="_uw.usertype!=='customer'">
-            <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref)> -1}"><a class="ai-icon"  >
+            <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref)> -1}"><a class="ai-icon"   [routerLink]="['/admin/mycards']" >
                 <i class="flaticon-381-id-card"></i>
                 <span class="nav-text">Mis tarjetas</span>
                 </a>
@@ -50,7 +50,7 @@
                     <li><a [routerLink]=""class="{{(currentHref == '/admin/accounts') ? 'mm-active' : ''}}">tarjetas activas</a></li>
                 </ul> -->
             </li>
-            <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}"><a class=" ai-icon"  >
+            <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}"><a class=" ai-icon"  [routerLink]="['/admin/mytrans']"  >
                 <i class="flaticon-381-book"></i>
                 <span class="nav-text">Mis transacciones</span>
                 </a>

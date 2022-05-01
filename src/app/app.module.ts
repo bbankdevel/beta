@@ -109,6 +109,8 @@ import { SuccessaaComponent } from './admin/successaa/successaa.component';
 import { HistoryComponent } from './admin/history/history.component';
 import { NewrequestComponent } from './admin/newrequest/newrequest.component';
 import { TransdetailComponent } from './admin/transdetail/transdetail.component';
+import { MycardsComponent } from './admin/mycards/mycards.component';
+import { MytransComponent } from './admin/mytrans/mytrans.component';
 
 
 import { ApexComponent } from './charts/apex/apex.component';
@@ -687,6 +689,8 @@ import { SwitcherComponent } from './switcher/switcher.component';
     HistoryComponent,
     NewrequestComponent,
     TransdetailComponent,
+    MycardsComponent,
+    MytransComponent,
     ApexComponent,
   	LineComponent,
   	BasicLineChartComponent,

@@ -25,6 +25,8 @@ import { AccComponent } from './admin/acc/acc.component';
 import { SettingsComponent } from './admin/settings/settings.component';
 import { HistoryComponent } from './admin/history/history.component';
 import { NewrequestComponent } from './admin/newrequest/newrequest.component';
+import { MycardsComponent } from './admin/mycards/mycards.component';
+import { MytransComponent } from './admin/mytrans/mytrans.component';
 
 
 import { ApexComponent } from './charts/apex/apex.component';
@@ -164,6 +166,8 @@ const routes: Routes = [
                         {path: 'settings', component: SettingsComponent},
                         {path: 'history', component: HistoryComponent},
                         {path: 'newrequest', component: NewrequestComponent},
+                        {path: 'mycards', component: MycardsComponent},
+                        {path: 'mytrans', component: MytransComponent},
                         // {path: 'transactions', component: TransactionsComponent},
                         
                         {path: 'chart-apex', component: ApexComponent},

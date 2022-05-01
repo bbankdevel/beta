@@ -100,4 +100,10 @@ export class DataApiService {
 		.post<TransactionInterface>(url_api, transaction)
 		.pipe(map(data => data));
 	}
+	getTransactionsByUserId(userd: string){
+		let indice = userd;
+		const url_api =  "https://db.bbevolutionbank.com:3025/api/transaction?filter[where][userId]=p"+indice;
+		this.transaction = this.http.get(url_api);
+		return (this.transaction);
+	}
 }

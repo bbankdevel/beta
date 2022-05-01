@@ -50,6 +50,10 @@ export class NewrequestComponent implements OnInit {
     return this.ngFormOne.controls;
   }
 
+ get fval2() {
+    return this.ngFormTwo.controls;
+  }
+
 
   public saveTransaction(transaction){
     return this.dataApi.saveTransaction(this.transaction)
@@ -81,6 +85,16 @@ export class NewrequestComponent implements OnInit {
       this.transaction.ammount=this.transaction.ammount;
       this.transaction.type="one";
       this.transaction.beneficiaryId="p"+this._uw.userActive.id;
+      this.transaction.userId="p"+this._uw.userActive.id;
+      this.saveTransaction(this.transaction);
+    }
+  } 
+  public goDepositToCard(){
+    this.submitted = true;
+    if (this.ngFormTwo.valid){
+      this.transaction.ammount=this.transaction.ammount;
+      this.transaction.type="three";
+      this.transaction.beneficiaryId="p"+this._uw.userActive.id;
       this.saveTransaction(this.transaction);
     }
   }
@@ -99,6 +113,9 @@ export class NewrequestComponent implements OnInit {
 
   ngOnInit(): void {
     this.ngFormOne = this.formBuilder.group({
+      ammount: [0, [Validators.required]]
+      });
+    this.ngFormTwo = this.formBuilder.group({
       ammount: [0, [Validators.required]]
       });
   }
