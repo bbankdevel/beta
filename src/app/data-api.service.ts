@@ -32,6 +32,13 @@ export class DataApiService {
   	headers : HttpHeaders = new HttpHeaders({
   		"Content-Type":"application/json"
   		});
+
+
+  getTotalTransactions(userId: string){
+  		let indice = userId;
+  		const url_api =  "https://db.bbevolutionbank.com:3025/api/transaction?filter[where][userId]=p"+indice;
+		return (this.transactions = this.http.get(url_api));
+	}
 		getInfo(){
 		const url_api=`https://db.bbevolutionbank.com:3025/api/infos/`;
 		this.info = this.http.get(url_api);
@@ -79,6 +86,18 @@ export class DataApiService {
 		const url_api=`https://db.bbevolutionbank.com:3025/api/account/${id}`;
 		return this.http
 		.put<AccountInterface>(url_api, account)
+		.pipe(map(data => data));
+	}
+	updateCreditcard(creditcard :CreditcardInterface, id: string){
+		const url_api=`https://db.bbevolutionbank.com:3025/api/creditcard/${id}`;
+		return this.http
+		.put<CreditcardInterface>(url_api, creditcard)
+		.pipe(map(data => data));
+	}
+	updateTransaction(transaction :TransactionInterface, id: string){
+		const url_api=`https://db.bbevolutionbank.com:3025/api/transaction/${id}`;
+		return this.http
+		.put<TransactionInterface>(url_api, transaction)
 		.pipe(map(data => data));
 	}
 	getAccountByUserd2(userd: string){

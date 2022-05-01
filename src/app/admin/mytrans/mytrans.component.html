@@ -54,8 +54,8 @@
 										<td class="py-2"><a
 										href="mailto:ricky@example.com">{{transaction.createdAt |  date:'mediumDate'}}</a>
 										</td>
-										<td *ngIf="transaction.status==='active'">
-											<a class="btn-link text-success float-right">ACTIVE</a>
+										<td *ngIf="transaction.status==='complete'">
+											<a class="btn-link text-success float-right">COMPLETED</a>
 										</td>
 										<td *ngIf="transaction.status==='new'">
 											<a class="btn-link text-light float-right">PENDING</a>

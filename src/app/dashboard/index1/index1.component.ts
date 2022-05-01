@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { isError } from "util";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TransactionInterface } from '../../models/transaction-interface'; 
 interface Alert {
   type: string;
   message: string;
@@ -35,6 +36,8 @@ export class Index1Component implements OnInit {
   ) { 
   this.reset();
   }
+  public size=0;
+  public saldo=0;
   public isError = false;
   public fullProfile = false;
   public zero = false;
@@ -44,13 +47,53 @@ export class Index1Component implements OnInit {
   public four = false;
   public accountId = "";
   public isLogged =false;
-  public accounts : AccountInterface ;
-  public account : AccountInterface ={
+  public transactions:TransactionInterface;
+public transaction:TransactionInterface;
+  public accounts : AccountInterface  ;
+    public account : AccountInterface ={
     numberBankAccount:"",
     bankEntity:"",
     address:"",
     phone:""
   };
+  public getMyTansactions(){
+    if (this._uw.userActiveId!==undefined &&  this._uw.usertype=='customer' ){
+      this.dataApi.getTransactionsByUserId(this._uw.userActiveId)
+      .subscribe(
+        (transactions: TransactionInterface) => (
+          this.transactions=transactions,
+          this.size= this.transactions.length,
+          this.saldoSumary()
+
+        )
+      );
+    }
+  }
+  public getTotalTansactions(){
+    if (this._uw.userActiveId!==undefined &&  this._uw.usertype=='customer' ){
+      this.dataApi.getTotalTransactions(this._uw.userActiveId)
+      .subscribe((res:any)=>{ 
+          if(res[0] === undefined ){ 
+            return
+          }
+          else
+            { 
+            this._uw.transactionsSize=res.length;
+           
+             this.saldoSumary();
+          }
+        });
+    }
+  }
+  public saldoSumary(){
+    for(let i ;i <=this._uw.transactionsSize; i++){
+      if(this.transactions[i].type==='one' && this.transactions[i].status==='complete' ){ 
+        this.saldo=this.saldo+this.transactions[i].ammount;
+        console.log("saldo "+this.saldo);
+      }
+    }
+  }
+
   close(alert: Alert) {
     this.alerts.splice(this.alerts.indexOf(alert), 1);
     this._uw.alerts=this.alerts;
@@ -60,11 +103,7 @@ export class Index1Component implements OnInit {
     this.alerts = Array.from(this._uw.alerts);
   }
 
-
  public loadAccount(){
-
-   
-
   if (this._uw.userActiveId!==undefined &&  this._uw.usertype=='customer' ){
       this.dataApi.getAccountByUserd2(this._uw.userActiveId)
       .subscribe(
@@ -89,6 +128,7 @@ export class Index1Component implements OnInit {
   }
 
   ngOnInit(): void {
+       this.getTotalTansactions();
     // this,alerts=this._uw.alerts;
     // this.alerts = Array.from(this._uw.alerts);
     this.loadAccount();

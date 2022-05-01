@@ -5,6 +5,8 @@ import { UserWService } from "../user-w.service";
 import {  throwError } from 'rxjs';
 import { Observable }  from 'rxjs/internal/Observable';
 import { map, catchError } from 'rxjs/operators';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 //import 'rxjs/add/operator/map'
@@ -255,14 +257,17 @@ public collectionSize = 0;
 public transactions:  transaction[] ;
   constructor(
     public _uw:UserWService,
-    //public router: Router,
+    public router: Router,
     public dataApi:DataApiService
   	) {
 		
 		this.updateTransactionListing();
  
   }
-
+public transactionview(transaction){
+  this._uw.transactionToEdit=transaction;
+       this.router.navigate(['/admin/transactionview']);
+}
   ngOnInit(): void {
   	// this.transactions==[null];
 

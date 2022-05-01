@@ -83,6 +83,7 @@ export class NewrequestComponent implements OnInit {
     this.submitted = true;
     if (this.ngFormOne.valid){
       this.transaction.ammount=this.transaction.ammount;
+      this.transaction.email=this._uw.email;
       this.transaction.type="one";
       this.transaction.beneficiaryId="p"+this._uw.userActive.id;
       this.transaction.userId="p"+this._uw.userActive.id;

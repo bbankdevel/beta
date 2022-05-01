@@ -1,88 +1,54 @@
-
-<!--**********************************
-    Content body start
-***********************************-->
 <div class="content-body">
-            <!-- row -->
-			<div class="container-fluid">
-	
-				<div class="row">
-					<div class="col-xl-12">
-						<div class="table-responsive table-hover fs-14">
-							<table class="table display mb-4 dataTablesCard dataTable short-one  card-table text-black" id="example5">
-								<thead>
-									<tr>
-										<!-- <th>
-											<div class="checkbox mr-0 align-self-center">
-												<div class="custom-control custom-checkbox ">
-													<input type="checkbox" class="custom-control-input" id="checkAll" required="">
-													<label class="custom-control-label" for="checkAll"></label>
-												</div>
-											</div>
-										</th> -->
-										<!-- <th> ID</th> -->
-										<!-- <th>Fecha</th> -->
-										<th>De</th>
-										<th>A</th>
-										<th>Tipo</th>
-										<th>Monto</th>
-										<!-- <th>Nota</th> -->
-										<th>Estado</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr *ngFor="let transaction of transactions; let i= index">
-										<td class="pr-0">
-												<!-- <img class="ic-icon" src="{{transaction.image}}" /> -->
-											<!-- <span class="bg-success ic-icon"></span> -->
-											de
-										</td>
-										<!-- <td>{{transaction.trans_id}}</td> -->
-										<!-- <td>{{transaction.trans_date}}</td> -->
-										<td></td>
-										<td>
-											<div class="d-flex align-items-center">
-												<!-- <img src="{{transaction.user_image}}"  class="rounded-circle mr-2 width40 height40" alt=""> -->
-												<span *ngIf="transaction.type=='one'">carga de fondos</span>
-												<span *ngIf="transaction.type=='two'">carga de fondos a tarjeta</span>
-												<span *ngIf="transaction.type=='three'">transferencia a otro usuario</span>
-												<span *ngIf="transaction.type=='four'">retiro de fondos</span>
-											</div>
-										</td>
-										<td class="wspace-no">
-										<!-- 	<img src="{{transaction.coin_image}}" class="mr-2"/> -->
-											<span class="text-black">{{transaction.ammount}}</span>
-										</td>
-										<td>
-											<a href="javascript:void(0);" class="btn-link text-light float-right" *ngIf="transaction.status=='new'">PENDING</a>
-											<a href="javascript:void(0);" class="btn-link text-light float-success" *ngIf="transaction.status=='completed'">COMPLETED</a>
-										</td>
-								<!-- 		<td>
-											<p class="mb-0 wspace-no">{{transaction.note}}</p>
-										</td> -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="table-responsive table-hover fs-14">
+					<table class="table display mb-4 dataTablesCard dataTable short-one  card-table text-black" id="example5">
+						<thead>
+							<tr>
+								<th>De</th>
+								<th>A</th>
+								<th>Tipo</th>
+								<th>Monto</th>
+								<th>Estado</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let transaction of transactions; let i= index">
+								<td class="pr-0" >
+									de
+								</td>
+								<td></td>
+								<td >
+									<div class="d-flex align-items-center">
 										
-									</tr>
-                                    
-                                    
-                                
-                                </tbody>
-							</table>
-                            
-                            <div class="d-flex justify-content-between p-2">
-                                <ngb-pagination class="mr-3" [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="updateTransactionListing()">
-                                </ngb-pagination>
-                                
-                                <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="updateTransactionListing()">
-                                    <option [ngValue]="5">5 resultados por pagina</option>
-                                    <option [ngValue]="10">10 resultados por pagina</option>
-                                    <option [ngValue]="20">20 resultados por pagina</option>
-                                </select>
-                            </div>
-						</div>	
-					</div>
-				</div>
-            </div>
-        </div>
-<!--**********************************
-    Content body end
-***********************************-->
+										<span *ngIf="transaction.type=='one'">carga de fondos</span>
+										<span *ngIf="transaction.type=='two'">carga de fondos a tarjeta</span>
+										<span *ngIf="transaction.type=='three'">transferencia a otro usuario</span>
+										<span *ngIf="transaction.type=='four'">retiro de fondos</span>
+									</div>
+								</td>
+								<td class="wspace-no" >
+									<span class="text-black">{{transaction.ammount}}</span>
+								</td>
+								<td  style="cursor:pointer;">
+									<a (click)="transactionview(transaction)"class="btn-link text-light float-right" *ngIf="transaction.status=='new'" style="cursor:pointer;">PENDING</a>
+									<a href="javascript:void(0);" class="btn-link text-success float-right" *ngIf="transaction.status=='complete'">COMPLETED</a>
+								</td>
+							</tr>
+                        </tbody>
+					</table>
+                    <div class="d-flex justify-content-between p-2">
+                        <ngb-pagination class="mr-3" [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="updateTransactionListing()">
+                        </ngb-pagination>
+                        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="updateTransactionListing()">
+                            <option [ngValue]="5">5 resultados por pagina</option>
+                            <option [ngValue]="10">10 resultados por pagina</option>
+                            <option [ngValue]="20">20 resultados por pagina</option>
+                        </select>
+                    </div>
+				</div>	
+			</div>
+		</div>
+    </div>
+</div>

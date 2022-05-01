@@ -12,6 +12,7 @@ export class UserWService {
 	card:any={};
 	accountToEdit:any={};
 	creditcardToEdit:any={};
+	transactionToEdit:any={};
 	account:any={};
 	usercard:any={};
 	cardsResult:any[]=[];
@@ -31,6 +32,7 @@ export class UserWService {
 	name:string;
 	email:string;
 	total:number=0;
+	transactionsSize:number=0;
 	type:string;
 	usertype:string;
 	user:any={};

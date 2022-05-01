@@ -111,7 +111,8 @@ import { NewrequestComponent } from './admin/newrequest/newrequest.component';
 import { TransdetailComponent } from './admin/transdetail/transdetail.component';
 import { MycardsComponent } from './admin/mycards/mycards.component';
 import { MytransComponent } from './admin/mytrans/mytrans.component';
-
+import { TransactionviewComponent } from './admin/transactionview/transactionview.component';
+import { ActivatecardComponent } from './admin/activatecard/activatecard.component';
 
 import { ApexComponent } from './charts/apex/apex.component';
 import { LineComponent } from './charts/apex/line/line.component';
@@ -1226,6 +1227,8 @@ import { SwitcherComponent } from './switcher/switcher.component';
      WalletCoinChartComponent,
      WalletActivityComponent,
      TransactionsComponent,
+     TransactionviewComponent,
+     ActivatecardComponent,
      PortofolioComponent,
      MyProfileComponent,
      CoinHoldingComponent,

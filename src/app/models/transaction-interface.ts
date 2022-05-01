@@ -5,4 +5,6 @@ export interface TransactionInterface {
 	beneficiaryId?:string;
 	ammount?:number;
 	status?:string;
+	email?:string;
+
 }
