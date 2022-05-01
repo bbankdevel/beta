@@ -78,8 +78,8 @@ public transaction:TransactionInterface;
           else
             { 
             this._uw.transactionsSize=res.length;
-           
-             this.saldoSumary();
+            this.transactions=res;
+            this.saldoSumary();
           }
         });
     }
@@ -88,7 +88,6 @@ public transaction:TransactionInterface;
     for(let i ;i <=this._uw.transactionsSize; i++){
       if(this.transactions[i].type==='one' && this.transactions[i].status==='complete' ){ 
         this.saldo=this.saldo+this.transactions[i].ammount;
-        console.log("saldo "+this.saldo);
       }
     }
   }
