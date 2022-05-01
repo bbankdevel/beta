@@ -169,7 +169,16 @@
                     </div>
                 </div>
             </div>
+        </div> 
+        <div class="row" [hidden]="_uw.usertype!=='customer' || !fullProfile">
+            <div class="col-xl-3 col-xxl-4">
+                <app-my-profile></app-my-profile>
+            </div>
+            <div class="col-xl-9 col-xxl-8">
+                <app-coin-holding [data]="coinHolding"></app-coin-holding>
+            </div>
         </div>
+
 
         <div class="row">
             <div class="col-xl-6 col-xxl-12" [hidden]="_uw.usertype!=='admin'">
