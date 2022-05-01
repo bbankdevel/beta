@@ -83,7 +83,7 @@ export class Index1Component implements OnInit {
         );
     }
     setTimeout(() => {
-        if(!this.fullProfile){this.router.navigate(['/admin/acc'])}
+        if(!this.fullProfile && this._uw.usertype=='customer'){this.router.navigate(['/admin/acc'])}
       }, 4000);
 
   }
