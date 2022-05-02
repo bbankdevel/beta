@@ -268,7 +268,7 @@ public transactions:  transaction[] ;
   public accounts : AccountInterface  ;
 public transactionview(transaction){
   this._uw.transactionToEdit=transaction;
-  this.dataApi.getAccountByUserd2(this._uw.transactionToEdit.beneficiaryId)
+  this.dataApi.getAccountByUserID(this._uw. .beneficiaryId)
       .subscribe(
         (account: AccountInterface) => (
           this._uw.accountForTransfer=account[0],

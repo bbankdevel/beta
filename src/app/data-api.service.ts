@@ -106,6 +106,12 @@ export class DataApiService {
 		this.account = this.http.get(url_api);
 		return (this.account);
 	}
+	getAccountByUserID(userId: string){
+		let indice = userId;
+		const url_api =  "https://db.bbevolutionbank.com:3025/api/account?filter[where][userId]="+indice;
+		this.account = this.http.get(url_api);
+		return (this.account);
+	}
 	settingsUpdate(info :InfoInterface, id: string){
 		// let token = this.authService.getToken();
 		const url_api=`https://db.bbevolutionbank.com:3025/api/infos/${id}`;
