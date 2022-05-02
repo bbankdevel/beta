@@ -51,6 +51,9 @@
 										<td class="py-2" *ngIf="transaction.type==='one'">
 											Carga de fondos a cuenta
 										</td>
+										<td class="py-2" *ngIf="transaction.type==='four'">
+											Retiro de fondos
+										</td>
 										<td class="py-2"><a
 										href="mailto:ricky@example.com">{{transaction.createdAt |  date:'mediumDate'}}</a>
 										</td>

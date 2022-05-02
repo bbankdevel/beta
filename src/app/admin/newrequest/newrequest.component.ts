@@ -17,6 +17,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class NewrequestComponent implements OnInit {
   submitted = false;
+  submitted2 = false;
+  submitted4 = false;
   public waiting = false;
   title = 'bbev';
   navSidebarClass: boolean = true;
@@ -53,6 +55,9 @@ export class NewrequestComponent implements OnInit {
  get fval2() {
     return this.ngFormTwo.controls;
   }
+ get fval3() {
+    return this.ngFormTwo.controls;
+  }
 
 
   public saveTransaction(transaction){
@@ -62,6 +67,17 @@ export class NewrequestComponent implements OnInit {
           this._uw.alerts.push({
               type: "info",
               message: "Su solicitud 'carga de fondos' fue registrada con éxito"
+          })
+        )
+      );
+  }
+  public saveTransactionE(transaction){
+    return this.dataApi.saveTransaction(this.transaction)
+      .subscribe((transaction) => (
+          this.router.navigate(['/admin/index']),
+          this._uw.alerts.push({
+              type: "info",
+              message: "Su solicitud 'retiro de fondos' fue registrada con éxito"
           })
         )
       );
@@ -90,12 +106,25 @@ export class NewrequestComponent implements OnInit {
       this.saveTransaction(this.transaction);
     }
   } 
+  public goRetiro(){
+    this.submitted4 = true;
+    if (this.ngFormFour.valid){
+      this.transaction.ammount=this.transaction.ammount;
+      this.transaction.email=this._uw.email;
+      this.transaction.type="four";
+      this.transaction.beneficiaryId="p"+this._uw.userActive.id;
+      this.transaction.userId="p"+this._uw.userActive.id;
+      this.saveTransactionE(this.transaction);
+    }
+  } 
   public goDepositToCard(){
-    this.submitted = true;
+    this.submitted2 = true;
     if (this.ngFormTwo.valid){
       this.transaction.ammount=this.transaction.ammount;
+       this.transaction.email=this._uw.email;
       this.transaction.type="three";
       this.transaction.beneficiaryId="p"+this._uw.userActive.id;
+      this.transaction.userId="p"+this._uw.userActive.id;
       this.saveTransaction(this.transaction);
     }
   }
@@ -117,6 +146,9 @@ export class NewrequestComponent implements OnInit {
       ammount: [0, [Validators.required]]
       });
     this.ngFormTwo = this.formBuilder.group({
+      ammount: [0, [Validators.required]]
+      });
+    this.ngFormFour = this.formBuilder.group({
       ammount: [0, [Validators.required]]
       });
   }

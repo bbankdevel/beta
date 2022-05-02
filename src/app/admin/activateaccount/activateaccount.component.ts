@@ -33,7 +33,9 @@ export class ActivateaccountComponent implements OnInit {
     address:"",
     userId:"",
     email:"",
-    fullProfile:false
+    fullProfile:false,
+    two:false,
+    three:false
   };
   message = "";  
 
@@ -50,6 +52,8 @@ export class ActivateaccountComponent implements OnInit {
       let id = this._uw.accountToEdit.id;
       // this._uw.accountToEdit.fullProfile=false;
       this._uw.accountToEdit.status="active";
+      this._uw.accountToEdit.two=true;
+      this._uw.accountToEdit.three=true;
       this._uw.alerts.push({
             type: "info",
             message: "Cuenta activada con exito"

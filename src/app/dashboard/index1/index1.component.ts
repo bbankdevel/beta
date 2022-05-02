@@ -84,10 +84,14 @@ export class Index1Component implements OnInit {
     }
   }
   public sumaryAmount(){
+    this.saldo=0;
     if(!!this.transactions){
       for(let i=0 ;i <=this._uw.transactionsSize; i++){
         if(this.transactions[i].type==='one' && this.transactions[i].status==='complete' ){ 
           this.saldo=this.saldo+this.transactions[i].ammount;
+        }
+        if(this.transactions[i].type==='four' && this.transactions[i].status==='complete' ){ 
+          this.saldo=this.saldo-this.transactions[i].ammount;
         }
       }
     }
