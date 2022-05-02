@@ -66,7 +66,7 @@ export class NewrequestComponent implements OnInit {
           this.router.navigate(['/admin/index']),
           this._uw.alerts.push({
               type: "info",
-              message: "Su solicitud 'carga de fondos' fue registrada con éxito"
+              message: "Su solicitud fue registrada con éxito"
           })
         )
       );
