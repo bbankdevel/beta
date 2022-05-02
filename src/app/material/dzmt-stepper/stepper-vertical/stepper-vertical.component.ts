@@ -86,7 +86,7 @@ public goAmount(stepper: MatStepper){
       firstCtrl: ['', Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: [0 Validators.required]
+      secondCtrl: [0, Validators.required]
     });
   }
 
