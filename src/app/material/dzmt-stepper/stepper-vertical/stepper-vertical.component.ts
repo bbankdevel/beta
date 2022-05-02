@@ -66,7 +66,7 @@ public goAmount(stepper: MatStepper){
         this.transaction.ammount=this.secondCtrl;
         this.transaction.type="three";
         this.transaction.status="new";
-        this.transaction.beneficiaryId="p"+this._uw.accountDestin.userId;
+        this.transaction.beneficiaryId=this._uw.accountDestin.userId;
         this.transaction.remiteId=this._uw.userActiveId;
         this.transaction.email=this._uw.email;
       this.dataApi.saveTransaction(this.transaction)
