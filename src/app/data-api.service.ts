@@ -39,7 +39,7 @@ export class DataApiService {
   		const url_api =  "https://db.bbevolutionbank.com:3025/api/transaction?filter[where][userId]=p"+indice;
 		return (this.transactions = this.http.get(url_api));
 	}
-		getInfo(){
+	getInfo(){
 		const url_api=`https://db.bbevolutionbank.com:3025/api/infos/`;
 		this.info = this.http.get(url_api);
 		return (this.info);
@@ -106,7 +106,7 @@ export class DataApiService {
 		this.account = this.http.get(url_api);
 		return (this.account);
 	}
-		settingsUpdate(info :InfoInterface, id: string){
+	settingsUpdate(info :InfoInterface, id: string){
 		// let token = this.authService.getToken();
 		const url_api=`https://db.bbevolutionbank.com:3025/api/infos/${id}`;
 		return this.http

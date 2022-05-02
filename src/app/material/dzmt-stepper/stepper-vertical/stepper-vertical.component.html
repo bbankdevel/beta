@@ -29,7 +29,7 @@
       <mat-form-field>
         <mat-label>Monto a transferir</mat-label>
         <input matInput formControlName="secondCtrl" placeholder="Monto a tansferir"
-               required>
+           [(ngModel)]="secondCtrl" type="number"   required>
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Atras</button>
@@ -39,10 +39,10 @@
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Confirmar</ng-template>
-    <p>Desea confimar la transferencia de fondos.</p>
+    <p>Desea confimar la transferencia de fondos?</p>
     <div>
       <button mat-button matStepperPrevious>Atras</button>
-      <button mat-button (click)="stepper.reset()">Si</button>
+      <button  (click)="ok(stepper)" >Si</button>
     </div>
   </mat-step>
 </mat-vertical-stepper>
