@@ -53,6 +53,20 @@ export class ActivatecardComponent implements OnInit {
         );
     }
 
+    public negative (){   
+      let id = this._uw.creditcardToEdit.id;
+      // this._uw.creditcardToEdit.fullProfile=false;
+      this._uw.creditcardToEdit.status="negative";
+      this._uw.alerts.push({
+            type: "danger",
+            message: "La solicitud de tajeta ha sido denegada"
+        });
+      this.dataApi.updateCreditcard(this._uw.creditcardToEdit,id)
+        .subscribe(
+           creditcard => this.router.navigate(['/admin/index'])
+        );
+    }
+
   onIsError(): void {
        
       this.isError = true;

@@ -76,8 +76,8 @@
 							<table class="table table-responsive-md mb-0 table-striped" *ngIf="creditcards!=undefined">
 								<thead>
 									<tr>
-										<th>Email</th>
-										<th>date</th>
+										<th>Numero</th>
+										<th>Propietario</th>
 										<th>Status</th>
 									</tr>
 								</thead>
@@ -87,13 +87,13 @@
 											<a href="javascript:void(0);">
 												<div class="media d-flex align-items-center">												
 													<div class="media-body">
-														<h5 class="mb-0 fs--1">{{creditcard.email}}</h5>
+														<h5 class="mb-0 fs--1">{{creditcard.number}}</h5>
 													</div>
 												</div>
 											</a>
 										</td>
 										<td class="py-2"><a
-										href="mailto:ricky@example.com">{{creditcard.createdAt |  date:'mediumDate'}}</a></td>
+										href="mailto:ricky@example.com">{{creditcard.email}}</a></td>
 											<td>
 											<a class="btn-link text-success float-right">ACTIVE</a>
 										</td>

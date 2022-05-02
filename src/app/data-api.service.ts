@@ -100,8 +100,8 @@ export class DataApiService {
 		.put<TransactionInterface>(url_api, transaction)
 		.pipe(map(data => data));
 	}
-	getAccountByUserd2(userd: string){
-		let indice = userd;
+	getAccountByUserd2(userId: string){
+		let indice = userId;
 		const url_api =  "https://db.bbevolutionbank.com:3025/api/account?filter[where][userId]=p"+indice;
 		this.account = this.http.get(url_api);
 		return (this.account);
@@ -119,10 +119,16 @@ export class DataApiService {
 		.post<TransactionInterface>(url_api, transaction)
 		.pipe(map(data => data));
 	}
-	getTransactionsByUserId(userd: string){
-		let indice = userd;
+	getTransactionsByUserId(userId: string){
+		let indice = userId;
 		const url_api =  "https://db.bbevolutionbank.com:3025/api/transaction?filter[where][userId]=p"+indice;
 		this.transaction = this.http.get(url_api);
 		return (this.transaction);
+	}
+	getCreditcardsByUserId(userId: string){
+		let indice = userId;
+		const url_api =  "https://db.bbevolutionbank.com:3025/api/creditcard?filter[where][userId]=p"+indice;
+		this.creditcard = this.http.get(url_api);
+		return (this.creditcard);
 	}
 }

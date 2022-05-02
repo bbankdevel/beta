@@ -22,11 +22,11 @@ public transaction:TransactionInterface;
     ) { }
 
   ngOnInit(): void {
-      this.getMyTansactions();
+      this.getMyTransactions();
   }
      
 
-  public getMyTansactions(){
+  public getMyTransactions(){
     if (this._uw.userActiveId!==undefined &&  this._uw.usertype=='customer' ){
       this.waiting=true;         
       this.dataApi.getTransactionsByUserId(this._uw.userActiveId)

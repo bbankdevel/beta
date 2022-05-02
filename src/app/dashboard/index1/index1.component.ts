@@ -6,7 +6,9 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { isError } from "util";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TransactionInterface } from '../../models/transaction-interface'; 
+import { TransactionInterface } from '../../models/transaction-interface';
+import { CreditcardInterface } from '../../models/creditcard-interface'; 
+
 interface Alert {
   type: string;
   message: string;
@@ -27,7 +29,11 @@ const ALERTS: Alert[] = [{
 export class Index1Component implements OnInit {
   ngFormCompleteAccount: FormGroup;
   submitted = false;
-   alerts: Alert[];
+  alerts: Alert[];
+  public waiting = true;
+  public clear = true;
+  public clear2 = true;
+  
   constructor(    
     public _uw:UserWService,
     public router: Router,
@@ -47,27 +53,20 @@ export class Index1Component implements OnInit {
   public four = false;
   public accountId = "";
   public isLogged =false;
+  public creditcards:CreditcardInterface;
+  public creditcard:CreditcardInterface;
+  public newCreditcards:CreditcardInterface; 
+  public newAccounts:AccountInterface;
   public transactions:TransactionInterface;
-public transaction:TransactionInterface;
+  public transaction:TransactionInterface;
   public accounts : AccountInterface  ;
-    public account : AccountInterface ={
+  public account : AccountInterface ={
     numberBankAccount:"",
     bankEntity:"",
     address:"",
     phone:""
   };
-  public getMyTansactions(){
-    if (this._uw.userActiveId!==undefined &&  this._uw.usertype=='customer' ){
-      this.dataApi.getTransactionsByUserId(this._uw.userActiveId)
-      .subscribe(
-        (transactions: TransactionInterface) => (
-          this.transactions=transactions,
-          this.saldoSumary()
-
-        )
-      );
-    }
-  }
+ 
   public getTotalTansactions(){
     if (this._uw.userActiveId!==undefined &&  this._uw.usertype=='customer' ){
       this.dataApi.getTotalTransactions(this._uw.userActiveId)
@@ -79,13 +78,12 @@ public transaction:TransactionInterface;
             { 
             this._uw.transactionsSize=res.length;
             this.transactions=res;
-            this.saldoSumary();
+            this.sumaryAmount();
           }
         });
     }
   }
-  public saldoSumary(){
-    console.log(+this._uw.transactionsSize);
+  public sumaryAmount(){
     if(!!this.transactions){
       for(let i=0 ;i <=this._uw.transactionsSize; i++){
         if(this.transactions[i].type==='one' && this.transactions[i].status==='complete' ){ 
@@ -127,12 +125,39 @@ public transaction:TransactionInterface;
       }, 4000);
 
   }
+  getNewAccounts(){
+        this.waiting=true;
+        this.dataApi.getNewAccountsReturn().subscribe((res:any) => {
+      if (res[0] === undefined){
+        this.clear = true;
+        // console.log("hey");
+       }else{
+        this.clear = false;
+        this.waiting=false;
+        this.newAccounts=res;            
+        }
+     });  
+    }
+    getNewCreditcards(){
+        this.waiting=true;
+        this.dataApi.getNewCreditcardsReturn().subscribe((res:any) => {
+      if (res[0] === undefined){
+        this.clear2 = true;
+        // console.log("hey");
+       }else{
+        this.clear2 = false;
+        this.waiting=false;
+        this.newCreditcards=res;            
+        }
+     });  
+    }
+    
 
   ngOnInit(): void {
-       this.getTotalTansactions();
-    // this,alerts=this._uw.alerts;
-    // this.alerts = Array.from(this._uw.alerts);
+    this.getNewAccounts();
+    this.getTotalTansactions();
     this.loadAccount();
+    this.getNewCreditcards();
     this.ngFormCompleteAccount = this.formBuilder.group({
       numberBankAccount: ['', [Validators.required]],
       address: ['', [Validators.required]],

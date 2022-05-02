@@ -5,39 +5,18 @@
                 <i class="flaticon-381-book"></i>
                 <span class="nav-text">Cuentas</span>
                 </a>
-           <!--  <ul aria-expanded="false"  [ngClass]="{'mm-show': dashboardArray.indexOf(currentHref) > -1}">
-                <li><a  class="{{(currentHref == '/admin/index' || currentHref == '/admin') ? 'mm-active' : ''}}" [routerLink]="">Solicitudes</a></li>
-                <li><a [routerLink]="['/admin/accounts']"class="{{(currentHref == '/admin/accounts') ? 'mm-active' : ''}}">Cuentas</a></li>
-            </ul> -->
-            
             </li>
-          <!--   <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}">
-                <a class=" ai-icon"  [routerLink]="['/admin/customers']" aria-expanded="false">
-                    <i class="fa fa-users"></i> 
-                      <span class="nav-text">Clientes</span>
-                </a>
-                <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
-                   <li><a [routerLink]="['/admin/customers']" >Listado</a></li>
-                </ul>
-            </li> -->
             <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}">
                 <a class=" ai-icon" [routerLink]="['/admin/creditcards']" aria-expanded="false">
                     <i class="flaticon-381-id-card"></i>
                     <span class="nav-text">Tarjetas</span>
                 </a>
-              <!--   <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
-                    <li><a [routerLink]="['/admin/creditcards']">Listado</a></li>
-                  
-                </ul> -->
             </li>
             <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}">
                 <a class=" ai-icon" [routerLink]="['/admin/transactions']"aria-expanded="false">
                     <i class="flaticon-381-television"></i>
                     <span class="nav-text">Transacciones</span>
                 </a>
-              <!--   <ul aria-expanded="false" [ngClass]="{'mm-show': apsArray.indexOf(currentHref) > -1}">
-                    <li><a [routerLink]="['/admin/transactions']">Listado</a></li> 
-                </ul> -->
             </li>
         </ul>
         <ul class="metismenu" id="menu2" metis-menu [hidden]="_uw.usertype!=='customer'">
@@ -45,27 +24,12 @@
                 <i class="flaticon-381-id-card"></i>
                 <span class="nav-text">Mis tarjetas</span>
                 </a>
-               <!--  <ul aria-expanded="false"  [ngClass]="{'mm-show': dashboardArray.indexOf(currentHref) > -1}">
-                    <li><a  class="{{(currentHref == '/admin/index' || currentHref == '/admin') ? 'mm-active' : ''}}" [routerLink]="">Solicitudes</a></li>
-                    <li><a [routerLink]=""class="{{(currentHref == '/admin/accounts') ? 'mm-active' : ''}}">tarjetas activas</a></li>
-                </ul> -->
             </li>
             <li [ngClass]="{'mm-active': apsArray.indexOf(currentHref) > -1}"><a class=" ai-icon"  [routerLink]="['/admin/mytrans']"  >
                 <i class="flaticon-381-book"></i>
                 <span class="nav-text">Mis transacciones</span>
                 </a>
-               <!--  <ul aria-expanded="false"  [ngClass]="{'mm-show': dashboardArray.indexOf(currentHref) > -1}">
-                    <li><a  class="{{(currentHref == '/admin/index' || currentHref == '/admin') ? 'mm-active' : ''}}" [routerLink]="">Historial</a></li>
-                </ul> -->
             </li>
         </ul>
-        <!-- <div class="book-box">
-            <img src="assets/images/book.png" alt="">
-            <a href="javascript:void(0);">Generate Report  ></a>
-        </div> -->
-        <!-- <div class="copyright">
-            <p><strong>BB Evolution Bank BETA</strong> © 2022 All Rights Reserved</p>
-            <p class="fs-12">Made with <span [ngClass]="{'': toggleIcon, 'heart-blast': !toggleIcon}" class="heart" (click)="toggleLoveIcon()"></span> by Buckapi</p>
-        </div> -->
     </div>
 </div>
