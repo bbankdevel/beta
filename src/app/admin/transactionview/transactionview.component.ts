@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataApiService } from '../../data-api.service';
 import { UserWService } from "../../user-w.service";
 import { TransactionInterface } from '../../models/transaction-interface'; 
+import { AccountInterface } from '../../models/account-interface'; 
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { isError } from "util";
@@ -22,20 +23,40 @@ export class TransactionviewComponent implements OnInit {
   ) { }
   public isError = false;
   public transactionToEdit : TransactionInterface ;
-     
-     public ok (){
-      this._uw.transactionToEdit.status="complete";
-      let id = this._uw.transactionToEdit.id;
-      this._uw.alerts.push({
-            type: "info",
-            message: "Transaccion procesada con exito"
-        });
-      this.dataApi.updateTransaction(this._uw.transactionToEdit,id)
-        .subscribe(
-           transaction => this.router.navigate(['/admin/index'])
+  public transactionToEdit2 : TransactionInterface ;
+  public account : AccountInterface  ;
+  public accounts : AccountInterface  ;
+  public ok (){
+    this._uw.transactionToEdit.status="complete";
+    let id = this._uw.transactionToEdit.id;
+    this._uw.alerts.push({
+          type: "info",
+          message: "Transaccion procesada con exito"
+      });
+     if(this._uw.transactionToEdit.type==='three'){
+        this.transactionToEdit2= this._uw.transactionToEdit;
+        this.transactionToEdit2.type="five";
+        this.transactionToEdit2.email=this.account.email;
+        this.transactionToEdit2.userId=this._uw.transactionToEdit.beneficiaryId;
+        this.dataApi.saveTransaction(this.transactionToEdit2).subscribe();
+      }
+         
+    this.dataApi.updateTransaction(this._uw.transactionToEdit,id)
+      .subscribe(
+         transaction => this.router.navigate(['/admin/index'])
+      );
+  }
+ public loadAccount(){
+  if (this._uw.transactionToEdit!==undefined &&  this._uw.usertype=='customer' ){
+      this.dataApi.getAccountByUserd2(this._uw.transactionToEdit.beneficiaryId)
+      .subscribe(
+        (account: AccountInterface) => (
+          this.account=account[0]
+          )
         );
     }
 
+  }
   onIsError(): void {
        
       this.isError = true;
@@ -46,6 +67,7 @@ export class TransactionviewComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    this.loadAccount();
     
   }
 

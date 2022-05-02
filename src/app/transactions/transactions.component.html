@@ -17,7 +17,7 @@
 						<tbody>
 							<tr *ngFor="let transaction of transactions; let i= index">
 								<td >
-									<img _ngcontent-xhu-c929="" class="ic-icon" src="assets/images/svg/in.svg" *ngIf="transaction.type==='one'">
+									<img _ngcontent-xhu-c929="" class="ic-icon" src="assets/images/svg/in.svg" *ngIf="transaction.type==='one'  || transaction.type==='five'">
 									<img _ngcontent-xhu-c929="" class="ic-icon" src="assets/images/svg/eg.svg" *ngIf="transaction.type==='two' || transaction.type==='four' || transaction.type==='three'">
 
 
@@ -28,6 +28,7 @@
 										<span *ngIf="transaction.type=='one'">carga de fondos</span>
 										<span *ngIf="transaction.type=='two'">carga de fondos a tarjeta</span>
 										<span *ngIf="transaction.type=='three'">transferencia a otro usuario</span>
+										<span *ngIf="transaction.type=='five'">abono por transferencia</span>
 										<span *ngIf="transaction.type=='four'">retiro de fondos</span>
 									</div>
 								</td>
