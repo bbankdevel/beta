@@ -4,7 +4,8 @@
         <div class="row page-titles mx-0" >
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Procesar carga de fondos</h4>
+                    <h4 *ngIf="_uw.transactionToEdit.type==='one'">Procesar carga de fondos</h4>
+                    <h4 *ngIf="_uw.transactionToEdit.type==='four'">Procesar retiro de fondos</h4>
                     <!-- <p class="mb-0">Nuevos registros</p> -->
                 </div>
             </div>
@@ -24,7 +25,7 @@
                             <div class="auth-form" >
                                 <form (ngSubmit)="ok()"  >
                                     <div class="form-group form-focus">
-                                        <label class="focus-label"  >Beneficiario {{_uw.transactionToEdit.email}}</label>
+                                        <label class="focus-label"  >Cuenta {{_uw.transactionToEdit.email}}</label>
                                        
                                     </div> <div class="form-group form-focus">
                                         <label class="focus-label"  >Monto {{_uw.transactionToEdit.ammount}}</label>

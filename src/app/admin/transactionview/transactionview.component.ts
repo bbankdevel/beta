@@ -22,9 +22,8 @@ export class TransactionviewComponent implements OnInit {
   ) { }
   public isError = false;
   public transactionToEdit : TransactionInterface ;
+     
      public ok (){
-   
-
       this._uw.transactionToEdit.status="complete";
       let id = this._uw.transactionToEdit.id;
       this._uw.alerts.push({
