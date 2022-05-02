@@ -122,7 +122,7 @@ export class NewrequestComponent implements OnInit {
     if (this.ngFormTwo.valid){
       this.transaction.ammount=this.transaction.ammount;
        this.transaction.email=this._uw.email;
-      this.transaction.type="three";
+      this.transaction.type="two";
       this.transaction.beneficiaryId="p"+this._uw.userActive.id;
       this.transaction.userId="p"+this._uw.userActive.id;
       this.saveTransaction(this.transaction);
