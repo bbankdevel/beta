@@ -31,23 +31,28 @@
 							<table class="table table-responsive-md mb-0 table-striped" *ngIf="transactions!=undefined">
 								<thead>
 									<tr>
-										<th>Monto</th>
+										<th></th>
 										<th>Tipo</th>
+										<th>Monto</th>
 										<th>Fecha</th>
 										<th class="float-right">Status</th>
 									</tr>
 								</thead>
 								<tbody id="customers">
 									<tr class="btn-reveal-trigger" *ngFor="let transaction of transactions">
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">												
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">{{transaction.ammount}}</h5>
-													</div>
-												</div>
-											</a>
+										
+										<td class="pr-0" *ngIf="transaction.type==='one'">
+											<img _ngcontent-xhu-c929="" class="ic-icon" src="assets/images/svg/in.svg">
 										</td>
+										<td class="pr-0" *ngIf="transaction.type==='two'">
+											<img _ngcontent-xhu-c929="" class="ic-icon" src="assets/images/svg/eg.svg">
+										</td>
+										<td class="pr-0" *ngIf="transaction.type==='four'">
+											<img _ngcontent-xhu-c929="" class="ic-icon" src="assets/images/svg/eg.svg">
+										</td>
+
+
+
 										<td class="py-2" *ngIf="transaction.type==='one'">
 											Carga de fondos a cuenta
 										</td>
@@ -56,6 +61,15 @@
 										</td>
 										<td class="py-2" *ngIf="transaction.type==='two'">
 											Carga de fondos a tarjeta
+										</td>
+										<td class="py-3">
+											<a href="javascript:void(0);">
+												<div class="media d-flex align-items-center">												
+													<div class="media-body">
+														<h5 class="mb-0 fs--1">{{transaction.ammount}}</h5>
+													</div>
+												</div>
+											</a>
 										</td>
 										<td class="py-2"><a
 										>{{transaction.createdAt |  date:'mediumDate'}}</a>

@@ -7,18 +7,21 @@
 						<thead>
 							<tr>
 								
-								<th>Cuenta</th>
+								<th></th>
 								<th>Tipo</th>
+								<th>Cuenta</th>
 								<th>Monto</th>
 								<th class="float-right">Estado</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr *ngFor="let transaction of transactions; let i= index">
-								<td class="pr-0" >
-									{{transaction.email}}
+								<td >
+									<img _ngcontent-xhu-c929="" class="ic-icon" src="assets/images/svg/in.svg" *ngIf="transaction.type==='one'">
+									<img _ngcontent-xhu-c929="" class="ic-icon" src="assets/images/svg/in.svg" *ngIf="transaction.type==='two' || transaction.type==='four'">
+
+
 								</td>
-								
 								<td >
 									<div class="d-flex align-items-center">
 										
@@ -27,6 +30,9 @@
 										<span *ngIf="transaction.type=='three'">transferencia a otro usuario</span>
 										<span *ngIf="transaction.type=='four'">retiro de fondos</span>
 									</div>
+								</td>
+								<td class="pr-0" >
+									{{transaction.email}}
 								</td>
 								<td class="wspace-no" >
 									<span class="text-black">{{transaction.ammount}}</span>
