@@ -63,7 +63,7 @@ public goAmount(stepper: MatStepper){
   if (this._uw.userActiveId!==undefined &&  this._uw.usertype=='customer' ){
         this.waiting2=true;
         this.transaction.userId=this._uw.userActiveId ;
-        this.transaction.amount=this.secondCtrl;
+        this.transaction.ammount=this.secondCtrl;
         this.transaction.type="three";
         this.transaction.status="new";
         this.transaction.beneficiaryId=this._uw.accountDestin.userId;
