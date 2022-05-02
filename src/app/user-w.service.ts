@@ -7,6 +7,7 @@ export class UserWService {
 	admin:boolean=false;
 	adminName:string;
 	accountActive:any={};
+	accountDestin:any={};
 	allLoaded:boolean=false;
 	buttonDisabled:boolean=false;
 	card:any={};

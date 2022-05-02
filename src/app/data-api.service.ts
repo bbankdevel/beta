@@ -131,4 +131,10 @@ export class DataApiService {
 		this.creditcard = this.http.get(url_api);
 		return (this.creditcard);
 	}
+	getAccountByEmail(userEmail: string){
+		let email = userEmail;
+		const url_api =  "https://db.bbevolutionbank.com:3025/api/account?filter[where][email]="+email;
+		this.account = this.http.get(url_api);
+		return (this.account);
+	}
 }

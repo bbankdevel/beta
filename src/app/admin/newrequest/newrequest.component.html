@@ -139,6 +139,41 @@
     </div>
     <!-- END TWO -->
 
+    <!-- INIT THREE -->
+    <div class="container-fluid" *ngIf="_uw.transactionType==='three'">
+        <div class="row page-titles mx-0" >
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Transferir fondos a terceros</h4>
+                    <!-- <p class="mb-0">Nuevos registros</p> -->
+                </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                </ol>
+            </div>
+        </div>
+        <!--     <div [hidden]="!this.waiting">Cargando...
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </div> -->
+        <div class="row justify-content-center h-100 align-items-center">
+            <div class="col-lg-8 col-md-8">
+                <div class="">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12">
+                        
+                             <div class="card-body">
+                                <app-stepper-vertical></app-stepper-vertical>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END THREE -->
+
     <!-- INIT FOUR -->
     <div class="container-fluid" *ngIf="_uw.transactionType==='four'">
         <div class="row page-titles mx-0" >

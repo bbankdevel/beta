@@ -1,39 +1,48 @@
-<button mat-raised-button color="primary" (click)="isLinear = !isLinear" id="toggle-linear">
+<!-- <button mat-raised-button color="primary" (click)="isLinear = !isLinear" id="toggle-linear">
   {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-</button>
+</button> -->
 <mat-vertical-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
+      <ng-template matStepLabel>Receptor</ng-template>
       <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="email cuenta rceptora" formControlName="firstCtrl"
+[(ngModel)]="firstCtrl"
+         required>
       </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
+      <div [hidden]="!fail" style="color:red;" >
+          {{message}}
+      </div>
+      <div [hidden]="!waiting" >
+          Buscando, por favor espere
+      </div>
+      <div [hidden]="waiting" >
+
+        <button   (click)="goAmount(stepper)" class="btn btn-primary" >Siguiente</button>
       </div>
     </form>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
+      <ng-template matStepLabel>Monto</ng-template>
       <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+        <mat-label>Monto a transferir</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Monto a tansferir"
                required>
       </mat-form-field>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperPrevious>Atras</button>
+        <button mat-button matStepperNext>Siguiente</button>
       </div>
     </form>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
+    <ng-template matStepLabel>Confirmar</ng-template>
+    <p>Desea confimar la transferencia de fondos.</p>
     <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button matStepperPrevious>Atras</button>
+      <button mat-button (click)="stepper.reset()">Si</button>
     </div>
   </mat-step>
 </mat-vertical-stepper>
