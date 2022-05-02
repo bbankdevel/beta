@@ -30,16 +30,25 @@
 									<tr>
 										<th>Numero</th>
 										<th>Fecha</th>
-										<th>Status</th>
+										<th class="float-right">>Status</th>
 									</tr>
 								</thead>
 								<tbody id="customers">
 									<tr class="btn-reveal-trigger" *ngFor="let creditcard of creditcards">
-										<td class="py-3">
+										<td class="py-3" *ngIf="creditcard.number!=undefined">
 											<a href="javascript:void(0);">
 												<div class="media d-flex align-items-center">												
 													<div class="media-body">
 														<h5 class="mb-0 fs--1">{{creditcard.number}}</h5>
+													</div>
+												</div>
+											</a>
+										</td>
+										<td class="py-3" *ngIf="creditcard.number==undefined">
+											<a href="javascript:void(0);">
+												<div class="media d-flex align-items-center">												
+													<div class="media-body">
+														<h5 class="mb-0 fs--1">Por asignar</h5>
 													</div>
 												</div>
 											</a>
