@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { TransactionInterface } from '../models/transaction-interface'; 
+import { AccountInterface } from '../models/account-interface'; 
 import { DataApiService } from '../data-api.service';
 import { UserWService } from "../user-w.service";
 import {  throwError } from 'rxjs';
@@ -264,9 +264,17 @@ public transactions:  transaction[] ;
 		this.updateTransactionListing();
  
   }
+    public account : AccountInterface  ;
+  public accounts : AccountInterface  ;
 public transactionview(transaction){
   this._uw.transactionToEdit=transaction;
-       this.router.navigate(['/admin/transactionview']);
+  this.dataApi.getAccountByUserd2(this._uw.transactionToEdit.beneficiaryId)
+      .subscribe(
+        (account: AccountInterface) => (
+          this._uw.accountForTransfer=account[0],
+            this.router.navigate(['/admin/transactionview'])  
+          )
+        );
 }
   ngOnInit(): void {
   	// this.transactions==[null];

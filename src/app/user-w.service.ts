@@ -8,6 +8,7 @@ export class UserWService {
 	adminName:string;
 	accountActive:any={};
 	accountDestin:any={};
+	accountForTransfer:any={};
 	allLoaded:boolean=false;
 	buttonDisabled:boolean=false;
 	card:any={};

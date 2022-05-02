@@ -36,7 +36,7 @@ export class TransactionviewComponent implements OnInit {
      if(this._uw.transactionToEdit.type==='three'){
         this.transactionToEdit2= this._uw.transactionToEdit;
         this.transactionToEdit2.type="five";
-        this.transactionToEdit2.email=this.account.email;
+        this.transactionToEdit2.email=this._uw.accountForTransfer.email;
         this.transactionToEdit2.userId=this._uw.transactionToEdit.beneficiaryId;
         this.dataApi.saveTransaction(this.transactionToEdit2).subscribe();
       }
@@ -46,17 +46,7 @@ export class TransactionviewComponent implements OnInit {
          transaction => this.router.navigate(['/admin/index'])
       );
   }
- public loadAccount(){
-  if (this._uw.transactionToEdit!==undefined &&  this._uw.usertype=='customer' ){
-      this.dataApi.getAccountByUserd2(this._uw.transactionToEdit.beneficiaryId)
-      .subscribe(
-        (account: AccountInterface) => (
-          this.account=account[0]
-          )
-        );
-    }
 
-  }
   onIsError(): void {
        
       this.isError = true;
@@ -67,7 +57,7 @@ export class TransactionviewComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.loadAccount();
+    
     
   }
 
