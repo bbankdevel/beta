@@ -54,8 +54,11 @@
 										<td class="py-2" *ngIf="transaction.type==='four'">
 											Retiro de fondos
 										</td>
+										<td class="py-2" *ngIf="transaction.type==='two'">
+											Carga de fondos a tarjeta
+										</td>
 										<td class="py-2"><a
-										href="mailto:ricky@example.com">{{transaction.createdAt |  date:'mediumDate'}}</a>
+										>{{transaction.createdAt |  date:'mediumDate'}}</a>
 										</td>
 										<td *ngIf="transaction.status==='complete'">
 											<a class="btn-link text-success float-right">COMPLETED</a>
