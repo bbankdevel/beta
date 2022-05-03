@@ -75,7 +75,7 @@ export class SwitcherComponent implements OnInit {
             typography: "poppins",
             version: "light",
             layout: "vertical",
-            primary: "color_14",
+            primary: "color_15",
             headerBg: "color_1",
             navheaderBg: "color_14",
             sidebarBg: "color_12",
