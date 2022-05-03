@@ -30,12 +30,15 @@ export class NewrequestComponent implements OnInit {
       private formBuilder: FormBuilder,
       public dataApi:DataApiService
   ) { }
-
+ public aleatorio(a,b) {
+    return Math.round(Math.random()*(b-a)+parseInt(a));
+  }
   public creditcard : CreditcardInterface={
     status:"new"
   }; 
   public transaction : TransactionInterface={
     type:"one",
+    ref:"",
     beneficiaryId:"",
     status:"new",
     ammount: 0
@@ -103,6 +106,9 @@ export class NewrequestComponent implements OnInit {
       this.transaction.type="one";
       this.transaction.beneficiaryId="p"+this._uw.userActive.id;
       this.transaction.userId="p"+this._uw.userActive.id;
+      this.ref=this.aleatorio(10000,99999);
+      let refString = this.ref.toString();
+      this.transaction.ref=refString;
       this.saveTransaction(this.transaction);
     }
   } 
@@ -114,6 +120,9 @@ export class NewrequestComponent implements OnInit {
       this.transaction.type="four";
       this.transaction.beneficiaryId="p"+this._uw.userActive.id;
       this.transaction.userId="p"+this._uw.userActive.id;
+        this.ref=this.aleatorio(10000,99999);
+      let refString = this.ref.toString();
+      this.transaction.ref=refString;
       this.saveTransactionE(this.transaction);
     }
   } 
@@ -125,6 +134,9 @@ export class NewrequestComponent implements OnInit {
       this.transaction.type="two";
       this.transaction.beneficiaryId="p"+this._uw.userActive.id;
       this.transaction.userId="p"+this._uw.userActive.id;
+        this.ref=this.aleatorio(10000,99999);
+      let refString = this.ref.toString();
+      this.transaction.ref=refString;
       this.saveTransaction(this.transaction);
     }
   }

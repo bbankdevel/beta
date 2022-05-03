@@ -8,6 +8,7 @@
 							<tr>
 								
 								<th></th>
+								<th>Id</th>
 								<th>Tipo</th>
 								<th>Cuenta</th>
 								<th>Monto</th>
@@ -21,6 +22,9 @@
 									<img _ngcontent-xhu-c929="" class="ic-icon" src="assets/images/svg/eg.svg" *ngIf="transaction.type==='two' || transaction.type==='four' || transaction.type==='three'">
 
 
+								</td>
+								<td >
+									{{transaction.ref}}
 								</td>
 								<td >
 									<div class="d-flex align-items-center">

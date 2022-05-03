@@ -9,5 +9,6 @@ export interface TransactionInterface {
 	email?:string;
 	remitEmail?:string;
 	receptEmail?:string;
+	ref?:string;
 
 }

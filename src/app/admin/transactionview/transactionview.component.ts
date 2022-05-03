@@ -25,6 +25,7 @@ export class TransactionviewComponent implements OnInit {
   public transactionToEdit : TransactionInterface ;
   public transactionToAdd : TransactionInterface ={
         ammount:0,
+        ref:"",
         type:"five",
         email:"",
         remitEmail:"",
@@ -33,8 +34,14 @@ export class TransactionviewComponent implements OnInit {
       };
   public account : AccountInterface  ;
   public accounts : AccountInterface  ;
+   public aleatorio(a,b) {
+    return Math.round(Math.random()*(b-a)+parseInt(a));
+  }
   public ok (){
     this._uw.transactionToEdit.status="complete";
+    this.ref=this.aleatorio(10000,99999);
+      let refString = this.ref.toString();
+      this.transactionToEdit.ref=refString;
     this._uw.transactionToEdit.receptEmail=this._uw.accountForTransfer.email;
     let id = this._uw.transactionToEdit.id;
     this._uw.alerts.push({
@@ -48,6 +55,9 @@ export class TransactionviewComponent implements OnInit {
         this.transactionToAdd.remitEmail=this._uw.transactionToEdit.email;
         this.transactionToAdd.email=this._uw.accountForTransfer.email;
         this.transactionToAdd.userId=this._uw.transactionToEdit.beneficiaryId;
+          this.ref=this.aleatorio(10000,99999);
+      let refString = this.ref.toString();
+      this.transactionToAdd.ref=refString;
         this.dataApi.saveTransaction(this.transactionToAdd).subscribe();
       }
          
