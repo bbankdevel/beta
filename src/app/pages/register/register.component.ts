@@ -18,6 +18,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class RegisterComponent implements OnInit {
   public user : UserInterface ={
     name:"",
+    fullname:"",
     email:"",
     usertype:"",
     password:"",
@@ -48,6 +49,7 @@ export class RegisterComponent implements OnInit {
     status:"new",
     userId:"",
     name:"",
+    fullname:"",
     email:"",
     subjectEmail:"",
     address:"",
@@ -77,6 +79,7 @@ export class RegisterComponent implements OnInit {
       this.authService
         .registerUser(
           this.user.name, 
+          this.user.fullname, 
           this.user.email, 
           this.user.password, 
           this.user.usertype, 

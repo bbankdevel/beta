@@ -13,11 +13,20 @@
                                     <h4 class="text-center mb-4">Crea tu cuenta</h4>
                                     <form [formGroup]="ngFormSignup" (ngSubmit) ="onRegister()">
                                         <div class="form-group form-focus">
-                                            <label class="focus-label">Nombre Completo</label>
-                                            <input type="text" class="form-control floating" id="name" formControlName="name" placeholder="Nombre completo" [(ngModel)]="user.name" [ngClass]="{'is-invalid': submitted && fval.name.errors }"required>
+                                            <label class="focus-label">Nombre </label>
+                                            <input type="text" class="form-control floating" id="name" formControlName="name" placeholder="Nombre" [(ngModel)]="user.name" [ngClass]="{'is-invalid': submitted && fval.name.errors }"required>
                                             <div *ngIf="submitted && fval.name.errors" class="invalid-feedback">
                                                 <div *ngIf="fval.name.errors.required">
                                                El nombre es requerido y debe ser un nombre válido
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-focus">
+                                            <label class="focus-label">Apellidos </label>
+                                            <input type="text" class="form-control floating" id="fullname" formControlName="fullname" placeholder="Apellidos" [(ngModel)]="user.fullname" [ngClass]="{'is-invalid': submitted && fval.fullname.errors }"required>
+                                            <div *ngIf="submitted && fval.fullname.errors" class="invalid-feedback">
+                                                <div *ngIf="fval.fullname.errors.required">
+                                               Campo requerido 
                                                 </div>
                                             </div>
                                         </div>

@@ -44,10 +44,10 @@ export class AuthService {
 		"Content-Type":"application/json"
 		});
 
-	registerUser(name :string, email: string, password: string, usertype: string, status: string){
+	registerUser(name :string, fullname :string, email: string, password: string, usertype: string, status: string){
 		const url_api ='https://db.bbevolutionbank.com:3025/api/Users/';
 		return this.http
-		.post<UserInterface>(url_api,{name,email,password,usertype,status},{headers:this.headers})
+		.post<UserInterface>(url_api,{name,fullname,email,password,usertype,status},{headers:this.headers})
 		.pipe(map(data => data,error => error),catchError(this.handleError));
 	}
 

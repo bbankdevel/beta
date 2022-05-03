@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   message = "";  
   public user : UserInterface ={
     name:"",
+    fullname:"",
     email:"",
     password:"",
     usertype:""
@@ -84,6 +85,7 @@ get fval() {
               this._uw.userId=data.id;
               this._uw.appointmentUsercard=data.user.id;
               this._uw.name=data.user.name;
+              this._uw.fullname=data.user.fullname;
               this._uw.email=data.user.email;
               this._uw.usertype=data.user.usertype;
               this._uw.userActiveId=data.user.id;

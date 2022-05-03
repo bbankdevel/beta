@@ -25,7 +25,7 @@
                                         <form [formGroup]="ngFormCompleteAccount" (ngSubmit)="complete()">
                                             <div class="form-group form-focus">
                                                 <label class="focus-label">Nombres</label>
-                                                <input type="text" class="form-control floating" id="name" placeholder="nombres" formControlName="name" [(ngModel)]="account.name"required [ngClass]="{ 'is-invalid': submitted && fval.name.errors }">
+                                                <input type="text" class="form-control floating" id="name" placeholder="nombres" formControlName="name" [(ngModel)]="account.name"required [ngClass]="{ 'is-invalid': submitted && fval.name.errors }" disabled="disabled">
                                                 <div *ngIf="submitted && fval.name.errors" class="invalid-feedback">
                                                     <div ngClass="fval.name.errors.required">
                                                        Campo requerido.
