@@ -1,4 +1,4 @@
-<!-- <button mat-raised-button color="primary" (click)="isLinear = !isLinear" id="toggle-linear">
+<!-- <button mat-raised-button color="success" (click)="isLinear = !isLinear" id="toggle-linear">
   {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
 </button> -->
 <mat-vertical-stepper [linear]="isLinear" #stepper>
@@ -19,7 +19,7 @@
       </div>
       <div [hidden]="waiting" >
 
-        <button   (click)="goAmount(stepper)" class="btn btn-primary" >Siguiente</button>
+        <button   (click)="goAmount(stepper)" class="btn btn-success" >Siguiente</button>
       </div>
     </form>
   </mat-step>
@@ -42,7 +42,7 @@
     <p>Desea confimar la transferencia de fondos?</p>
     <div>
       <button mat-button matStepperPrevious>Atras</button>
-      <button  (click)="ok(stepper)" class="btn btn-primary" >Si</button>
+      <button  (click)="ok(stepper)" class="btn btn-success" >Si</button>
     </div>
   </mat-step>
 </mat-vertical-stepper>
