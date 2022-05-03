@@ -29,13 +29,15 @@
 							<table class="table table-responsive-md mb-0 table-striped" *ngIf="newCreditcards!=undefined">
 								<thead>
 									<tr>
+										<th>Solicitante</th>
 										<th>Email</th>
 										<th>Fecha</th>
 										<th class="float-right">Status</th>
 									</tr>
 								</thead>
 								<tbody >
-									<tr class="btn-reveal-trigger" *ngFor="let creditcard of newCreditcards;let i = index">	
+									<tr class="btn-reveal-trigger" *ngFor="let creditcard of newCreditcards;let i = index">
+									<td class="py-2" (click)="view(creditcard,i)" style="cursor:pointer;">{{creditcard.name}}</td>	
 										<td class="py-3" (click)="view(creditcard,i)" style="cursor:pointer;">
 											<div class="media d-flex align-items-center">
 												<div class="media-body">

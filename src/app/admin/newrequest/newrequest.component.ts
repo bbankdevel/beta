@@ -35,7 +35,8 @@ export class NewrequestComponent implements OnInit {
     return Math.round(Math.random()*(b-a)+parseInt(a));
   }
   public creditcard : CreditcardInterface={
-    status:"new"
+    status:"new",
+    name:''
   }; 
   public transaction : TransactionInterface={
     type:"one",
@@ -144,6 +145,7 @@ export class NewrequestComponent implements OnInit {
   public goNewCard(){
     this.creditcard.userId="p"+this._uw.userActive.id;
     this.creditcard.email=this._uw.email;
+    this.creditcard.name=this._uw.name;
     this.newCreditcard(this.creditcard);    
   }
 
