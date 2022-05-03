@@ -39,7 +39,7 @@ export class AccComponent implements OnInit {
       this.loadAccount();
       this.ngFormCompleteAccount = this.formBuilder.group({
       name: [+this._uw.name, [Validators.required]],
-      fullname: ['', [Validators.required]],
+      fullname: [+this._uw.fullname, [Validators.required]],
       identity: ['', [Validators.required]],
       cnumber: ['', ],
       birthday: ['', [Validators.required]],
