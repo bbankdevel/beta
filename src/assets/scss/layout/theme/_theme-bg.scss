@@ -4,7 +4,7 @@
     [data-nav-headerbg="#{$name}"] {
         @if $name != "color_1"  {
             .nav-header {
-                background-color: $color;
+                background-color: #000;
 				border-color:rgba($white,0.15);
                 .brand-logo {
                     color: $white;
@@ -275,7 +275,7 @@
 				background:rgba($white,0.5);
 			}
 			.deznav {
-                background-color: $color;
+                background-color: #000;
 				
 				.menu-tabs li a.active{
 					color: $color;
