@@ -13,6 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./activateaccount.component.css']
 })
 export class ActivateaccountComponent implements OnInit {
+  public account : AccountInterface;
   ngFormActivateAccount: FormGroup;
   submitted = false;
 
@@ -24,22 +25,6 @@ export class ActivateaccountComponent implements OnInit {
   ) { }
   public isError = false;
   public isLogged =false;
-  public account : AccountInterface ={
-    name:"",
-    numberAccount:"",
-    phone:"",
-    status:"",
-    type:"",
-    address:"",
-    userId:"",
-    email:"",
-    fullProfile:false,
-    two:false,
-    three:false,
-    four:false,
-    five:false,
-    zero:false
-  };
   message = "";  
 
   get fval() {

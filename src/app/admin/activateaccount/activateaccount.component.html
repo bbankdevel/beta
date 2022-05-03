@@ -19,7 +19,8 @@
                         <div class="col-xl-12">
                             <div class="auth-form">                              
                                 <form [formGroup]="ngFormActivateAccount" (ngSubmit)="activate()">
-                                    <div class="form-group form-focus">
+                                  
+                                      <div class="form-group form-focus">
                                         <label class="focus-label">Numero de cuenta</label>
                                         <input type="text" class="form-control floating" id="numberAccount" placeholder="# de cuenta" formControlName="numberAccount" [(ngModel)]="account.numberAccount"required [ngClass]="{ 'is-invalid': submitted && fval.numberAccount.errors }">
                                             <div *ngIf="submitted && fval.numberAccount.errors" class="invalid-feedback">
@@ -28,6 +29,7 @@
                                                 </div>
                                             </div>
                                     </div>
+
                                     <div class="text-right">
                                     <div [hidden]="!isError">
                                         <div style="color: red;text-align: left;">
