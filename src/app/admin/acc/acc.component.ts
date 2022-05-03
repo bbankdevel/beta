@@ -25,6 +25,11 @@ export class AccComponent implements OnInit {
   public isLogged =false;
   public accounts : AccountInterface ;
   public account : AccountInterface ={
+    name:"",
+    fullname:"",
+    identity:"",
+    cnumber:"",
+    birthday:"",
     numberBankAccount:"",
     bankEntity:"",
     address:"",
@@ -33,6 +38,11 @@ export class AccComponent implements OnInit {
   ngOnInit(): void {
       this.loadAccount();
       this.ngFormCompleteAccount = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      fullname: ['', [Validators.required]],
+      identity: ['', [Validators.required]],
+      cnumber: ['', ],
+      birthday: ['', [Validators.required]],
       numberBankAccount: ['', [Validators.required]],
       address: ['', [Validators.required]],
       bankEntity: ['', [Validators.required]],

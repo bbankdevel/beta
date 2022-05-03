@@ -24,6 +24,47 @@
                                     <div class="text-center mb-3">
                                         <form [formGroup]="ngFormCompleteAccount" (ngSubmit)="complete()">
                                             <div class="form-group form-focus">
+                                                <label class="focus-label">Nombres</label>
+                                                <input type="text" class="form-control floating" id="name" placeholder="nombres" formControlName="name" [(ngModel)]="account.name"required [ngClass]="{ 'is-invalid': submitted && fval.name.errors }">
+                                                <div *ngIf="submitted && fval.name.errors" class="invalid-feedback">
+                                                    <div ngClass="fval.name.errors.required">
+                                                       Campo requerido.
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Apellidos</label>
+                                                <input type="text" class="form-control floating" id="fullname" placeholder="apellidos" formControlName="fullname" [(ngModel)]="account.fullname"required [ngClass]="{ 'is-invalid': submitted && fval.fullname.errors }">
+                                                <div *ngIf="submitted && fval.fullname.errors" class="invalid-feedback">
+                                                    <div ngClass="fval.fullname.errors.required">
+                                                       Campo requerido.
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Identidad</label>
+                                                <input type="text" class="form-control floating" id="identity" placeholder="identidad" formControlName="identity" [(ngModel)]="account.identity"required [ngClass]="{ 'is-invalid': submitted && fval.identity.errors }">
+                                                <div *ngIf="submitted && fval.identity.errors" class="invalid-feedback">
+                                                    <div ngClass="fval.identity.errors.required">
+                                                       Campo requerido.
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Numero de contrato</label>
+                                                <input type="text" class="form-control floating" id="cnumber" placeholder="identidad" formControlName="cnumber" [(ngModel)]="account.cnumber"required [ngClass]="{ 'is-invalid': submitted && fval.cnumber.errors }">
+                                               
+                                            </div>
+                                            <div class="form-group form-focus">
+                                                <label class="focus-label">Fecha de nacimiento</label>
+                                                <input type="text" class="form-control floating" id="birthday" placeholder="apellidos" formControlName="birthday" [(ngModel)]="account.birthday"required [ngClass]="{ 'is-invalid': submitted && fval.birthday.errors }">
+                                                <div *ngIf="submitted && fval.birthday.errors" class="invalid-feedback">
+                                                    <div ngClass="fval.birthday.errors.required">
+                                                       Campo requerido.
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="form-group form-focus">
                                                 <label class="focus-label">Numero de cuenta bancaria</label>
                                                 <input type="text" class="form-control floating" id="numberBankAccount" placeholder="# de cuenta Bancaria" formControlName="numberBankAccount" [(ngModel)]="account.numberBankAccount"required [ngClass]="{ 'is-invalid': submitted && fval.numberBankAccount.errors }">
                                                 <div *ngIf="submitted && fval.numberBankAccount.errors" class="invalid-feedback">

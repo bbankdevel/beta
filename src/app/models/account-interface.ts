@@ -3,6 +3,10 @@ export interface AccountInterface{
 	numberAccount?:string;
 	numberBankAccount?:string;
 	name?:string;
+	fullname?:string;
+	indentity?:string;
+	cnumber?:string;
+	birthday?:string;
 	phone?:string;
 	email?:string;
 	subjectEmail?:string;
