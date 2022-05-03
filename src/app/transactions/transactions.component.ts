@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 interface transaction {
   id?:number;
   type?:string;
-  ref?:string;
+  ref?:number;
   beneficiaryId?:string;
   ammount?:number;
   status?:string;

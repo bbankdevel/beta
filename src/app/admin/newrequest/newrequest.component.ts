@@ -21,6 +21,7 @@ export class NewrequestComponent implements OnInit {
   submitted4 = false;
   public waiting = false;
   title = 'bbev';
+  ref = 0;
   navSidebarClass: boolean = true;
   hamburgerClass: boolean = false;
 
@@ -38,7 +39,7 @@ export class NewrequestComponent implements OnInit {
   }; 
   public transaction : TransactionInterface={
     type:"one",
-    ref:"",
+    ref:0,
     beneficiaryId:"",
     status:"new",
     ammount: 0

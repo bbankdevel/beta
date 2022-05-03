@@ -28,7 +28,7 @@ export class ActivatecardComponent implements OnInit {
     number:"",
     name:"",
     cvv:"",
-    caducidad:"",
+    caduca:"",
     address:"",
     status:"active"
   };
@@ -85,7 +85,7 @@ export class ActivatecardComponent implements OnInit {
       number: ['', [Validators.required]],
       name: ['', [Validators.required]],
       cvv: ['', [Validators.required]],
-      caducidad: ['', [Validators.required]],
+      caduca: ['', [Validators.required]],
       address: ['', [Validators.required]]
       });
   }

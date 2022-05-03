@@ -48,9 +48,9 @@
                                     </div>
                                     <div class="form-group form-focus">
                                         <label class="focus-label">Fecha de caducidad</label>
-                                        <input type="text" class="form-control floating" id="caducidad" placeholder="caducidad" formControlName="caducidad" [(ngModel)]="creditcard.caducidad"required [ngClass]="{ 'is-invalid': submitted && fval.caducidad.errors }">
-                                            <div *ngIf="submitted && fval.caducidad.errors" class="invalid-feedback">
-                                            <div ngClass="fval.caducidad.errors.required">
+                                        <input type="text" class="form-control floating" id="caduca" placeholder="caducidad" formControlName="caduca" [(ngModel)]="creditcard.caduca"required [ngClass]="{ 'is-invalid': submitted && fval.caduca.errors }">
+                                            <div *ngIf="submitted && fval.caduca.errors" class="invalid-feedback">
+                                            <div ngClass="fval.caduca.errors.required">
                                                Campo requerido.
                                                 </div>
                                             </div>

@@ -29,7 +29,12 @@
 								<thead>
 									<tr>
 										<th>Numero</th>
-										<th>Fecha</th>
+										<th>Nombre</th>
+										<th>CVV</th>
+										<th>Caducidad</th>
+										<th>Direccion</th>
+										
+								
 										<th class="float-right">>Status</th>
 									</tr>
 								</thead>
@@ -54,7 +59,16 @@
 											</a>
 										</td>
 										<td class="py-2"><a
-										>{{creditcard.createdAt |  date:'mediumDate'}}</a>
+										>{{creditcard.name }}</a>
+										</td>
+										<td class="py-2"><a
+										>{{creditcard.cvv}}</a>
+										</td>
+										<td class="py-2"><a
+										>{{creditcard.caduca}}</a>
+										</td>
+										<td class="py-2"><a
+										>{{creditcard.address}}</a>
 										</td>
 										<td *ngIf="creditcard.status==='complete'">
 											<a class="btn-link text-success float-right">COMPLETED</a>

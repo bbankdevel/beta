@@ -21,11 +21,12 @@ export class TransactionviewComponent implements OnInit {
     private formBuilder: FormBuilder,
     public dataApi:DataApiService
   ) { }
+    ref = '';
   public isError = false;
   public transactionToEdit : TransactionInterface ;
   public transactionToAdd : TransactionInterface ={
         ammount:0,
-        ref:"",
+        ref:0,
         type:"five",
         email:"",
         remitEmail:"",
