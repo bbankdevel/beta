@@ -303,7 +303,8 @@
 				background-color: $color;
 			}
 			.page-titles h4 {
-				color: $color;
+				color: #000;
+				// color de titulo
 			}
 			.card-action{
 				&>a{
@@ -1173,7 +1174,8 @@
 			
 			//header
 			.nav-header .hamburger .line{
-				background:$color;
+				background:#000;
+				//color de liniea burger
 			}
 			.pulse-css{
 				background:$color;

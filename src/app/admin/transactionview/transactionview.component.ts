@@ -26,7 +26,7 @@ export class TransactionviewComponent implements OnInit {
   public transactionToEdit : TransactionInterface ;
   public transactionToAdd : TransactionInterface ={
         ammount:0,
-        ref:0,
+        ref:'',
         type:"five",
         email:"",
         remitEmail:"",

@@ -9,6 +9,6 @@ export interface TransactionInterface {
 	email?:string;
 	remitEmail?:string;
 	receptEmail?:string;
-	ref?:number;
+	ref?:string;
 
 }
