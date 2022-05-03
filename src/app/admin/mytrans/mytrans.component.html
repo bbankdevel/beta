@@ -69,10 +69,11 @@
 											Carga de fondos a tarjeta
 										</td>
 										<td class="py-2" *ngIf="transaction.type==='three'">
-											Transferencia a otro usuario
+											Transferencia ({{transaction.remitEmail}} -> {{transaction.reeptEmail}})
 										</td>
 										<td class="py-2" *ngIf="transaction.type==='five'">
-											Recibido por transferencia
+											Recibido por transferencia 
+											({{transaction.remitEmail}} -> {{transaction.reeptEmail}})
 										</td>
 										<td class="py-3">
 											<a href="javascript:void(0);">

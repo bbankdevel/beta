@@ -3,9 +3,11 @@ export interface TransactionInterface {
 	userId?:string;
 	type?:string;
 	beneficiaryId?:string;
-	remiteId?:string;
+	remitId?:string;
 	ammount?:number;
 	status?:string;
 	email?:string;
+	remitEmail?:string;
+	receptEmail?:string;
 
 }

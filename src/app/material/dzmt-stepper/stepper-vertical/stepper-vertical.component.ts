@@ -34,10 +34,6 @@ public clear2 = true;
 public accounts:AccountInterface;
 public account:AccountInterface;
 public transaction:TransactionInterface={};
-
-// goAmount(stepper: MatStepper){
-//     stepper.next();
-// }
 public goAmount(stepper: MatStepper){
   if (this._uw.userActiveId!==undefined &&  this._uw.usertype=='customer' ){
         this.waiting=true;
@@ -67,8 +63,10 @@ public goAmount(stepper: MatStepper){
         this.transaction.type="three";
         this.transaction.status="new";
         this.transaction.beneficiaryId=this._uw.accountDestin.userId;
-        this.transaction.remiteId=this._uw.userActiveId;
+        this.transaction.remitId=this._uw.userActiveId;
         this.transaction.email=this._uw.email;
+        this.transaction.remitEmail=this._uw.email;
+        this.transaction.receptEmail=this._uw.accountDestin.email;
       this.dataApi.saveTransaction(this.transaction)
       .subscribe((transaction) => (
           this.router.navigate(['/admin/index']),

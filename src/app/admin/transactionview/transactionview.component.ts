@@ -27,12 +27,15 @@ export class TransactionviewComponent implements OnInit {
         ammount:0,
         type:"five",
         email:"",
+        remitEmail:"",
+        remitId:"",
         userId:""
       };
   public account : AccountInterface  ;
   public accounts : AccountInterface  ;
   public ok (){
     this._uw.transactionToEdit.status="complete";
+    this._uw.transactionToEdit.receptEmail=this._uw.accountForTransfer.email;
     let id = this._uw.transactionToEdit.id;
     this._uw.alerts.push({
           type: "info",
@@ -41,6 +44,8 @@ export class TransactionviewComponent implements OnInit {
      if(this._uw.transactionToEdit.type==='three'){
         this.transactionToAdd.ammount= this._uw.transactionToEdit.ammount;
         this.transactionToAdd.type="five";
+        this.transactionToAdd.remitId=this._uw.transactionToEdit.remitId;
+        this.transactionToAdd.remitEmail=this._uw.transactionToEdit.email;
         this.transactionToAdd.email=this._uw.accountForTransfer.email;
         this.transactionToAdd.userId=this._uw.transactionToEdit.beneficiaryId;
         this.dataApi.saveTransaction(this.transactionToAdd).subscribe();
