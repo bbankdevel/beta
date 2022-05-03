@@ -21,7 +21,7 @@ export class TransactionviewComponent implements OnInit {
     private formBuilder: FormBuilder,
     public dataApi:DataApiService
   ) { }
-    ref = '';
+    ref = 0;
   public isError = false;
   public transactionToEdit : TransactionInterface ;
   public transactionToAdd : TransactionInterface ={
