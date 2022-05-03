@@ -32,6 +32,7 @@ export class UserWService {
 	loaded:boolean=false;
 	method:string;
 	name:string;
+	fullname:string;
 	email:string;
 	total:number=0;
 	transactionsSize:number=0;
