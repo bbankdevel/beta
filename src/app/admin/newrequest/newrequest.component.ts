@@ -106,6 +106,7 @@ export class NewrequestComponent implements OnInit {
       this.transaction.ammount=this.transaction.ammount;
       this.transaction.email=this._uw.email;
       this.transaction.type="one";
+      this.transaction.ref="";
       this.transaction.beneficiaryId="p"+this._uw.userActive.id;
       this.transaction.userId="p"+this._uw.userActive.id;
       this.ref=this.aleatorio(10000,99999);
