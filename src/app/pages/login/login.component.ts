@@ -83,7 +83,7 @@ get fval() {
               this.authService.setToken(token);
               this._uw.userId=data.id;
               this._uw.appointmentUsercard=data.user.id;
-              this._uw.name=data.name;
+              this._uw.name=data.user.name;
               this._uw.email=data.user.email;
               this._uw.usertype=data.user.usertype;
               this._uw.userActiveId=data.user.id;
