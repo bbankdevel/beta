@@ -4,7 +4,7 @@ export interface AccountInterface{
 	numberBankAccount?:string;
 	name?:string;
 	fullname?:string;
-	indentity?:string;
+	identity?:string;
 	cnumber?:string;
 	birthday?:string;
 	phone?:string;
