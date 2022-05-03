@@ -1,4 +1,4 @@
-<div class="deznav" >
+<div class="deznav" style="background-color: black;">
     <div class="deznav-scroll" [perfectScrollbar] *ngIf="_uw.usertype!=undefined">
         <ul class="metismenu" id="menu" metis-menu [hidden]="_uw.usertype!=='admin'">
             <li [ngClass]="{'mm-active': dashboardArray.indexOf(currentHref) > -1}"><a class="" [routerLink]="['/admin/accounts']"aria-expanded="false">
