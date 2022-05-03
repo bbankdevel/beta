@@ -173,6 +173,7 @@ export class RegisterComponent implements OnInit {
     this._uw.loaded=true;
     this.ngFormSignup = this.formBuilder.group({
       name: ['', Validators.required],
+      fullname: ['', Validators.required],
       email: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required,Validators.minLength(6)]]
     });    
