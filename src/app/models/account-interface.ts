@@ -24,5 +24,6 @@ export interface AccountInterface{
 	two?:boolean;
 	three?:boolean;
 	four?:boolean;
+	five?:boolean;
 	images?:Array<string>;
 }
