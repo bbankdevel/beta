@@ -23,7 +23,12 @@ export class TransactionviewComponent implements OnInit {
   ) { }
   public isError = false;
   public transactionToEdit : TransactionInterface ;
-  public transactionToEdit2 : TransactionInterface ;
+  public transactionToAdd : TransactionInterface ={
+        ammount:0,
+        type:"five",
+        email:"",
+        userId:""
+      };
   public account : AccountInterface  ;
   public accounts : AccountInterface  ;
   public ok (){
@@ -34,11 +39,11 @@ export class TransactionviewComponent implements OnInit {
           message: "Transaccion procesada con exito"
       });
      if(this._uw.transactionToEdit.type==='three'){
-        this.transactionToEdit2= this._uw.transactionToEdit;
-        this.transactionToEdit2.type="five";
-        this.transactionToEdit2.email=this._uw.accountForTransfer.email;
-        this.transactionToEdit2.userId=this._uw.transactionToEdit.beneficiaryId;
-        this.dataApi.saveTransaction(this.transactionToEdit2).subscribe();
+        this.transactionToAdd.ammount= this._uw.transactionToEdit.ammount;
+        this.transactionToAdd.type="five";
+        this.transactionToAdd.email=this._uw.accountForTransfer.email;
+        this.transactionToAdd.userId=this._uw.transactionToEdit.beneficiaryId;
+        this.dataApi.saveTransaction(this.transactionToAdd).subscribe();
       }
          
     this.dataApi.updateTransaction(this._uw.transactionToEdit,id)
