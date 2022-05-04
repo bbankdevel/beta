@@ -1,6 +1,7 @@
 export interface UsercardInterface{
 	id?:string;
 	name?:string;
+	naccount?:string;
 	phone?:string;
 	email?:string;
 	subjectEmail?:string;

@@ -22,9 +22,9 @@
                                   
                                       <div class="form-group form-focus">
                                         <label class="focus-label">Numero de cuenta</label>
-                                        <input type="text" class="form-control floating" placeholder="# de cuenta" formControlName="numberAccount" [(ngModel)]="account.numberAccount"required [ngClass]="{ 'is-invalid': submitted && fval.numberAccount.errors }">
-                                            <div *ngIf="submitted && fval.numberAccount.errors" class="invalid-feedback">
-                                            <div ngClass="fval.numberAccount.errors.required">
+                                        <input type="text" class="form-control floating" placeholder="# de cuenta" formControlName="naccount" [(ngModel)]="account.naccount"required [ngClass]="{ 'is-invalid': submitted && fval.naccount.errors }">
+                                            <div *ngIf="submitted && fval.naccount.errors" class="invalid-feedback">
+                                            <div ngClass="fval.naccount.errors.required">
                                                Campo requerido.
                                                 </div>
                                             </div>

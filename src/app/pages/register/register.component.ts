@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
 
 
   public accountSubmit : AccountInterface ={
-    numberAccount:"",
+    naccount:"",
     status:"new",
     userId:"",
     name:"",

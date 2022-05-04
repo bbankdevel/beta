@@ -1,6 +1,6 @@
 export interface AccountInterface{
 	id?:string;
-	numberAccount?:string;
+	naccount?:string;
 	numberBankAccount?:string;
 	name?:string;
 	fullname?:string;

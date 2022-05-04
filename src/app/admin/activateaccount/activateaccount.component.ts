@@ -23,7 +23,7 @@ export class ActivateaccountComponent implements OnInit {
     public dataApi:DataApiService
   ) { }
   public account : AccountInterface={
-    numberAccount:"",
+    naccount:"",
     status:"active"
   };
   public isError = false;
@@ -41,7 +41,7 @@ export class ActivateaccountComponent implements OnInit {
         } 
       let id = this._uw.accountToEdit.id;
       // this._uw.accountToEdit.fullProfile=false;
-      this._uw.accountToEdit.numberAccount=this.account.numberAccount;
+      this._uw.accountToEdit.naccount=this.account.naccount;
       this._uw.accountToEdit.status="active";
       this._uw.accountToEdit.two=true;
       this._uw.accountToEdit.three=true;
@@ -68,7 +68,7 @@ export class ActivateaccountComponent implements OnInit {
 
   ngOnInit(): void {
     this.ngFormActivateAccount = this.formBuilder.group({
-      numberAccount: ['', [Validators.required]]
+      naccount: ['', [Validators.required]]
       });
   }
 
