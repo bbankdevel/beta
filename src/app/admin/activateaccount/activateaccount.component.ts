@@ -13,10 +13,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./activateaccount.component.css']
 })
 export class ActivateaccountComponent implements OnInit {
-  public account : AccountInterface={
-    numberAccount:"",
-    status:"active"
-  };
   ngFormActivateAccount: FormGroup;
   submitted = false;
 
@@ -26,6 +22,10 @@ export class ActivateaccountComponent implements OnInit {
     private formBuilder: FormBuilder,
     public dataApi:DataApiService
   ) { }
+  public account : AccountInterface={
+    numberAccount:"",
+    status:"active"
+  };
   public isError = false;
   public isLogged =false;
   message = "";  
@@ -39,9 +39,9 @@ export class ActivateaccountComponent implements OnInit {
       if (this.ngFormActivateAccount.invalid) {
         return;
         } 
-      this._uw.accountToEdit.numberAccount=this.account.numberAccount;
       let id = this._uw.accountToEdit.id;
       // this._uw.accountToEdit.fullProfile=false;
+      this._uw.accountToEdit.numberAccount=this.account.numberAccount;
       this._uw.accountToEdit.status="active";
       this._uw.accountToEdit.two=true;
       this._uw.accountToEdit.three=true;

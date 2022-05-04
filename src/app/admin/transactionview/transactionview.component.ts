@@ -51,7 +51,7 @@ export class TransactionviewComponent implements OnInit {
     this.ref=this.aleatorio(10000,99999);
       let refString = this.ref.toString();
       this._uw.transactionToEdit.ref=refString;
-    this._uw.transactionToEdit.receptEmail=this._uw.accountForTransfer.email;
+    this._uw.transactionToEdit.receptEmail=this._uw.transactionToEdit.email;
     let id = this._uw.transactionToEdit.id;
     this._uw.alerts.push({
           type: "info",
