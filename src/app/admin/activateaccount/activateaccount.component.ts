@@ -39,7 +39,7 @@ export class ActivateaccountComponent implements OnInit {
       if (this.ngFormActivateAccount.invalid) {
         return;
         } 
-      this._uw.accountToEdit.numberAccount=this.account.refacc;
+      this._uw.accountToEdit.numberAccount=this.account.numberAccount;
       let id = this._uw.accountToEdit.id;
       // this._uw.accountToEdit.fullProfile=false;
       this._uw.accountToEdit.status="active";
@@ -68,7 +68,7 @@ export class ActivateaccountComponent implements OnInit {
 
   ngOnInit(): void {
     this.ngFormActivateAccount = this.formBuilder.group({
-      refacc: ['', [Validators.required]]
+      numberAccount: ['', [Validators.required]]
       });
   }
 
