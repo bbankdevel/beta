@@ -23,11 +23,19 @@ export class TransactionviewComponent implements OnInit {
   ) { }
     ref = 0;
   public isError = false;
-  public transactionToEdit : TransactionInterface ;
+  public transactionToEdit : TransactionInterface ={
+        ammount:0,
+        ref:"",
+        type:"",
+        email:"",
+        remitEmail:"",
+        remitId:"",
+        userId:""
+      };
   public transactionToAdd : TransactionInterface ={
         ammount:0,
         ref:"",
-        type:"five",
+        type:"",
         email:"",
         remitEmail:"",
         remitId:"",
@@ -42,7 +50,7 @@ export class TransactionviewComponent implements OnInit {
     this._uw.transactionToEdit.status="complete";
     this.ref=this.aleatorio(10000,99999);
       let refString = this.ref.toString();
-      this.transactionToEdit.ref=refString;
+      this._uw.transactionToEdit.ref=refString;
     this._uw.transactionToEdit.receptEmail=this._uw.accountForTransfer.email;
     let id = this._uw.transactionToEdit.id;
     this._uw.alerts.push({
