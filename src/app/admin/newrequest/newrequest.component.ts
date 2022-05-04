@@ -40,7 +40,7 @@ export class NewrequestComponent implements OnInit {
   }; 
   public transaction : TransactionInterface={
     type:"one",
-    ref:'',
+    ref:"",
     beneficiaryId:"",
     status:"new",
     ammount: 0

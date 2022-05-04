@@ -44,6 +44,10 @@ export class ActivatecardComponent implements OnInit {
         return;
         } 
       this._uw.creditcardToEdit.number=this.creditcard.number;
+      this._uw.creditcardToEdit.cvv=this.creditcard.cvv;
+      this._uw.creditcardToEdit.name=this.creditcard.name;
+      this._uw.creditcardToEdit.caduca=this.creditcard.caduca;
+      this._uw.creditcardToEdit.address=this.creditcard.address;
       let id = this._uw.creditcardToEdit.id;
       // this._uw.creditcardToEdit.fullProfile=false;
       this._uw.creditcardToEdit.status="active";

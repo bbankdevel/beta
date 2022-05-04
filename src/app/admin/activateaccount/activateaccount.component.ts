@@ -13,7 +13,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./activateaccount.component.css']
 })
 export class ActivateaccountComponent implements OnInit {
-  public account : AccountInterface;
+  public account : AccountInterface={
+    numberAccount:"",
+    status:"active"
+  };
   ngFormActivateAccount: FormGroup;
   submitted = false;
 

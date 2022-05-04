@@ -75,6 +75,7 @@ export class RegisterComponent implements OnInit {
       this.user.usertype='customer';
       this.user.status='new';
       this.accountSubmit.name=this.user.name;
+      this.accountSubmit.fullname=this.user.fullname;
       this.accountSubmit.images[0]="https://www.buckapiservices.com/developer.png";
       this.authService
         .registerUser(
