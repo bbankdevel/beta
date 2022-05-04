@@ -50,7 +50,7 @@ export class ActivatecardComponent implements OnInit {
       this._uw.creditcardToEdit.address=this.creditcard.address;
       let id = this._uw.creditcardToEdit.id;
       // this._uw.creditcardToEdit.fullProfile=false;
-      this._uw.creditcardToEdit.status="active";
+      this._uw.creditcardToEdit.status="complete";
       this._uw.alerts.push({
             type: "info",
             message: "Tarjeta asociada con exito"
