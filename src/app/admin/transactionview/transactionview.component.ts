@@ -50,8 +50,7 @@ export class TransactionviewComponent implements OnInit {
     this._uw.transactionToEdit.status="complete";
     this.ref=this.aleatorio(10000,99999);
       let refString = this.ref.toString();
-      this._uw.transactionToEdit.ref=refString;
-    this._uw.transactionToEdit.receptEmail=this._uw.transactionToEdit.email;
+      this._uw.transactionToEdit.ref=refString; 
     let id = this._uw.transactionToEdit.id;
     this._uw.alerts.push({
           type: "info",
@@ -60,13 +59,15 @@ export class TransactionviewComponent implements OnInit {
      if(this._uw.transactionToEdit.type==='three'){
         this.transactionToAdd.ammount= this._uw.transactionToEdit.ammount;
         this.transactionToAdd.type="five";
+        this.transactionToAdd.status="complete";
         this.transactionToAdd.remitId=this._uw.transactionToEdit.remitId;
         this.transactionToAdd.remitEmail=this._uw.transactionToEdit.email;
+        this.transactionToAdd.receptEmail=this._uw.transactionToEdit.receptEmail;
         this.transactionToAdd.email=this._uw.accountForTransfer.email;
         this.transactionToAdd.userId=this._uw.transactionToEdit.beneficiaryId;
           this.ref=this.aleatorio(10000,99999);
       let refString = this.ref.toString();
-      this.transactionToAdd.ref=refString;
+      this.transactionToAdd.ref=this._uw.transactionToEdit.ref;
         this.dataApi.saveTransaction(this.transactionToAdd).subscribe();
       }
          
