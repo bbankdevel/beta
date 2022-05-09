@@ -49,7 +49,7 @@ export class DataApiService {
 		return (this.creditcards = this.http.get(url_api));
 	}
 	getActiveCreditcardsReturn(){
-		const url_api = 'https://db.bbevolutionbank.com:3025/api/creditcard?filter[where][status]=active';
+		const url_api = 'https://db.bbevolutionbank.com:3025/api/creditcard?filter[where][status]=complete';
 		return (this.creditcards = this.http.get(url_api));
 	}	
 	getActiveAccountsReturn(){
